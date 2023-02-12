@@ -1,16 +1,16 @@
 @font-face {
-  font-family: rocko;
-  src: url(../fonts/rocko.ttf);
+  font-family: aurora;
+  src: url(../fonts/AURORA-PRO.otf);
 }
 
 * {
     margin: 0;
     padding: 0;
-    font-family: 'rocko';
-    transition: color 0.25s, transform 0.25s ease-out, width 0.25s;
+    font-family: 'Ubuntu Mono NerdFont';
+    transition: color 0s, transform 0.25s ease-out, width 0.25s;
 }
 body {
-    background-color: #eacc81;
+    background-color: white;
     overflow-x: hidden;
 }
 
@@ -49,18 +49,18 @@ body {
 }
 
 .wrapper-sections-left {
-    padding-left: 16.5vw;
+    padding-left: 32vw;
     padding-right: 2vw;
     position: relative;
     justify-content: center;
-    padding-top: 1vh;
+    padding-top: 0.8vw;
     padding-bottom: 0vw;
     display: grid;
     grid-gap: 1vw;
     background-color: transparent;
     color: #444;
     grid-template-rows: repeat(1, 0.5vw);
-    grid-template-columns: 6vw 12.5vw 6.5vw;
+    grid-template-columns: auto auto auto;
     z-index: 10;
 }
 
@@ -74,16 +74,16 @@ body {
 }
 
 .wrapper-sections-left .box p:hover {
-    color: #a58a43;
-    opacity: 0.75;
+    color: white;
+    background-color: #4f3d74;
 }
 
 .wrapper-sections-left .box p {
     text-align: center;
     width: 100%;
-    padding-top: 0.6vh;
-    color: #c9aa5a;
-    font-size: 2vw;
+    padding: 0.1vw;
+    color: black;
+    font-size: 1vw;
 }
 
 .wrapper-sections-left .box img {
@@ -114,14 +114,14 @@ body {
     padding-right: 0vw;
     position: relative;
     justify-content: center;
-    padding-top: 1vh;
+    padding-top: 0.8vw;
     padding-bottom: 0vw;
     display: grid;
     grid-gap: 1vw;
     background-color: transparent;
     color: #444;
     grid-template-rows: repeat(1, 0.5vw);
-    grid-template-columns: 6vw 7.5vw 6.5vw;
+    grid-template-columns: auto auto auto;
     z-index: 10;
 }
 
@@ -135,16 +135,16 @@ body {
 }
 
 .wrapper-sections-right .box p:hover {
-    color: #a58a43;
-    opacity: 0.75;
+    color: white;
+    background-color: #4f3d74;
 }
 
 .wrapper-sections-right .box p {
     text-align: center;
     width: 100%;
-    padding-top: 0.6vh;
-    color: #c9aa5a;
-    font-size: 2vw;
+    padding: 0.1vw;
+    color: black;
+    font-size: 1vw;
 }
 
 .wrapper-sections-right .box img {
