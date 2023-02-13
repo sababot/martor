@@ -1,12 +1,12 @@
 @font-face {
-  font-family: aurora;
-  src: url(../fonts/AURORA-PRO.otf);
+  font-family: nerd;
+  src: url(../fonts/UbuntuNerdFont.ttf);
 }
 
 * {
     margin: 0;
     padding: 0;
-    font-family: 'Ubuntu Mono NerdFont';
+    font-family: 'nerd';
     transition: color 0s, transform 0.25s ease-out, width 0.25s;
 }
 body {
