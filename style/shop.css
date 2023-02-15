@@ -1,0 +1,156 @@
+.select {
+    margin-top: 4vw;
+    display: flex;
+    justify-content: center;
+}
+
+.all {
+    margin-top: 0.5vw;
+    margin-right: 4vw;
+    margin-left: 4vw;
+
+    height: 2.5vw;
+    width: 4vw;
+    opacity: 0.75;
+    text-decoration: none;
+    background-color: transparent;
+    color: #fff;
+    padding: 0px;
+    font-size: 1.5vw;
+    border: solid;
+    border-color: rgba(84, 7, 249, 1);
+    border-width: 0.15vw;
+}
+
+.all:hover {
+    opacity: 1;
+}
+
+.all .box p {
+    text-align: center;
+    width: 100%;
+    padding-top: 0vw;
+    color: #757575;
+    font-size: 100%;
+}
+
+.select-sections {
+    position: relative;
+    justify-content: center;
+    padding-top: 0.5vw;
+    padding-bottom: 0vw;
+    margin-left: 0vw;
+    margin-right: 0vw;
+    background-color: transparent;
+    color: #444;
+    z-index: 10;
+    flex: 1;
+}
+
+.select-sections button {
+    width: 100%;
+    text-decoration: none;
+    background-color: transparent;
+    color: #fff;
+    padding: 0;
+    font-size: 1vw;
+    border: none;
+    margin-bottom: 0.25vw;
+}
+
+.select-sections button:hover {
+    opacity: 1;
+    border-color: rgba(84, 7, 249, 1);
+    font-weight: bold;
+}
+
+.select-sections .box p {
+    text-align: right;
+    color: black;
+    font-size: 1vw;
+}
+
+.search-holder {
+    display: flex;
+}
+
+.search {
+    height: 1vw;
+    border-radius: 0;
+    text-decoration: none;
+    outline: none;
+    border-width: 0.1vw;
+    background-color: transparent;
+    font-size: 1vw;
+    padding-top: 0vw;
+    padding-bottom: 0vw;
+    padding-right: 2%;
+    width: 75%;
+    text-align: right;
+    margin-left: 23%;
+}
+
+.search-button {
+    margin-top: 0.5vw;
+    margin-right: 4vw;
+
+    height: 2.5vw;
+    width: 2.5vw;
+    opacity: 0.75;
+    text-decoration: none;
+    background-color: transparent;
+    color: #fff;
+    padding: 0px;
+    font-size: 1.5vw;
+    border: solid;
+    border-color: rgba(84, 7, 249, 1);
+    border-width: 0.15vw;
+}
+
+.search-button:hover {
+    opacity: 1;
+}
+
+.search-button i {
+    margin: 0.35vw;
+    color: #757575;
+}
+
+.select-sections .active {
+    opacity: 1;
+}
+
+.work-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(15vw, auto));
+    gap: 1vw;
+    margin-left: 2vw;
+    margin-right: 2vw;
+    justify-content: center;
+    flex: 8;
+}
+
+.work-cards a {
+    text-decoration: none;
+    background-color: transparent;
+    color: #fff;
+    padding: 7.5px;
+    font-size: 20px;
+}
+
+.work-cards a:hover {
+    opacity: 1;
+}
+
+.work-cards a .title {
+    font-size: 0.75vw;
+    text-align: center;
+    color: black;
+    margin-top: 0.5vw;
+    margin-bottom: 2vw;
+}
+
+.work-cards a img {
+    margin-top: 0vw;
+    width: 100%;
+}
