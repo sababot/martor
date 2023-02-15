@@ -7,7 +7,6 @@
     margin: 0;
     padding: 0;
     font-family: 'nerd';
-    transition: color 0s, transform 0.25s ease-out, width 0.25s;
 }
 body {
     background-image: url(../images/download.png);
@@ -321,11 +320,30 @@ p{
 .premiere{
     text-align: center;
     font-size: 1vw;
-    margin-top: 8vw;
+    margin-top: 9vw;
     margin-left: 47vw;
     margin-right: 47vw;
     background-color: #4f3d74;
     color: white;
     padding: 0.1vw;
     margin-bottom: 2vw;
+}
+
+.view-channel{
+    outline: none;
+    border: none;
+    font-size: 1vw;
+    padding: 0.25vw;
+    background-color: transparent;
+    color: black;
+    text-align: center;
+    display: block;
+    margin: auto;
+    margin-top: 0vw;
+    text-decoration: none;
+    margin-bottom: 0;
+}
+
+.view-channel:hover{
+    font-weight: bold;
 }
