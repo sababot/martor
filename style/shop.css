@@ -1,5 +1,5 @@
 .select {
-    margin-top: 4vw;
+    margin-top: 6vw;
     display: flex;
     justify-content: center;
 }
@@ -85,9 +85,9 @@
     padding-top: 0vw;
     padding-bottom: 0vw;
     padding-right: 2%;
-    width: 75%;
+    width: 60%;
     text-align: right;
-    margin-left: 23%;
+    margin-left: 38%;
 }
 
 .search-button {

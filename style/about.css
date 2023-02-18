@@ -1,0 +1,17 @@
+.about-heading{
+    text-align: center;
+    font-size: 1vw;
+    margin-top: 8vw;
+    margin-left: 48vw;
+    margin-right: 48vw;
+    background-color: #4f3d74;
+    color: white;
+    padding: 0.1vw;
+    margin-bottom: 2vw;
+}
+
+.about-text{
+    margin-right: 15vw;
+    margin-left: 15vw;
+    margin-bottom: 15vw;
+}
