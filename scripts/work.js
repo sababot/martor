@@ -1,16 +1,18 @@
 var active = 'all';
 
 var options = [	document.getElementById('all'), 
-				document.getElementById('projects'),
-				document.getElementById('repositories'),
-				document.getElementById('games'),
-				document.getElementById('publications'),
+				document.getElementById('shirts'),
+				document.getElementById('hoods'),
+				document.getElementById('pants'),
+				document.getElementById('hats'),
+				document.getElementById('accesories'),
 				document.getElementById('search_input')];
 
-var projects = document.getElementsByClassName('card-project');
-var repositories = document.getElementsByClassName('card-repository');
-var games = document.getElementsByClassName('card-game');
-var publications = document.getElementsByClassName('card-publication');
+var shirts = document.getElementsByClassName('shirt');
+var hoods = document.getElementsByClassName('hood');
+var pants = document.getElementsByClassName('pant');
+var hats = document.getElementsByClassName('hat');
+var accesories = document.getElementsByClassName('accesory');
 
 var cards = document.querySelectorAll('.work-cards a');
 
@@ -27,152 +29,214 @@ function select_all() {
 		}
 	}
 
-	// ENABLE PUBLICATIONS
-	for (var i = 0; i < publications.length; i++) {
-		publications[i].style.display = 'block';
+	// ENABLE HATS
+	for (var i = 0; i < hats.length; i++) {
+		hats[i].style.display = 'block';
 	}
 
-	// ENABLE GAMES
-	for (var i = 0; i < games.length; i++) {
-		games[i].style.display = 'block';
+	// ENABLE PANTS
+	for (var i = 0; i < pants.length; i++) {
+		pants[i].style.display = 'block';
 	}
 
-	// ENABLE REPOSITORIES
-	for (var i = 0; i < repositories.length; i++) {
-		repositories[i].style.display = 'block';
+	// ENABLE HOODS
+	for (var i = 0; i < hoods.length; i++) {
+		hoods[i].style.display = 'block';
 	}
 
-	// ENABLE PROJECTS
-	for (var i = 0; i < projects.length; i++) {
-		projects[i].style.display = 'block';
+	// ENABLE SHIRTS
+	for (var i = 0; i < shirts.length; i++) {
+		shirts[i].style.display = 'block';
+	}
+
+	// ENABLE ACCESORIES
+	for (var i = 0; i < accesories.length; i++) {
+		accesories[i].style.display = 'block';
 	}
 }
 
-function select_projects() {
-	document.getElementById('projects').style.fontWeight = 'bold';
-	document.getElementById('projects').style.borderColor = 'rgba(84, 7, 249, 1)';
-	active = 'projects';
+function select_shirts() {
+	document.getElementById('shirts').style.fontWeight = 'bold';
+	document.getElementById('shirts').style.borderColor = 'rgba(84, 7, 249, 1)';
+	active = 'shirts';
 
 	for (var i = 0; i < options.length; i++) {
-		if (options[i].id != 'projects') {
+		if (options[i].id != 'shirts') {
 			options[i].style.fontWeight = 'normal';
 		}
 	}
 
-	// ENABLE PROJECTS
-	for (var i = 0; i < projects.length; i++) {
-		projects[i].style.display = 'block';
+	// ENABLE SHIRTS
+	for (var i = 0; i < shirts.length; i++) {
+		shirts[i].style.display = 'block';
 	}
 
-	// DISABLE REPOSITORIES
-	for (var i = 0; i < repositories.length; i++) {
-		repositories[i].style.display = 'none';
+	// DISABLE HOODS
+	for (var i = 0; i < hoods.length; i++) {
+		hoods[i].style.display = 'none';
 	}
 
-	// DISABLE GAMES
-	for (var i = 0; i < games.length; i++) {
-		games[i].style.display = 'none';
+	// DISABLE PANTS
+	for (var i = 0; i < pants.length; i++) {
+		pants[i].style.display = 'none';
 	}
 
-	// DISABLE PUBLICATIONS
-	for (var i = 0; i < publications.length; i++) {
-		publications[i].style.display = 'none';
+	// DISABLE HATS
+	for (var i = 0; i < hats.length; i++) {
+		hats[i].style.display = 'none';
+	}
+
+	// DISABLE ACCESORIES
+	for (var i = 0; i < accesories.length; i++) {
+		accesories[i].style.display = 'none';
 	}
 }
 
-function select_repositories() {
-	document.getElementById('repositories').style.fontWeight = 'bold';
-	document.getElementById('repositories').style.borderColor = 'rgba(84, 7, 249, 1)';
-	active = 'repositories';
+function select_hoods() {
+	document.getElementById('hoods').style.fontWeight = 'bold';
+	document.getElementById('hoods').style.borderColor = 'rgba(84, 7, 249, 1)';
+	active = 'hoods';
 
 	for (var i = 0; i < options.length; i++) {
-		if (options[i].id != 'repositories') {
+		if (options[i].id != 'hoods') {
 			options[i].style.fontWeight = 'normal';
 		}
 	}
 
-	// ENABLE REPOSITORIES
-	for (var i = 0; i < repositories.length; i++) {
-		repositories[i].style.display = 'block';
+	// ENABLE HOODS
+	for (var i = 0; i < hoods.length; i++) {
+		hoods[i].style.display = 'block';
 	}
 
-	// DISABLE PROJECTS
-	for (var i = 0; i < projects.length; i++) {
-		projects[i].style.display = 'none';
+	// DISABLE SHIRTS
+	for (var i = 0; i < shirts.length; i++) {
+		shirts[i].style.display = 'none';
 	}
 
-	// DISABLE GAMES
-	for (var i = 0; i < games.length; i++) {
-		games[i].style.display = 'none';
+	// DISABLE PANTS
+	for (var i = 0; i < pants.length; i++) {
+		pants[i].style.display = 'none';
 	}
 
-	// DISABLE PUBLICATIONS
-	for (var i = 0; i < publications.length; i++) {
-		publications[i].style.display = 'none';
+	// DISABLE HATS
+	for (var i = 0; i < hats.length; i++) {
+		hats[i].style.display = 'none';
+	}
+
+	// DISABLE ACCESORIES
+	for (var i = 0; i < accesories.length; i++) {
+		accesories[i].style.display = 'none';
 	}
 }
 
-function select_games() {
-	document.getElementById('games').style.fontWeight = 'bold';
-	document.getElementById('games').style.borderColor = 'rgba(84, 7, 249, 1)';
-	active = 'games';
+function select_pants() {
+	document.getElementById('pants').style.fontWeight = 'bold';
+	document.getElementById('pants').style.borderColor = 'rgba(84, 7, 249, 1)';
+	active = 'pants';
 
 	for (var i = 0; i < options.length; i++) {
-		if (options[i].id != 'games') {
+		if (options[i].id != 'pants') {
 			options[i].style.fontWeight = 'normal';
 		}
 	}
 
-	// ENABLE GAMES
-	for (var i = 0; i < games.length; i++) {
-		games[i].style.display = 'block';
+	// ENABLE PANTS
+	for (var i = 0; i < pants.length; i++) {
+		pants[i].style.display = 'block';
 	}
 
-	// DIABLE REPOSITORIES
-	for (var i = 0; i < repositories.length; i++) {
-		repositories[i].style.display = 'none';
+	// DIABLE HOODS
+	for (var i = 0; i < hoods.length; i++) {
+		hoods[i].style.display = 'none';
 	}
 
-	// DISABLE PROJECTS
-	for (var i = 0; i < projects.length; i++) {
-		projects[i].style.display = 'none';
+	// DISABLE SHIRTS
+	for (var i = 0; i < shirts.length; i++) {
+		shirts[i].style.display = 'none';
 	}
 
-	// DISABLE PUBLICATIONS
-	for (var i = 0; i < publications.length; i++) {
-		publications[i].style.display = 'none';
+	// DISABLE HATS
+	for (var i = 0; i < hats.length; i++) {
+		hats[i].style.display = 'none';
+	}
+
+	// DISABLE ACCESORIES
+	for (var i = 0; i < accesories.length; i++) {
+		accesories[i].style.display = 'none';
 	}
 }
 
-function select_publications() {
-	document.getElementById('publications').style.fontWeight = 'bold';
-	document.getElementById('publications').style.borderColor = 'rgba(84, 7, 249, 1)';
-	active = 'publications';
+function select_hats() {
+	document.getElementById('hats').style.fontWeight = 'bold';
+	document.getElementById('hats').style.borderColor = 'rgba(84, 7, 249, 1)';
+	active = 'hats';
 
 	for (var i = 0; i < options.length; i++) {
-		if (options[i].id != 'publications') {
+		if (options[i].id != 'hats') {
 			options[i].style.fontWeight = 'normal';
 		}
 	}
 
-	// ENABLE PUBLICATIONS
-	for (var i = 0; i < publications.length; i++) {
-		publications[i].style.display = 'block';
+	// ENABLE HATS
+	for (var i = 0; i < hats.length; i++) {
+		hats[i].style.display = 'block';
 	}
 
-	// DISABLE GAMES
-	for (var i = 0; i < games.length; i++) {
-		games[i].style.display = 'none';
+	// DISABLE PANTS
+	for (var i = 0; i < pants.length; i++) {
+		pants[i].style.display = 'none';
 	}
 
-	// DIABLE REPOSITORIES
-	for (var i = 0; i < repositories.length; i++) {
-		repositories[i].style.display = 'none';
+	// DIABLE HOODS
+	for (var i = 0; i < hoods.length; i++) {
+		hoods[i].style.display = 'none';
 	}
 
-	// DISABLE PROJECTS
-	for (var i = 0; i < projects.length; i++) {
-		projects[i].style.display = 'none';
+	// DISABLE SHIRTS
+	for (var i = 0; i < shirts.length; i++) {
+		shirts[i].style.display = 'none';
+	}
+
+	// DISABLE ACCESORIES
+	for (var i = 0; i < accesories.length; i++) {
+		accesories[i].style.display = 'none';
+	}
+}
+
+function select_accesories() {
+	document.getElementById('accesories').style.fontWeight = 'bold';
+	document.getElementById('accesories').style.borderColor = 'rgba(84, 7, 249, 1)';
+	active = 'accesories';
+
+	for (var i = 0; i < options.length; i++) {
+		if (options[i].id != 'accesories') {
+			options[i].style.fontWeight = 'normal';
+		}
+	}
+
+	// ENABLE ACCESORES
+	for (var i = 0; i < accesories.length; i++) {
+		accesories[i].style.display = 'block';
+	}
+
+	// DISABLE HATS
+	for (var i = 0; i < hats.length; i++) {
+		hats[i].style.display = 'none';
+	}
+
+	// DISABLE PANTS
+	for (var i = 0; i < pants.length; i++) {
+		pants[i].style.display = 'none';
+	}
+
+	// DIABLE HOODS
+	for (var i = 0; i < hoods.length; i++) {
+		hoods[i].style.display = 'none';
+	}
+
+	// DISABLE SHIRTS
+	for (var i = 0; i < shirts.length; i++) {
+		shirts[i].style.display = 'none';
 	}
 }
 
