@@ -345,3 +345,38 @@ p{
 .view-channel:hover{
     font-weight: bold;
 }
+
+.tickerContainer {
+  position: block;
+}
+
+.ticker {
+    padding-top: 0.15vw;
+    height: 1vw;
+    width: 100vw;
+    background-color: #4f3d74;
+    color: white;
+    text-align: center;
+    overflow: hidden;
+    white-space: nowrap;
+    position: relative;
+}
+
+.ticker div {
+    display: inline-block;
+    width: 200%;
+    height: 1vw;
+    position: absolute;
+    overflow: hidden;
+    animation: ticker 15s linear infinite;
+}
+
+.ticker span {
+    float: left;
+    width: 12.5%;
+}
+
+@keyframes ticker {
+    0% { left: 0; }
+    100% { left: -100%; }
+}
