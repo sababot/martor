@@ -1,9 +1,12 @@
+.space{
+    padding-top: 7vw;
+}
+
 .about-heading{
     text-align: center;
     font-size: 1vw;
-    margin-top: 8vw;
-    margin-left: 48vw;
-    margin-right: 48vw;
+    margin-left: 46.5vw;
+    margin-right: 46.5vw;
     background-color: #4f3d74;
     color: white;
     padding: 0.1vw;
@@ -11,7 +14,20 @@
 }
 
 .about-text{
-    margin-right: 15vw;
-    margin-left: 15vw;
-    margin-bottom: 15vw;
+    margin-right: 10vw;
+    margin-left: 10vw;
+    text-align: center;
+    margin-bottom: 5vw;
+}
+
+.cool-images{
+    display: flex;
+    justify-content: center;
+    width: 100vw;
+    margin-bottom: 10vw;
+    gap: 2vw;
+}
+
+.cool-images img{
+    width: 25vw;
 }
