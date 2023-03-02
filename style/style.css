@@ -7,7 +7,6 @@
     margin: 0;
     padding: 0;
     font-family: 'nerd';
-    transition: filter 0.15s;
 }
 body {
     background-color: white; /*#f8f7fa;*/
@@ -300,6 +299,10 @@ p{
     opacity: 0;
 }
 
+.work-cards a:hover .price{
+    opacity: 1;
+}
+
 .work-cards a img {
     margin-top: 0vw;
     width: 100%;
@@ -445,4 +448,16 @@ p{
 @keyframes ticker {
     0% { left: 0; }
     100% { left: -100%; }
+}
+
+.lookbook{
+    text-align: center;
+    font-size: 1vw;
+    margin-top: 7vw;
+    margin-left: 47vw;
+    margin-right: 47vw;
+    background-color: #4f3d74;
+    color: white;
+    padding: 0.1vw;
+    margin-bottom: 2vw;
 }
