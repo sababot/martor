@@ -1,0 +1,83 @@
+.space{
+    padding-top: 7vw;
+}
+
+.contact-heading{
+    text-align: center;
+    font-size: 1vw;
+    margin-left: 46vw;
+    margin-right: 46vw;
+    background-color: #4f3d74;
+    color: white;
+    padding: 0.1vw;
+    margin-bottom: 2vw;
+}
+
+.contact-text{
+    margin-right: 10vw;
+    margin-left: 10vw;
+    text-align: center;
+    margin-bottom: 5vw;
+}
+
+.contact-images{
+    display: flex;
+    justify-content: center;
+    width: 100vw;
+    margin-bottom: 10vw;
+    gap: 2vw;
+}
+
+.cool-images img{
+    width: 25vw;
+}
+
+.contact-form{
+    margin-top: 2vw;
+    margin-bottom: 1vw;
+    display: block;
+    text-align: center;
+}
+
+.contact-form input{
+    border-radius: 0;
+    text-decoration: none;
+    outline: none;
+    border-width: 0.1vw;
+    background-color: transparent;
+    font-size: 1vw;
+    margin-top: 0.5vw;
+    padding-bottom: 0vw;
+    padding-left: 0.25vw;
+    width: 35%;
+}
+
+.contact-form textarea{
+    border-radius: 0;
+    text-decoration: none;
+    outline: none;
+    border-width: 0.1vw;
+    background-color: transparent;
+    font-size: 1vw;
+    margin-top: 0.5vw;
+    padding-bottom: 0vw;
+    padding-left: 0.25vw;
+    width: 35%;
+    resize: none;
+}
+
+.contact-form button{
+    margin-left: 1vw;
+    border-radius: 0;
+    text-decoration: none;
+    outline: none;
+    border: none;
+    background-color: transparent;
+    font-size: 1vw;
+    padding-top: 0vw;
+    padding-bottom: 0vw;
+}
+
+.contact-form button:hover{
+    font-weight: bold;
+}

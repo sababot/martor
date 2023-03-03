@@ -461,3 +461,8 @@ p{
     padding: 0.1vw;
     margin-bottom: 2vw;
 }
+
+.fixed-footer {
+    position: absolute;
+    bottom: 0;
+}
