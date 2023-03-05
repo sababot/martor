@@ -42,10 +42,10 @@ function unhover_must_fall_hat_2(element) {
 //
 
 function hover_living_fast_hoodie_1(element) {
-	element.setAttribute('src', 'images/collections/living-fast/hoodie-1-front.webp');
+	element.setAttribute('src', 'images/collections/living-fast/hoodie-1-back.png');
 	element.setAttribute('id', 'card');
 }
 
 function unhover_living_fast_hoodie_1(element) {
-	element.setAttribute('src', 'images/collections/living-fast/hoodie-1-back.webp');
+	element.setAttribute('src', 'images/collections/living-fast/hoodie-1-front.webp');
 }
