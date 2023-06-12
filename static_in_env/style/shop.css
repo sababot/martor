@@ -1,0 +1,137 @@
+.select {
+    padding-top: 0vw;
+}
+
+.all {
+    margin-top: 0.5vw;
+    margin-right: 4vw;
+    margin-left: 4vw;
+
+    height: 2.5vw;
+    width: 4vw;
+    opacity: 0.75;
+    text-decoration: none;
+    background-color: transparent;
+    color: #fff;
+    padding: 0px;
+    font-size: 1.5vw;
+    border: solid;
+    border-color: rgba(84, 7, 249, 1);
+    border-width: 0.15vw;
+}
+
+.all:hover {
+    opacity: 1;
+}
+
+.all .box p {
+    text-align: center;
+    width: 100%;
+    padding-top: 0vw;
+    color: #757575;
+    font-size: 100%;
+}
+
+.select-sections {
+    justify-content: center;
+    padding-top: 0.5vw;
+    padding-bottom: 0vw;
+    margin-left: 0vw;
+    background-color: transparent;
+    color: #444;
+    z-index: 10;
+    z-index: 0;
+    display: flex;
+    gap: 1.5vw;
+}
+
+.select-sections button {
+    text-decoration: none;
+    background-color: transparent;
+    color: #fff;
+    padding: 0;
+    font-size: 1vw;
+    border: none;
+    margin-bottom: 0.25vw;
+}
+
+.select-sections button:hover {
+    opacity: 1;
+    border-color: rgba(84, 7, 249, 1);
+    font-weight: bold;
+}
+
+.select-sections .box p {
+    text-align: right;
+    color: black;
+    font-size: 1vw;
+}
+
+.search-holder {
+
+}
+
+.search {
+    height: 1vw;
+    border-radius: 0;
+    text-decoration: none;
+    outline: none;
+    border-width: 0.1vw;
+    background-color: transparent;
+    font-size: 1vw;
+    padding-top: 0vw;
+    padding-bottom: 0vw;
+    padding-left: 0.25vw;
+    width: 10%;
+    text-align: left;
+}
+
+.search-button {
+    margin-top: 0.5vw;
+    margin-right: 4vw;
+
+    height: 2.5vw;
+    width: 2.5vw;
+    opacity: 0.75;
+    text-decoration: none;
+    background-color: transparent;
+    color: #fff;
+    padding: 0px;
+    font-size: 1.5vw;
+    border: solid;
+    border-color: rgba(84, 7, 249, 1);
+    border-width: 0.15vw;
+}
+
+.search-button:hover {
+    opacity: 1;
+}
+
+.search-button i {
+    margin: 0.35vw;
+    color: #757575;
+}
+
+.select-sections .active {
+    opacity: 1;
+}
+
+.work-cards{
+    margin-left: 4vw;
+    margin-right: 4vw;
+}
+
+.all-heading{
+    text-align: center;
+    font-size: 1vw;
+    margin-left: 46.5vw;
+    margin-right: 46.5vw;
+    background-color: #4f3d74;
+    color: white;
+    padding: 0.1vw;
+    margin-bottom: 2vw;
+}
+
+.space{
+    padding-top: 7vw;
+}
