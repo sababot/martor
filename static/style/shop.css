@@ -1,5 +1,8 @@
 .select {
     padding-top: 0vw;
+    padding: 0;
+    margin-left: 2vw;
+    margin-right: 2vw;
 }
 
 .all {
@@ -117,8 +120,8 @@
 }
 
 .work-cards{
-    margin-left: 4vw;
-    margin-right: 4vw;
+    margin-left: 0vw;
+    margin-right: 0vw;
 }
 
 .all-heading{
