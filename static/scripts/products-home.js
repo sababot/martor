@@ -11,7 +11,7 @@ function unhover_must_fall_shirt_1(element) {
 
 //
 
-function hover_must_fall_shirt_2(element) {dd
+function hover_must_fall_shirt_2(element) {
 	element.setAttribute('src', 'images/collections/fall-to-rise/printful-mockups/martor-shirt-1-blue-back.webp');
 }
 
