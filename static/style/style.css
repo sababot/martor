@@ -99,7 +99,7 @@ p{
     text-align: center;
     width: 100%;
     padding: 0.1vw;
-    font-size: 17px;
+    font-size: 15px;
 }
 
 .wrapper-sections-left .box p:before{
@@ -192,7 +192,7 @@ p{
     text-align: center;
     width: 100%;
     padding: 0.1vw;
-    font-size: 17px;
+    font-size: 15px;
 }
 
 .wrapper-sections-right .box p:before{
@@ -257,7 +257,7 @@ p{
 
 .new-collection .new-collection-text p{
     text-align: center;
-    font-size: 17px;
+    font-size: 15px;
     margin-top: 60px;
     padding-left: 10px;
     padding-right: 10px;
@@ -315,7 +315,7 @@ p{
 .show-all{
     outline: none;
     border: none;
-    font-size: 17px;
+    font-size: 15px;
     padding: 0.25vw;
     background-color: transparent;
     color: black;
@@ -340,7 +340,7 @@ p{
 
 .stay-updated p{
     text-align: center;
-    font-size: 17px;
+    font-size: 15px;
     padding-left: 10px;
     padding-right: 10px;
     background-color: #4f3d74;
@@ -350,7 +350,7 @@ p{
 
 .newsletter-text{
     text-align: center;
-    font-size: 17px;
+    font-size: 15px;
     width: 600px;
     margin-left: auto;
     margin-right: auto;
@@ -372,7 +372,7 @@ p{
     outline: none;
     border-width: 2px;
     background-color: transparent;
-    font-size: 17px;
+    font-size: 15px;
     padding-top: 0vw;
     padding-bottom: 0vw;
     padding-left: 5px;
@@ -386,7 +386,7 @@ p{
     outline: none;
     border: none;
     background-color: transparent;
-    font-size: 17px;
+    font-size: 15px;
     padding-top: 0;
     padding-bottom: 0;
 }
@@ -405,7 +405,7 @@ p{
 
 .premiere p{
     text-align: center;
-    font-size: 17px;
+    font-size: 15px;
     padding-left: 10px;
     padding-right: 10px;
     background-color: #4f3d74;
@@ -416,7 +416,7 @@ p{
 .view-channel{
     outline: none;
     border: none;
-    font-size: 17px;
+    font-size: 15px;
     padding: 0.25vw;
     background-color: transparent;
     color: black;
@@ -478,7 +478,7 @@ p{
 
 .lookbook p{
     text-align: center;
-    font-size: 17px;
+    font-size: 15px;
     padding-left: 10px;
     padding-right: 10px;
     background-color: #4f3d74;

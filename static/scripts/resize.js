@@ -45,7 +45,7 @@ function resize_elements(){
 		newsletter.style.display = 'none';
 		footer_mobile.style.display = 'block';
 		footer_desktop.style.display = 'none';
-		footer_logo.style.display = 'block';
+		footer_logo.style.display = 'none';
 		header_mobile.style.display = 'flex';
 		header_desktop.style.display = 'none';
 			
@@ -65,7 +65,7 @@ function resize_elements(){
 		newsletter.style.display = 'block';
 		footer_mobile.style.display = 'none';
 		footer_desktop.style.display = 'flex';
-		footer_logo.style.display = 'block';
+		footer_logo.style.display = 'none';
 		header_mobile.style.display = 'flex';
 		header_desktop.style.display = 'none';
 			
@@ -84,7 +84,7 @@ function resize_elements(){
 		newsletter.style.display = 'block';
 		footer_mobile.style.display = 'none';
 		footer_desktop.style.display = 'flex';
-		footer_logo.style.display = 'block';
+		footer_logo.style.display = 'none';
 		header_mobile.style.display = 'flex';
 		header_desktop.style.display = 'none';
 
@@ -103,7 +103,7 @@ function resize_elements(){
 		newsletter.style.display = 'block';
 		footer_mobile.style.display = 'none';
 		footer_desktop.style.display = 'flex';
-		footer_logo.style.display = 'block';
+		footer_logo.style.display = 'none';
 		header_mobile.style.display = 'none';
 		header_desktop.style.display = 'flex';
 
@@ -122,7 +122,7 @@ function resize_elements(){
 		newsletter.style.display = 'block';
 		footer_mobile.style.display = 'none';
 		footer_desktop.style.display = 'flex';
-		footer_logo.style.display = 'block';
+		footer_logo.style.display = 'none';
 		header_mobile.style.display = 'none';
 		header_desktop.style.display = 'flex';
 
