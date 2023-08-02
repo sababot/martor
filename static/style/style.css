@@ -300,7 +300,7 @@ p{
     text-align: center;
     color: #757575;
     line-height: 125%;
-    opacity: 0;
+    opacity: 1;
 }
 
 .work-cards a:hover .price{
