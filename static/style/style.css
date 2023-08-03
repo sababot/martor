@@ -292,19 +292,24 @@ p{
     font-size: 15px;
     text-align: center;
     color: black;
-    line-height: 100%;
 }
 
 .work-cards a .price {
     font-size: 15px;
     text-align: center;
     color: #757575;
-    line-height: 125%;
     opacity: 1;
 }
 
 .work-cards a:hover .price{
     opacity: 1;
+}
+
+.work-cards a .color{
+    font-size: 15px;
+    text-align: center;
+    color: #4f3d74;
+    margin-top: 0.2vw;
 }
 
 .work-cards a img {
