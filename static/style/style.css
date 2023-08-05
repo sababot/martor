@@ -57,7 +57,7 @@ p{
 }
 
 .wrapper-sections-left {
-    padding-left: 40px;
+    padding-left: 20px;
     padding-right: 40px;
     position: relative;
     justify-content: center;
@@ -151,7 +151,7 @@ p{
 
 .wrapper-sections-right {
     padding-left: 40px;
-    padding-right: 40px;
+    padding-right: 20px;
     position: relative;
     justify-content: center;
     padding-top: 14px;
@@ -274,7 +274,7 @@ p{
     display: grid;
     grid-template-columns: repeat(2, 40vw);
     column-gap: 4vw;
-    row-gap: 4vw;
+    row-gap: 7vh;
     margin-left: 2vw;
     margin-right: 2vw;
     justify-content: center;
@@ -292,12 +292,18 @@ p{
     font-size: 15px;
     text-align: center;
     color: black;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
 }
 
 .work-cards a .price {
     font-size: 15px;
     text-align: center;
     color: #757575;
+    line-height: 0;
+    margin-top: 12px;
+    padding-top: 0;
     opacity: 1;
 }
 
@@ -309,7 +315,8 @@ p{
     font-size: 15px;
     text-align: center;
     color: #4f3d74;
-    margin-top: 0.2vw;
+    margin-top: 7px;
+    padding-top: 0;
 }
 
 .work-cards a img {
