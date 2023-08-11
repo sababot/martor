@@ -518,3 +518,40 @@ p{
     position: absolute;
     bottom: 0;
 }
+
+.loader-background {
+    width: 100vw;
+    height: 100vh;
+    background-color: white;
+    margin: 0;
+    position: fixed;
+    z-index: 20;
+    transition: all 0.5s;
+}
+
+#loader {
+  position: absolute;
+  left: 50%;
+  top: 45%;
+  z-index: 1;
+  width: 6vh;
+  height: 6vh;
+  margin: -3vh 0 0 -3vh;
+  border: 1vh solid #d2c3f1;
+  border-radius: 50%;
+  border-top: 1vh solid #584778;
+  border-bottom: 1vh solid #584778;
+  -webkit-animation: spin 2s linear infinite;
+  animation: spin 2s linear infinite;
+  transition: all 0.5s;
+}
+
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}

@@ -22,7 +22,12 @@
 
 	<script src="https://kit.fontawesome.com/497ef235da.js" crossorigin="anonymous"></script>
 </head>
-<body>
+<body id="bod" onload="showPage()">
+	<!--LOADER-->
+	<div class="loader-background" id="loader_div">
+		<div id="loader"></div>
+	</div>
+
 	<!--TICKER-->
 	<div style="position: fixed; z-index: 2">
 		<div class="tickerContainer">  
@@ -307,5 +312,6 @@
 	<!--SCRIPTS-->
 	<script src="scripts/products-home.js"></script>
 	<script src="{% static 'scripts/resize.js' %}"></script>
+	<script src="{% static 'scripts/loader.js' %}"></script>
 </body>
 </html>
