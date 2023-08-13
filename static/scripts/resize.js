@@ -19,6 +19,8 @@ var lookbook_2 = document.getElementById('lookbook-2');
 var header_desktop = document.getElementById('header-desktop');
 var header_mobile = document.getElementById('header-mobile');
 
+var seperators = [document.getElementById("new-collection"), document.getElementById("premiere-text"), document.getElementById("new-collection"), document.getElementById("lookbook-text")]
+
 function resize_elements(){
 	if ((window.innerWidth / window.innerHeight) < 0.5){
 		products.style.gridTemplateColumns = "repeat(2, 50%)";
@@ -36,6 +38,10 @@ function resize_elements(){
 			background_mobile.style.display = 'block';
 			lookbook_1.style.display = 'none';
 			lookbook_2.style.display = 'block';
+		}
+
+		for (var i = 0; i < seperators.length; i++){
+			seperators[i].style.marginTop = "60px"
 		}
 
 	}
@@ -58,6 +64,10 @@ function resize_elements(){
 			lookbook_2.style.display = 'block';
 		}
 
+		for (var i = 0; i < seperators.length; i++){
+			seperators[i].style.marginTop = "60px"
+		}
+
 	}
 
 	else if ((window.innerWidth / window.innerHeight) < 0.75){
@@ -76,6 +86,10 @@ function resize_elements(){
 			background_mobile.style.display = 'block';
 			lookbook_1.style.display = 'none';
 			lookbook_2.style.display = 'block';
+		}
+
+		for (var i = 0; i < seperators.length; i++){
+			seperators[i].style.marginTop = "6vw"
 		}
 	}
 
@@ -96,6 +110,10 @@ function resize_elements(){
 			lookbook_1.style.display = 'none';
 			lookbook_2.style.display = 'none';
 		}
+
+		for (var i = 0; i < seperators.length; i++){
+			seperators[i].style.marginTop = "6vw"
+		}
 	}
 
 	else if ((window.innerWidth / window.innerHeight) < 1.25){
@@ -115,6 +133,10 @@ function resize_elements(){
 			lookbook_1.style.display = 'none';
 			lookbook_2.style.display = 'none';
 		}
+
+		for (var i = 0; i < seperators.length; i++){
+			seperators[i].style.marginTop = "6vw"
+		}
 	}
 
 	else{
@@ -133,6 +155,10 @@ function resize_elements(){
 			background_mobile.style.display = 'none';
 			lookbook_1.style.display = 'block';
 			lookbook_2.style.display = 'block';
+		}
+
+		for (var i = 0; i < seperators.length; i++){
+			seperators[i].style.marginTop = "6vw"
 		}
 	}
 }
