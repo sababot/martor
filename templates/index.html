@@ -45,6 +45,28 @@
 		  </div>
 		</div>
 
+		<!--SIDEBAR-->
+		<div class="sidebar" id="sidebar">
+			<div class="items">
+				<a href="" class="active">
+					<p>home</p>
+				</a>
+				<a href="desert">
+					<p>shop</p>
+				</a>
+				<div class="disabled">
+					<p>collections</p>
+				</div>
+				<div class="disabled">
+					<p>about</p>
+				</div>
+				<a href="manifesto">
+					<p>contact</p>
+				</a>
+			</div>
+			<!--<img src="../static/images/TungTTpfp.png" class="fennec-pop-2">-->
+		</div>
+
 		<!--HEADER-->
 		<div id="header-desktop" class="header">
 			<div class="wrapper-sections-left" id="header_elements">
@@ -99,7 +121,7 @@
 			</div>
 		-->
 
-			<div style="margin-top: 12px; margin-left: 15px;">
+			<div style="margin-top: 12px; margin-left: 15px;" onclick="toggleSidebar()">
 				<div style="width: 20px; height: 2px; background-color: #2b2b2b; margin: 4px 0;"></div>
 				<div style="width: 20px; height: 2px; background-color: #2b2b2b; margin: 4px 0;"></div>
 				<div style="width: 20px; height: 2px; background-color: #2b2b2b; margin: 4px 0;"></div>
@@ -313,5 +335,6 @@
 	<script src="scripts/products-home.js"></script>
 	<script src="{% static 'scripts/resize.js' %}"></script>
 	<script src="{% static 'scripts/loader.js' %}"></script>
+	<script src="{% static 'scripts/sidebar.js' %}"></script>
 </body>
 </html>
