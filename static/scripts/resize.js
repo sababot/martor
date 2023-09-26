@@ -89,7 +89,7 @@ function resize_elements(){
 		}
 
 		for (var i = 0; i < seperators.length; i++){
-			seperators[i].style.marginTop = "6vw"
+			seperators[i].style.marginTop = "60px"
 		}
 	}
 
