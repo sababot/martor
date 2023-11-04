@@ -576,15 +576,12 @@ p{
     text-decoration: none;
 }
 
-.sidebar .items div {
-    opacity: 0.5;
-}
-
 .sidebar .items a:hover {
     text-decoration: none;
     background-color: transparent;
     color: #fff;
     padding: 0px;
+    text-align: center;
 }
 
 .sidebar .disabled {
@@ -602,6 +599,7 @@ p{
     padding-top: 1vw;
     background-color: transparent;
     border-radius: 1vw;
+    display: block;
 }
 
 .sidebar .items i {
@@ -617,11 +615,30 @@ p{
     width: 7.5vw;
 }
 
+.sidebar .items p:before{
+    content: ']';
+    opacity: 0;
+}
+
+.sidebar .items p:after{
+    opacity: 0;
+    content: ']';
+}
+
 .sidebar .items .active{
-    text-decoration: none;
-    background-color: #FFCCB9;
-    color: #fff;
-    padding: 0px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+}
+
+.sidebar .items .active:before{
+    opacity: 1;
+    content: '[';
+}
+
+.sidebar .items .active:after{
+    opacity: 1;
+    content: ']';
 }
 
 .sidebar .exit-button {
