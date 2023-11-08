@@ -1,9 +1,11 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html>
 <head>
 	<title>Martor</title>
-	<link rel="stylesheet" type="text/css" href="../style/style.css">
-	<link rel="stylesheet" type="text/css" href="../style/collections.css">
+	<link rel="stylesheet" type="text/css" href="{% static 'style/style.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'style/collections.css' %}">
 
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.16.0/TweenMax.min.js"></script>
@@ -11,109 +13,212 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.3/plugins/animation.gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.3/plugins/animation.velocity.min.js"></script>
 
-    <link rel="icon" type="image/x-icon" href="images/logo-6-instagram.png">
+    <link rel="icon" type="image/png" href="{% static 'images/logo-6-instagram.png' %}">
 
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Cutive+Mono&display=swap" rel="stylesheet">
 
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+
 	<script src="https://kit.fontawesome.com/497ef235da.js" crossorigin="anonymous"></script>
 </head>
-<body>
+<body id="bod" onload="showPage()">
+	<!--LOADER-->
+	<div class="loader-background" id="loader_div">
+		<div id="loader"></div>
+	</div>
+
 	<!--TICKER-->
 	<div style="position: fixed; z-index: 2">
 		<div class="tickerContainer">  
 		  <div class="ticker">
 		    <div>
-		      <span style="font-size: 0.75vw;">WORLD WIDE SHIPPING</span>
-		      <span style="font-size: 0.75vw;">FALL TO RISE OUT NOW</span>
-		      <span style="font-size: 0.75vw;">© MARTOR CLOTHING</span>
-		      <span style="font-size: 0.75vw;">FREE SHIPPING OVER 100€</span>
-		      <span style="font-size: 0.75vw;">WORLD WIDE SHIPPING</span>
-		      <span style="font-size: 0.75vw;">FALL TO RISE OUT NOW</span>
-		      <span style="font-size: 0.75vw;">© MARTOR CLOTHING</span>
-		      <span style="font-size: 0.75vw;">FREE SHIPPING OVER 100€</span>
+		      <span>WORLD WIDE SHIPPING</span>
+		      <span>FALL TO RISE OUT NOW</span>
+		      <span>© MARTOR CLOTHING</span>
+		      <span>FREE SHIPPING OVER 100€</span>
+		      <span>WORLD WIDE SHIPPING</span>
+		      <span>FALL TO RISE OUT NOW</span>
+		      <span>© MARTOR CLOTHING</span>
+		      <span>FREE SHIPPING OVER 100€</span>
 		    </div>
 		  </div>
 		</div>
 
-		<!--HEADER-->
-		<div class="header">
-			<div class="wrapper-sections-left" id="header_elements">
-				<a href="../index.html">
+		<!--SIDEBAR-->
+		<div class="sidebar" id="sidebar">
+			<div class="items">
+				<a href="/">
 					<div class="box">
 					  	<p class="box-title">home</p>
 					</div>
 				</a>
-				<a href="shop.html">
+				<a href="shop">
 					<div class="box">
 					  	<p class="box-title">shop</p>
 					</div>
 				</a>
-				<a href="collections.html">
+				<a href="">
+					<div class="box">
+					  	<p class="active">collections</p>
+					</div>
+				</a>
+				<a href="about">
+					<div class="box">
+					  	<p class="box-title">about</p>
+					</div>
+				</a>
+				<a href="contact">
+					<div class="box">
+					  	<p class="box-title">contact</p>
+					</div>
+				</a>
+			</div>
+			<!--<img src="../static/images/TungTTpfp.png" class="fennec-pop-2">-->
+		</div>
+
+		<!--HEADER-->
+		<div id="header-desktop" class="header">
+			<div class="wrapper-sections-left" id="header_elements">
+				<a href="/">
+					<div class="box">
+					  	<p class="box-title">home</p>
+					</div>
+				</a>
+				<a href="shop">
+					<div class="box">
+					  	<p class="box-title">shop</p>
+					</div>
+				</a>
+				<a href="">
 					<div class="box">
 					  	<p class="active">collections</p>
 					</div>
 				</a>
 			</div>
 
-			<a href="index.html">
-				<img src="../images/logo-6-remastered-2.png" style="padding-top: 0.5vw; height: 1.5vw;">
+			<a href="">
+				<img src="{% static 'images/logo-6-remastered-2.png' %}" style="padding-top: 10px; height: 30px;">
 			</a>
 
 			<div class="wrapper-sections-right" id="header_elements">
-				<a href="about.html">
+				<a href="about">
 					<div class="box">
 					  	<p class="box-title">about</p>
 					</div>
 				</a>
-				<a href="contact.html">
+				<a href="contact">
 					<div class="box">
 					  	<p class="box-title">contact</p>
 					</div>
 				</a>
-				<a href="cart.html">
+				<a href="cart">
 					<div class="box">
 					  	<p class="box-title">cart(0)</p>
 					</div>
 				</a>
 			</div>
 		</div>
+
+		<div id="header-mobile" class="header">
+		<!--
+			<div class="wrapper-sections-left" id="header_elements" style="padding-left: 5px; grid-gap: 0">
+				<a href="">
+					<div class="box">
+					  	<p class="box-title" style="font-size: 17px;">menu</p>
+					</div>
+				</a>
+			</div>
+		-->
+
+			<div style="margin-top: 12px; margin-left: 15px;" onclick="toggleSidebar()">
+				<div style="width: 20px; height: 2px; background-color: #2b2b2b; margin: 4px 0;"></div>
+				<div style="width: 20px; height: 2px; background-color: #2b2b2b; margin: 4px 0;"></div>
+				<div style="width: 20px; height: 2px; background-color: #2b2b2b; margin: 4px 0;"></div>
+			</div>
+
+			<a href="">
+				<img src="{% static 'images/logo-6-remastered-2.png' %}" style="padding-top: 10px; height: 30px;">
+			</a>
+
+			<i class="fa-solid fa-cart-shopping" style="font-size: 20px; margin-top: 14px; margin-right: 12px; color: #2b2b2b"></i>
+
+		<!--
+			<div class="wrapper-sections-right" id="header_elements" style="padding-right: 5px; grid-gap: 0;">
+				<a href="cart">
+					<div class="box">
+					  	<p class="box-title" style="font-size: 17px;">cart</p>
+					</div>
+				</a>
+			</div>
+		-->
+		</div>
 	</div>
 
 	<div class="space"></div>
 	<!--COLLECTIONS-->
-	<p class="collections-heading">our collections</p>
-	<div class="collection-cards">
+	<div class="collections-heading">
+			<p>our collection</p>
+		</div>
+	<div class="collection-cards" id="collection-cards">
 		<a href="shop.html" class="shirt">
-			<img src="../images/sample/sample-9.webp" onmouseover="hover_must_fall_shirt_1(this);" onmouseout="unhover_must_fall_shirt_1(this);">
+			<img src="{% static 'images/sample/sample-9.webp' %}" onmouseover="hover_must_fall_shirt_1(this);" onmouseout="unhover_must_fall_shirt_1(this);">
 			<p class="title">All Items<br><span style="color: #616161">8 Items</span></p>
 		</a>
 		<a href="https://github.com/sababot/platformer-controller" class="shirt">
-			<img src="../images/sample/sample-10.webp" onmouseover="hover_must_fall_shirt_1(this);" onmouseout="unhover_must_fall_shirt_1(this);">
+			<img src="{% static 'images/sample/sample-10.webp' %}" onmouseover="hover_must_fall_shirt_1(this);" onmouseout="unhover_must_fall_shirt_1(this);">
 			<p class="title">Fall To Rise<br><span style="color: #616161">8 Items</span></p>
 		</a>
 		
 	</div>
 
-	<p class="stay-updated">stay updated</p>
-	<p class="newsletter-text">form a part of Martor and stay updated with all the news revolving Martor and be the first to find out about discounts or giveaways</p>
-	<div class="newsletter">
-		<input type="text" placeholder="email@domain.com" name="">
-		<button>[subscribe]</button>
+	<div id="newsletter">
+		<div class="stay-updated" id="newsletter">
+			<p>stay updated</p>
+		</div>
+		<p class="newsletter-text">Form a part of Martor and stay updated with all the news revolving Martor and be the first to find out about discounts and giveaways</p>
+		<div class="newsletter">
+			<input type="text" placeholder="email@domain.com" name="">
+			<button>[subscribe]</button>
+		</div>
+		<p class="newsletter-text">(you can opt out anytime)</p>
 	</div>
-	<p class="newsletter-text">(you can opt out anytime)</p>
 
-	<div style="display: flex; justify-content: space-between; padding-bottom: 0.1vw; margin-top: 8vw; background-color: #4f3d74; width: 95vw; padding-left: 2.5vw; padding-right: 2.5vw;">
-		<a href="" style="font-size: 0.75vw; margin-top: 0.1vh; text-align: center; color: white; text-decoration: none;">team</a>
-		<a href="" style="font-size: 0.75vw; margin-top: 0.1vh; text-align: center; color: white; text-decoration: none;">info</a>
-		<a href="" style="font-size: 0.75vw; margin-top: 0.1vh; text-align: center; color: white; text-decoration: none;">faqs</a>
-		<a href="" style="font-size: 0.75vw; margin-top: 0.1vh; text-align: center; color: white; text-decoration: none;">return & exchanges</a>
-		<a href="" style="font-size: 0.75vw; margin-top: 0.1vh; text-align: center; color: white; text-decoration: none;">privacy policy</a>
-		<a href="" style="font-size: 0.75vw; margin-top: 0.1vh; text-align: center; color: white; text-decoration: none;">shipping policy</a>
-		<a href="" style="font-size: 0.75vw; margin-top: 0.1vh; text-align: center; color: white; text-decoration: none;">terms & conditions</a>
+	<div id="footer-desktop" style="display: flex; justify-content: space-between; margin-top: 8vw; background-color: #4f3d74; width: 95vw; padding-left: 2.5vw; padding-right: 2.5vw;">
+		<a href="" style="font-size: 14px; margin-top: 3px; margin-bottom: 3px; text-align: center; color: white; text-decoration: none;">info</a>
+		<a href="" style="font-size: 14px; margin-top: 3px; margin-bottom: 3px; text-align: center; color: white; text-decoration: none;">return & exchanges</a>
+		<a href="" style="font-size: 14px; margin-top: 3px; margin-bottom: 3px; text-align: center; color: white; text-decoration: none;">privacy policy</a>
+		<a href="" style="font-size: 14px; margin-top: 3px; margin-bottom: 3px; text-align: center; color: white; text-decoration: none;">shipping policy</a>
+		<a href="" style="font-size: 14px; margin-top: 3px; margin-bottom: 3px; text-align: center; color: white; text-decoration: none;">faqs</a>
+		<a href="" style="font-size: 14px; margin-top: 3px; margin-bottom: 3px; text-align: center; color: white; text-decoration: none;">terms & conditions</a>
+	</div>
+
+	<div id="footer-mobile" style="margin-bottom: 0; margin-top: 20vw; background-color: #4f3d74; width: 95vw; padding-left: 2.5vw; padding-right: 2.5vw; padding-bottom: 15px; padding-top: 15px;">
+		<div style="display: flex; justify-content: space-between">
+			<div>
+				<a href="" style="font-size: 15px; margin-top: 0px; margin-bottom: 0px; text-align: center; position: absolute; left: 2.5vw; color: white; text-decoration: none;">privacy policy</a><br><br>
+				<a href="" style="font-size: 15px; margin-top: 0px; margin-bottom: 0px; text-align: center; position: absolute; left: 2.5vw; color: white; text-decoration: none;">info</a><br><br>
+				<a href="" style="font-size: 15px; margin-top: 0px; margin-bottom: 0px; text-align: center; position: absolute; left: 2.5vw; color: white; text-decoration: none;">return & exchanges</a><br><br>
+			</div>
+			<img id="footer-logo" src="{% static 'images/logo-6-instagram-inverse.png' %}" width="80px" height="80px" style="margin-top: 5px; margin-bottom: 5px">
+			<div>
+				<a href="" style="font-size: 15px; margin-top: 0px; margin-bottom: 0px; text-align: center; position: absolute; right: 2.5vw; color: white; text-decoration: none;">terms & conditions</a><br><br>
+				<a href="" style="font-size: 15px; margin-top: 0px; margin-bottom: 0px; text-align: center; position: absolute; right: 2.5vw;  color: white; text-decoration: none;">faq</a><br><br>
+				<a href="" style="font-size: 15px; margin-top: 0px; margin-bottom: 0px; text-align: center; position: absolute; right: 2.5vw;  color: white; text-decoration: none;">shipping policy</a><br><br>
+			</div>
+		</div>
+
+		<div class="newsletter" style="margin: 0; margin-top: 20px">
+			<input type="text" placeholder="email@domain.com" name="" style="width: 100%; color: white; font-size: 15px; border-color: lightgrey">
+			<button style="color: white; font-size: 15px;">[subscribe]</button>
+		</div>
 	</div>
 
 	<!--SCRIPTS-->
+	<script src="{% static 'scripts/resize.js' %}"></script>
+	<script src="{% static 'scripts/loader.js' %}"></script>
+	<script src="{% static 'scripts/sidebar.js' %}"></script>
+	<script src="{% static 'scripts/collections.js' %}"></script>
 </body>
 </html>

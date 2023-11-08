@@ -24,6 +24,11 @@
 	<script src="https://kit.fontawesome.com/497ef235da.js" crossorigin="anonymous"></script>
 </head>
 <body>
+	<!--LOADER-->
+	<div class="loader-background" id="loader_div">
+		<div id="loader"></div>
+	</div>
+
 	<!--TICKER-->
 	<div style="position: fixed; z-index: 2">
 		<div class="tickerContainer">  
@@ -41,8 +46,40 @@
 		  </div>
 		</div>
 
+		<!--SIDEBAR-->
+		<div class="sidebar" id="sidebar">
+			<div class="items">
+				<a href="/">
+					<div class="box">
+					  	<p class="box-title">home</p>
+					</div>
+				</a>
+				<a href="">
+					<div class="box">
+					  	<p class="active">shop</p>
+					</div>
+				</a>
+				<a href="collections">
+					<div class="box">
+					  	<p class="box-title">collections</p>
+					</div>
+				</a>
+				<a href="about">
+					<div class="box">
+					  	<p class="box-title">about</p>
+					</div>
+				</a>
+				<a href="contact">
+					<div class="box">
+					  	<p class="box-title">contact</p>
+					</div>
+				</a>
+			</div>
+			<!--<img src="../static/images/TungTTpfp.png" class="fennec-pop-2">-->
+		</div>
+
 		<!--HEADER-->
-		<div class="header">
+		<div id="header-desktop" class="header">
 			<div class="wrapper-sections-left" id="header_elements">
 				<a href="/">
 					<div class="box">
@@ -54,34 +91,68 @@
 					  	<p class="active">shop</p>
 					</div>
 				</a>
-				<a href="/collections">
+				<a href="collections">
 					<div class="box">
 					  	<p class="box-title">collections</p>
 					</div>
 				</a>
 			</div>
 
-			<a href="index.html">
-				<img src="{% static 'images/logo-6-remastered-2.png' %}" class="logo">
+			<a href="">
+				<img src="{% static 'images/logo-6-remastered-2.png' %}" style="padding-top: 10px; height: 30px;">
 			</a>
 
 			<div class="wrapper-sections-right" id="header_elements">
-				<a href="/about">
+				<a href="about">
 					<div class="box">
 					  	<p class="box-title">about</p>
 					</div>
 				</a>
-				<a href="/contact">
+				<a href="contact">
 					<div class="box">
 					  	<p class="box-title">contact</p>
 					</div>
 				</a>
-				<a href="/cart">
+				<a href="cart">
 					<div class="box">
 					  	<p class="box-title">cart(0)</p>
 					</div>
 				</a>
 			</div>
+		</div>
+
+		<div id="header-mobile" class="header">
+		<!--
+			<div class="wrapper-sections-left" id="header_elements" style="padding-left: 5px; grid-gap: 0">
+				<a href="">
+					<div class="box">
+					  	<p class="box-title" style="font-size: 17px;">menu</p>
+					</div>
+				</a>
+			</div>
+		-->
+
+			<div style="margin-top: 12px; margin-left: 15px;" onclick="toggleSidebar()">
+				<div style="width: 20px; height: 2px; background-color: #2b2b2b; margin: 4px 0;"></div>
+				<div style="width: 20px; height: 2px; background-color: #2b2b2b; margin: 4px 0;"></div>
+				<div style="width: 20px; height: 2px; background-color: #2b2b2b; margin: 4px 0;"></div>
+			</div>
+
+			<a href="">
+				<img src="{% static 'images/logo-6-remastered-2.png' %}" style="padding-top: 10px; height: 30px;">
+			</a>
+
+			<i class="fa-solid fa-cart-shopping" style="font-size: 20px; margin-top: 14px; margin-right: 12px; color: #2b2b2b"></i>
+
+		<!--
+			<div class="wrapper-sections-right" id="header_elements" style="padding-right: 5px; grid-gap: 0;">
+				<a href="cart">
+					<div class="box">
+					  	<p class="box-title" style="font-size: 17px;">cart</p>
+					</div>
+				</a>
+			</div>
+		-->
 		</div>
 	</div>
 
@@ -219,8 +290,8 @@
 	</div>
 
 	<!--SCRIPTS-->
-	<script src="../scripts/work.js"></script>
-	<script src="../scripts/products-shop.js"></script>
+	<script src="{% static 'scripts/loader.js' %}"></script>
+	<script src="{% static 'scripts/sidebar.js' %}"></script>
 	<script src="{% static 'scripts/resize.js' %}"></script>
 </body>
 </html>

@@ -526,7 +526,7 @@ p{
     margin: 0;
     position: fixed;
     z-index: 20;
-    transition: all 0.5s;
+    transition: z-index 0.5s, opacity 0.5s;
 }
 
 #loader {
@@ -543,7 +543,7 @@ p{
   border-bottom: 1vh solid #584778;
   -webkit-animation: spin 2s linear infinite;
   animation: spin 2s linear infinite;
-  transition: all 0.5s;
+  transition: z-index 0.5s, opacity 0.5s;
 }
 
 @-webkit-keyframes spin {
@@ -569,7 +569,7 @@ p{
 }
 
 .sidebar .items{
-    margin-top: 6vh;
+    margin-top: 65px;
 }
 
 .sidebar .items a {
@@ -593,8 +593,8 @@ p{
     text-align: center;
     width: 100%;
     color: black;
-    font-size: 5vw;
-    margin-top: 2vw;
+    font-size: 2vh;
+    margin-top: 10px;
     padding-left: 1vw;
     padding-top: 1vw;
     background-color: transparent;

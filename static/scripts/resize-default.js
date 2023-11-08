@@ -1,48 +1,23 @@
 var products = document.getElementById("work-cards");
 
-var premiere = document.getElementById("premiere");
-
-var lookbook = document.getElementById("lookbook");
-
-var background_desktop = document.getElementById("background-image-desktop");
-var background_mobile = document.getElementById("background-image-mobile");
-
 var newsletter = document.getElementById('newsletter');
 
 var footer_desktop = document.getElementById('footer-desktop');
 var footer_mobile = document.getElementById('footer-mobile');
 var footer_logo = document.getElementById('footer-logo');
 
-var lookbook_1 = document.getElementById('lookbook-1');
-var lookbook_2 = document.getElementById('lookbook-2');
-
 var header_desktop = document.getElementById('header-desktop');
 var header_mobile = document.getElementById('header-mobile');
 
-var seperators = [document.getElementById("new-collection"), document.getElementById("premiere-text"), document.getElementById("new-collection"), document.getElementById("lookbook-text")]
-
-var sidebar_links = document.getElementById("sidebar").querySelectorAll('p');
-
-width = window.innerWidth;
-height = window.innerHeight;
-
-if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
-	width = window.outerWidth;
-	height = window.outerHeight;
-}
-
 function resize_elements(){
-	if ((width / height) < 0.5){
+	if ((window.innerWidth / window.innerHeight) < 0.5){
+		products.style.gridTemplateColumns = "repeat(2, 50%)";
 		newsletter.style.display = 'none';
 		footer_mobile.style.display = 'block';
 		footer_desktop.style.display = 'none';
 		footer_logo.style.display = 'none';
 		header_mobile.style.display = 'flex';
 		header_desktop.style.display = 'none';
-
-		if (products != null){
-			products.style.gridTemplateColumns = "repeat(2, 50%)";
-		}
 			
 		if (premiere != null && lookbook != null && background_mobile != null && background_desktop != null){
 			premiere.style.width = "92vw"; premiere.style.height = "50vw";
@@ -53,34 +28,20 @@ function resize_elements(){
 			lookbook_2.style.display = 'block';
 		}
 
-		if (seperators.length > 0)
-		{
-			for (var i = 0; i < seperators.length; i++){
-				if (seperators[i] != null){
-					seperators[i].style.marginTop = "60px"
-				}
-			}
-		}
-
-		for (var i = 0; i < sidebar_links.length; i++){
-			if (sidebar_links[i] != null){
-				sidebar_links[i].style.fontSize = "16px";
-			}
+		for (var i = 0; i < seperators.length; i++){
+			seperators[i].style.marginTop = "60px"
 		}
 
 	}
 
-	else if ((width / height) < 0.65){
+	else if ((window.innerWidth / window.innerHeight) < 0.65){
+		products.style.gridTemplateColumns = "repeat(2, 50%)";
 		newsletter.style.display = 'none';
 		footer_mobile.style.display = 'block';
 		footer_desktop.style.display = 'none';
 		footer_logo.style.display = 'none';
 		header_mobile.style.display = 'flex';
 		header_desktop.style.display = 'none';
-
-		if (products != null){
-			products.style.gridTemplateColumns = "repeat(2, 50%)";
-		}
 			
 		if (premiere != null && lookbook != null && background_mobile != null && background_desktop != null){
 			premiere.style.width = "92vw"; premiere.style.height = "50vw";
@@ -91,71 +52,43 @@ function resize_elements(){
 			lookbook_2.style.display = 'block';
 		}
 
-		if (seperators.length > 0)
-		{
-			for (var i = 0; i < seperators.length; i++){
-				if (seperators[i] != null){
-					seperators[i].style.marginTop = "60px"
-				}
-			}
-		}
-
-		for (var i = 0; i < sidebar_links.length; i++){
-			if (sidebar_links[i] != null){
-				sidebar_links[i].style.fontSize = "16px";
-			}
+		for (var i = 0; i < seperators.length; i++){
+			seperators[i].style.marginTop = "60px"
 		}
 
 	}
 
-	else if ((width / height) < 0.75){
+	else if ((window.innerWidth / window.innerHeight) < 0.75){
+		products.style.gridTemplateColumns = "repeat(2, 50%)";
 		newsletter.style.display = 'none';
 		footer_mobile.style.display = 'block';
 		footer_desktop.style.display = 'none';
 		footer_logo.style.display = 'none';
 		header_mobile.style.display = 'flex';
 		header_desktop.style.display = 'none';
-
-		if (products != null){
-			products.style.gridTemplateColumns = "repeat(2, 50%)";
-		}
 			
 		if (premiere != null && lookbook != null && background_mobile != null && background_desktop != null){
 			premiere.style.width = "92vw"; premiere.style.height = "50vw";
 			lookbook.style.gridTemplateColumns = "repeat(3, auto)";
-			background_desktop.style.display = 'block';
-			background_mobile.style.display = 'none';
+			background_desktop.style.display = 'none';
+			background_mobile.style.display = 'block';
 			lookbook_1.style.display = 'none';
 			lookbook_2.style.display = 'block';
 		}
 
-		if (seperators.length > 0)
-		{
-			for (var i = 0; i < seperators.length; i++){
-				if (seperators[i] != null){
-					seperators[i].style.marginTop = "60px"
-				}
-			}
-		}
-
-		for (var i = 0; i < sidebar_links.length; i++){
-			if (sidebar_links[i] != null){
-				sidebar_links[i].style.fontSize = "16px";
-			}
+		for (var i = 0; i < seperators.length; i++){
+			seperators[i].style.marginTop = "60px"
 		}
 	}
 
-	else if ((width / height) < 0.9){
+	else if ((window.innerWidth / window.innerHeight) < 0.9){
+		products.style.gridTemplateColumns = "repeat(3, 32%)";
 		newsletter.style.display = 'block';
 		footer_mobile.style.display = 'none';
 		footer_desktop.style.display = 'flex';
 		footer_logo.style.display = 'none';
-		header_mobile.style.display = 'none';
-		header_desktop.style.display = 'flex';
-
-		if (products != null){
-			products.style.gridTemplateColumns = "repeat(3, 32%)";
-		}
+		header_mobile.style.display = 'flex';
+		header_desktop.style.display = 'none';
 
 		if (premiere != null && lookbook != null && background_mobile != null && background_desktop != null){
 			premiere.style.width = "75vw"; premiere.style.height = "40vw";
@@ -166,33 +99,19 @@ function resize_elements(){
 			lookbook_2.style.display = 'none';
 		}
 
-		if (seperators.length > 0)
-		{
-			for (var i = 0; i < seperators.length; i++){
-				if (seperators[i] != null){
-					seperators[i].style.marginTop = "6vw";
-				}
-			}
-		}
-
-		for (var i = 0; i < sidebar_links.length; i++){
-			if (sidebar_links[i] != null){
-				sidebar_links[i].style.fontSize = "16px";
-			}
+		for (var i = 0; i < seperators.length; i++){
+			seperators[i].style.marginTop = "6vw"
 		}
 	}
 
-	else if ((width / height) < 1.25){
+	else if ((window.innerWidth / window.innerHeight) < 1.25){
+		products.style.gridTemplateColumns = "repeat(3, 32%)";
 		newsletter.style.display = 'block';
 		footer_mobile.style.display = 'none';
 		footer_desktop.style.display = 'flex';
 		footer_logo.style.display = 'none';
 		header_mobile.style.display = 'none';
 		header_desktop.style.display = 'flex';
-
-		if (products != null){
-			products.style.gridTemplateColumns = "repeat(3, 32%)";
-		}
 
 		if (premiere != null && lookbook != null && background_mobile != null && background_desktop != null){
 			premiere.style.width = "75vw"; premiere.style.height = "40vw";
@@ -203,33 +122,19 @@ function resize_elements(){
 			lookbook_2.style.display = 'none';
 		}
 
-		if (seperators.length > 0)
-		{
-			for (var i = 0; i < seperators.length; i++){
-				if (seperators[i] != null){
-					seperators[i].style.marginTop = "6vw"
-				}
-			}
-		}
-
-		for (var i = 0; i < sidebar_links.length; i++){
-			if (sidebar_links[i] != null){
-				sidebar_links[i].style.fontSize = "16px";
-			}
+		for (var i = 0; i < seperators.length; i++){
+			seperators[i].style.marginTop = "6vw"
 		}
 	}
 
 	else{
+		products.style.gridTemplateColumns = "repeat(4, 23%)";
 		newsletter.style.display = 'block';
 		footer_mobile.style.display = 'none';
 		footer_desktop.style.display = 'flex';
 		footer_logo.style.display = 'none';
 		header_mobile.style.display = 'none';
 		header_desktop.style.display = 'flex';
-
-		if (products != null){
-			products.style.gridTemplateColumns = "repeat(4, 23%)";
-		}
 
 		if (premiere != null && lookbook != null && background_mobile != null && background_desktop != null){
 			premiere.style.width = "55vw"; premiere.style.height = "30vw";
@@ -240,19 +145,8 @@ function resize_elements(){
 			lookbook_2.style.display = 'block';
 		}
 
-		if (seperators.length > 0)
-		{
-			for (var i = 0; i < seperators.length; i++){
-				if (seperators[i] != null){
-					seperators[i].style.marginTop = "6vw"
-				}
-			}
-		}
-
-		for (var i = 0; i < sidebar_links.length; i++){
-			if (sidebar_links[i] != null){
-				sidebar_links[i].style.fontSize = "16px";
-			}
+		for (var i = 0; i < seperators.length; i++){
+			seperators[i].style.marginTop = "6vw"
 		}
 	}
 }
@@ -260,13 +154,5 @@ function resize_elements(){
 resize_elements();
 
 window.addEventListener('resize', function(){
-	width = window.innerWidth;
-	height = window.innerHeight;
-
-	if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
-		width = window.outerWidth;
-		height = window.outerHeight;
-	}
-
 	resize_elements();
 });

@@ -1,11 +1,11 @@
 .collection-cards {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(16vw, auto));
+    grid-template-columns: repeat(2, 40vw);
     gap: 1vw;
     margin-left: 2vw;
     margin-right: 2vw;
     justify-content: center;
-    margin-top: 2vw;
+    margin-top: 20px;
 }
 
 .collection-cards a {
@@ -16,7 +16,7 @@
 }
 
 .collection-cards a .title {
-    font-size: 0.8vw;
+    font-size: 14px;
     text-align: center;
     color: black;
     margin-top: 0.5vw;
@@ -30,16 +30,21 @@
 }
 
 .collections-heading{
-    text-align: center;
-    font-size: 1vw;
-    margin-left: 45vw;
-    margin-right: 45vw;
-    background-color: #4f3d74;
-    color: white;
-    padding: 0.1vw;
-    margin-bottom: 2vw;
+    width: 100%;
+    display: flex;
+    justify-content: center;
 }
 
+.collections-heading p{
+    text-align: center;
+    font-size: 15px;
+    padding-left: 10px;
+    padding-right: 10px;
+    background-color: #4f3d74;
+    color: white;
+}
+
+
 .space{
-    padding-top: 7vw;
+    padding-top: 125px;
 }

@@ -9,3 +9,6 @@ def item_list(request):
 
 def shop(request):
 	return render(request, "shop.html")
+
+def collections(request):
+	return render(request, "collections.html")
