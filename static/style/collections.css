@@ -1,9 +1,10 @@
 .collection-cards {
     display: grid;
     grid-template-columns: repeat(2, 40vw);
-    gap: 1vw;
-    margin-left: 2vw;
-    margin-right: 2vw;
+    column-gap: 1vw;
+    row-gap: 5vw;
+    margin-left: 5vw;
+    margin-right: 5vw;
     justify-content: center;
     margin-top: 20px;
 }

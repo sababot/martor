@@ -61,13 +61,6 @@ function resize_elements(){
 				}
 			}
 		}
-
-		for (var i = 0; i < sidebar_links.length; i++){
-			if (sidebar_links[i] != null){
-				sidebar_links[i].style.fontSize = "16px";
-			}
-		}
-
 	}
 
 	else if ((width / height) < 0.65){
@@ -99,13 +92,6 @@ function resize_elements(){
 				}
 			}
 		}
-
-		for (var i = 0; i < sidebar_links.length; i++){
-			if (sidebar_links[i] != null){
-				sidebar_links[i].style.fontSize = "16px";
-			}
-		}
-
 	}
 
 	else if ((width / height) < 0.75){
@@ -135,12 +121,6 @@ function resize_elements(){
 				if (seperators[i] != null){
 					seperators[i].style.marginTop = "60px"
 				}
-			}
-		}
-
-		for (var i = 0; i < sidebar_links.length; i++){
-			if (sidebar_links[i] != null){
-				sidebar_links[i].style.fontSize = "16px";
 			}
 		}
 	}
@@ -174,12 +154,6 @@ function resize_elements(){
 				}
 			}
 		}
-
-		for (var i = 0; i < sidebar_links.length; i++){
-			if (sidebar_links[i] != null){
-				sidebar_links[i].style.fontSize = "16px";
-			}
-		}
 	}
 
 	else if ((width / height) < 1.25){
@@ -209,12 +183,6 @@ function resize_elements(){
 				if (seperators[i] != null){
 					seperators[i].style.marginTop = "6vw"
 				}
-			}
-		}
-
-		for (var i = 0; i < sidebar_links.length; i++){
-			if (sidebar_links[i] != null){
-				sidebar_links[i].style.fontSize = "16px";
 			}
 		}
 	}
@@ -249,11 +217,6 @@ function resize_elements(){
 			}
 		}
 
-		for (var i = 0; i < sidebar_links.length; i++){
-			if (sidebar_links[i] != null){
-				sidebar_links[i].style.fontSize = "16px";
-			}
-		}
 	}
 }
 
