@@ -4,8 +4,8 @@
 <html>
 <head>
 	<title>Martor</title>
-	<link rel="stylesheet" type="text/css" href="{% static 'style/style.css' %}">
-	<link rel="stylesheet" type="text/css" href="{% static 'style/shop.css' %}">
+	<link rel="stylesheet" type="text/css" href="../../static/style/style.css">
+	<link rel="stylesheet" type="text/css" href="../../style/shop.css">
 
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.16.0/TweenMax.min.js"></script>
@@ -54,9 +54,9 @@
 					  	<p class="box-title">home</p>
 					</div>
 				</a>
-				<a href="">
+				<a href="/shop">
 					<div class="box">
-					  	<p class="active">shop</p>
+					  	<p class="box-title">shop</p>
 					</div>
 				</a>
 				<a href="collections">
@@ -86,9 +86,9 @@
 					  	<p class="box-title">home</p>
 					</div>
 				</a>
-				<a href="">
+				<a href="/shop">
 					<div class="box">
-					  	<p class="active">shop</p>
+					  	<p class="box-title">shop</p>
 					</div>
 				</a>
 				<a href="collections">
@@ -99,7 +99,7 @@
 			</div>
 
 			<a href="">
-				<img src="{% static 'images/logo-6-remastered-2.png' %}" style="padding-top: 10px; height: 30px;">
+				<img src="../../static/images/logo-6-remastered-2.png" style="padding-top: 10px; height: 30px;">
 			</a>
 
 			<div class="wrapper-sections-right" id="header_elements">
@@ -139,7 +139,7 @@
 			</div>
 
 			<a href="">
-				<img src="{% static 'images/logo-6-remastered-2.png' %}" style="padding-top: 10px; height: 30px;">
+				<img src="../../static/images/logo-6-remastered-2.png" style="padding-top: 10px; height: 30px;">
 			</a>
 
 			<i class="fa-solid fa-cart-shopping" style="font-size: 20px; margin-top: 14px; margin-right: 12px; color: #2b2b2b"></i>
@@ -156,47 +156,11 @@
 		</div>
 	</div>
 
-	<!--SHOP-->
-	<div class="space"></div>
-	<div class="all-heading">
-		<p>all items</p>
-	</div>
-	<div class="select">
-		<!--
-		<div class="select-sections">
-			<button id="all" onclick="select_all()">
-				<div class="box">
-				  	<p class="box-title">all</p>
-				</div>
-			</button><br>
-			<button id="shirts" onclick="select_shirts()">
-				<div class="box">
-				  	<p class="box-title">shirts</p>
-				</div>
-			</button><br>
-			<button id="hoods" onclick="select_hoods()">
-				<div class="box">
-				  	<p class="box-title">hoods</p>
-				</div>
-			</button><br>
-			<button id="pants" onclick="select_pants()">
-				<div class="box">
-				  	<p class="box-title">pants</p>
-				</div>
-			</button><br>
-			<button id="hats" onclick="select_hats()">
-				<div class="box">
-				  	<p class="box-title">hats</p>
-				</div>
-			</button><br>
-			<button id="accesories" onclick="select_accesories()">
-				<div class="box">
-				  	<p class="box-title">accesories</p>
-				</div>
-			</button><br>
-			<input type="text" name="" class="search" placeholder="search" id="search_input">
+	<div style="display: flex; padding-top: 100px; justify-content: center">
+		<img src="../../static/images/collections/fall-to-rise/printful-mockups/martor-shirt-1-purple-front.webp" style="width: 10vw">
+		<div>
+			<p>Classic Shirt Magenta</p>
 		</div>
-	-->
 	</div>
 
 	<div id="newsletter">
@@ -227,7 +191,7 @@
 				<a href="" style="font-size: 16px; margin-top: 5px; margin-bottom: 5px; text-align: center; position: absolute; left: 2.5vw; color: white; text-decoration: none;">return & exchanges</a><br><br>
 				<a href="" style="font-size: 16px; margin-top: 5px; margin-bottom: 5px; text-align: center; position: absolute; left: 2.5vw; color: white; text-decoration: none;">privacy policy</a><br><br>
 			</div>
-			<img id="footer-logo" src="{% static 'images/logo-6-instagram-inverse.png' %}" width="80px" height="80px" style="margin-top: 5px; margin-bottom: 5px">
+			<img id="footer-logo" src="../../static/images/logo-6-instagram-inverse.png" width="80px" height="80px" style="margin-top: 5px; margin-bottom: 5px">
 			<div>
 				<a href="" style="font-size: 16px; margin-top: 5px; margin-bottom: 5px; text-align: center; position: absolute; right: 2.5vw; color: white; text-decoration: none;">shipping policy</a><br><br>
 				<a href="" style="font-size: 16px; margin-top: 5px; margin-bottom: 5px; text-align: center; position: absolute; right: 2.5vw;  color: white; text-decoration: none;">faqs</a><br><br>
@@ -242,8 +206,8 @@
 	</div>
 
 	<!--SCRIPTS-->
-	<script src="{% static 'scripts/loader.js' %}"></script>
-	<script src="{% static 'scripts/sidebar.js' %}"></script>
-	<script src="{% static 'scripts/resize.js' %}"></script>
+	<script src="../../static/scripts/loader.js"></script>
+	<script src="../../static/scripts/sidebar.js"></script>
+	<script src="../../static/scripts/resize.js"></script>
 </body>
 </html>
