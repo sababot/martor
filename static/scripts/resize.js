@@ -23,6 +23,10 @@ var seperators = [document.getElementById("new-collection"), document.getElement
 
 var sidebar_links = document.getElementById("sidebar").querySelectorAll('p');
 
+var product_desktop = document.getElementById("product-desktop");
+var product_mobile = document.getElementById("product-mobile");
+var product_mobile_description = document.getElementById("product-mobile-description");
+
 width = window.innerWidth;
 height = window.innerHeight;
 
@@ -44,13 +48,16 @@ function resize_elements(){
 			products.style.gridTemplateColumns = "repeat(2, 50%)";
 		}
 			
-		if (premiere != null && lookbook != null && background_mobile != null && background_desktop != null){
+		if (premiere != null && background_mobile != null && background_desktop != null){
 			premiere.style.width = "92vw"; premiere.style.height = "50vw";
-			lookbook.style.gridTemplateColumns = "repeat(3, auto)";
 			background_desktop.style.display = 'none';
 			background_mobile.style.display = 'block';
 			lookbook_1.style.display = 'none';
 			lookbook_2.style.display = 'block';
+		}
+
+		if (lookbook != null){
+			lookbook.style.gridTemplateColumns = "repeat(3, auto)";
 		}
 
 		if (seperators.length > 0)
@@ -75,13 +82,16 @@ function resize_elements(){
 			products.style.gridTemplateColumns = "repeat(2, 50%)";
 		}
 			
-		if (premiere != null && lookbook != null && background_mobile != null && background_desktop != null){
+		if (premiere != null && background_mobile != null && background_desktop != null){
 			premiere.style.width = "92vw"; premiere.style.height = "50vw";
-			lookbook.style.gridTemplateColumns = "repeat(3, auto)";
 			background_desktop.style.display = 'none';
 			background_mobile.style.display = 'block';
 			lookbook_1.style.display = 'none';
 			lookbook_2.style.display = 'block';
+		}
+
+		if (lookbook != null){
+			lookbook.style.gridTemplateColumns = "repeat(3, auto)";
 		}
 
 		if (seperators.length > 0)
@@ -106,13 +116,16 @@ function resize_elements(){
 			products.style.gridTemplateColumns = "repeat(2, 50%)";
 		}
 			
-		if (premiere != null && lookbook != null && background_mobile != null && background_desktop != null){
+		if (premiere != null && background_mobile != null && background_desktop != null){
 			premiere.style.width = "92vw"; premiere.style.height = "50vw";
-			lookbook.style.gridTemplateColumns = "repeat(3, auto)";
 			background_desktop.style.display = 'block';
 			background_mobile.style.display = 'none';
 			lookbook_1.style.display = 'none';
 			lookbook_2.style.display = 'block';
+		}
+
+		if (lookbook != null){
+			lookbook.style.gridTemplateColumns = "repeat(3, auto)";
 		}
 
 		if (seperators.length > 0)
@@ -137,13 +150,16 @@ function resize_elements(){
 			products.style.gridTemplateColumns = "repeat(3, 32%)";
 		}
 
-		if (premiere != null && lookbook != null && background_mobile != null && background_desktop != null){
+		if (premiere != null && background_mobile != null && background_desktop != null){
 			premiere.style.width = "75vw"; premiere.style.height = "40vw";
-			lookbook.style.gridTemplateColumns = "repeat(4, auto)";
 			background_desktop.style.display = 'block';
 			background_mobile.style.display = 'none';
 			lookbook_1.style.display = 'none';
 			lookbook_2.style.display = 'none';
+		}
+
+		if (lookbook != null){
+			lookbook.style.gridTemplateColumns = "repeat(4, auto)";
 		}
 
 		if (seperators.length > 0)
@@ -168,13 +184,16 @@ function resize_elements(){
 			products.style.gridTemplateColumns = "repeat(3, 32%)";
 		}
 
-		if (premiere != null && lookbook != null && background_mobile != null && background_desktop != null){
+		if (premiere != null && background_mobile != null && background_desktop != null){
 			premiere.style.width = "75vw"; premiere.style.height = "40vw";
-			lookbook.style.gridTemplateColumns = "repeat(4, auto)";
 			background_desktop.style.display = 'block';
 			background_mobile.style.display = 'none';
 			lookbook_1.style.display = 'none';
 			lookbook_2.style.display = 'none';
+		}
+
+		if (lookbook != null){
+			lookbook.style.gridTemplateColumns = "repeat(4, auto)";
 		}
 
 		if (seperators.length > 0)
@@ -199,13 +218,16 @@ function resize_elements(){
 			products.style.gridTemplateColumns = "repeat(4, 23%)";
 		}
 
-		if (premiere != null && lookbook != null && background_mobile != null && background_desktop != null){
+		if (premiere != null && background_mobile != null && background_desktop != null){
 			premiere.style.width = "55vw"; premiere.style.height = "30vw";
-			lookbook.style.gridTemplateColumns = "repeat(5, auto)";
 			background_desktop.style.display = 'block';
 			background_mobile.style.display = 'none';
 			lookbook_1.style.display = 'block';
 			lookbook_2.style.display = 'block';
+		}
+
+		if (lookbook != null){
+			lookbook.style.gridTemplateColumns = "repeat(5, auto)";
 		}
 
 		if (seperators.length > 0)
@@ -217,6 +239,26 @@ function resize_elements(){
 			}
 		}
 
+	}
+
+	if (product_mobile != null && product_desktop != null && product_mobile_description != null){
+		if ((width / height) < 0.9){
+			product_mobile.style.display = 'block';
+			product_desktop.style.display = 'none';
+		}
+
+		else{
+			product_mobile.style.display = 'none';
+			product_desktop.style.display = 'flex';
+		}
+
+		if (width < 450){
+			product_mobile_description.style.width = '100%';
+		}
+
+		else{
+			product_mobile_description.style.width = '400px';
+		}
 	}
 }
 
