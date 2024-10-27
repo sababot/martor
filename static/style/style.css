@@ -676,3 +676,14 @@ p{
     left: 0;
     top: 50vh;
 }
+
+.product-button {
+    font-size: 15px;
+    background: none;
+    border: none;
+    font-weight: normal;
+}
+
+.product-button:hover {
+    font-weight: bold;
+}
