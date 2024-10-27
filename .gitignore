@@ -5,6 +5,7 @@ media
 .DS_Store
 *.sqlite3
 *.env
+/martor-django/settings.py
 
 # Accept these files in the repository
 !.gitignore
