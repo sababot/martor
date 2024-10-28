@@ -682,6 +682,9 @@ p{
     background: none;
     border: none;
     font-weight: normal;
+
+    outline: none;
+    -webkit-appearance: none;
 }
 
 .product-button:hover {
