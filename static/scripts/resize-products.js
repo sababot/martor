@@ -52,12 +52,12 @@ function resize_elements(){
 			premiere.style.width = "92vw"; premiere.style.height = "50vw";
 			background_desktop.style.display = 'none';
 			background_mobile.style.display = 'block';
+			lookbook_1.style.display = 'none';
+			lookbook_2.style.display = 'block';
 		}
 
 		if (lookbook != null){
 			lookbook.style.gridTemplateColumns = "repeat(3, auto)";
-			lookbook_1.style.display = 'none';
-			lookbook_2.style.display = 'block';
 		}
 
 		if (seperators.length > 0)
@@ -86,12 +86,12 @@ function resize_elements(){
 			premiere.style.width = "92vw"; premiere.style.height = "50vw";
 			background_desktop.style.display = 'none';
 			background_mobile.style.display = 'block';
+			lookbook_1.style.display = 'none';
+			lookbook_2.style.display = 'block';
 		}
 
 		if (lookbook != null){
 			lookbook.style.gridTemplateColumns = "repeat(3, auto)";
-			lookbook_1.style.display = 'none';
-			lookbook_2.style.display = 'block';
 		}
 
 		if (seperators.length > 0)
@@ -120,12 +120,12 @@ function resize_elements(){
 			premiere.style.width = "92vw"; premiere.style.height = "50vw";
 			background_desktop.style.display = 'block';
 			background_mobile.style.display = 'none';
+			lookbook_1.style.display = 'none';
+			lookbook_2.style.display = 'none';
 		}
 
 		if (lookbook != null){
 			lookbook.style.gridTemplateColumns = "repeat(3, auto)";
-			lookbook_1.style.display = 'none';
-			lookbook_2.style.display = 'block';
 		}
 
 		if (seperators.length > 0)
@@ -154,12 +154,12 @@ function resize_elements(){
 			premiere.style.width = "75vw"; premiere.style.height = "40vw";
 			background_desktop.style.display = 'block';
 			background_mobile.style.display = 'none';
+			lookbook_1.style.display = 'none';
+			lookbook_2.style.display = 'none';
 		}
 
 		if (lookbook != null){
 			lookbook.style.gridTemplateColumns = "repeat(4, auto)";
-			lookbook_1.style.display = 'none';
-			lookbook_2.style.display = 'none';
 		}
 
 		if (seperators.length > 0)
@@ -188,12 +188,12 @@ function resize_elements(){
 			premiere.style.width = "75vw"; premiere.style.height = "40vw";
 			background_desktop.style.display = 'block';
 			background_mobile.style.display = 'none';
+			lookbook_1.style.display = 'none';
+			lookbook_2.style.display = 'none';
 		}
 
 		if (lookbook != null){
 			lookbook.style.gridTemplateColumns = "repeat(4, auto)";
-			lookbook_1.style.display = 'none';
-			lookbook_2.style.display = 'none';
 		}
 
 		if (seperators.length > 0)
@@ -222,12 +222,12 @@ function resize_elements(){
 			premiere.style.width = "55vw"; premiere.style.height = "30vw";
 			background_desktop.style.display = 'block';
 			background_mobile.style.display = 'none';
+			lookbook_1.style.display = 'block';
+			lookbook_2.style.display = 'block';
 		}
 
 		if (lookbook != null){
 			lookbook.style.gridTemplateColumns = "repeat(5, auto)";
-			lookbook_1.style.display = 'block';
-			lookbook_2.style.display = 'block';
 		}
 
 		if (seperators.length > 0)
