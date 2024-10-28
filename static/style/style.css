@@ -682,6 +682,7 @@ p{
     background: none;
     border: none;
     font-weight: normal;
+    color: black;
 
     outline: none;
     -webkit-appearance: none;
