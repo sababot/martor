@@ -565,7 +565,7 @@ p{
     height: 100%;
     z-index: -5;
     transform: translate(-100vw);
-    margin-top: 73px;
+    margin-top: 50px;
 }
 
 .sidebar .items{
@@ -590,12 +590,12 @@ p{
 }
 
 .sidebar .items p {
-    text-align: center;
+    text-align: left;
     width: 100%;
     color: black;
     font-size: 16px;
     margin-top: 10px;
-    padding-left: 1vw;
+    padding-left: 5vw;
     padding-top: 1vw;
     background-color: transparent;
     border-radius: 1vw;
@@ -675,6 +675,13 @@ p{
     transform: rotate(90deg);
     left: 0;
     top: 50vh;
+}
+
+.sidebar .martor-grey {
+    position: fixed;
+    width: 100%;
+    bottom: 50px;
+    margin-left: 0%;
 }
 
 .product-button {
