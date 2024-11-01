@@ -5,7 +5,7 @@ ENVIRONMENT = os.getenv('ENVIRONMENT', 'development')
 DEBUG = True
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '-05sgp9!deq=q1nltm@^^2cc+v29i(tyybv3v2t77qi66czazj'
-ALLOWED_HOSTS = ['172.232.39.122', '127.0.0.1', 'localhost']
+ALLOWED_HOSTS = ['172.232.39.122', '172.20.10.4', '127.0.0.1', 'localhost']
 
 SESSION_ENGINE = 'django.contrib.sessions.backends.db'  # Store in the database
 SESSION_COOKIE_AGE = 1209600  # 2 weeks

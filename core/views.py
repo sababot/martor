@@ -18,6 +18,9 @@ class ItemDetailView(DetailView):
 	template_name = "products.html"
 
 def add_to_cart(request, slug):
+	if not request.session.session_key:
+		request.session.save()
+
 	item = get_object_or_404(Item, slug=slug)
 	order_item, created = OrderItem.objects.get_or_create(
 		item=item,
