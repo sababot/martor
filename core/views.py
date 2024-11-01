@@ -21,10 +21,10 @@ def add_to_cart(request, slug):
 	item = get_object_or_404(Item, slug=slug)
 	order_item, created = OrderItem.objects.get_or_create(
 		item=item,
-		user=request.user,
+		user=request.session.session_key,
 		ordered=False
 	)
-	order_qs = Order.objects.filter(user=request.user, ordered=False)
+	order_qs = Order.objects.filter(user=request.session.session_key, ordered=False)
 	if order_qs.exists():
 		order = order_qs[0]
 		if order.items.filter(item__slug=item.slug).exists():
@@ -36,7 +36,7 @@ def add_to_cart(request, slug):
 			order.items.add(order_item)
 	else:
 		ordered_date = timezone.now()
-		order = Order.objects.create(user=request.user, ordered_date=ordered_date)
+		order = Order.objects.create(user=request.session.session_key, ordered_date=ordered_date)
 		order.items.add(order_item)
 		messages.info(request, "This item was added to your cart")
 	return redirect("core:products", slug=slug)
@@ -44,7 +44,7 @@ def add_to_cart(request, slug):
 def remove_from_cart(request, slug):
 	item = get_object_or_404(Item, slug=slug)
 	order_qs = Order.objects.filter(
-		user=request.user,
+		user=request.session.session_key,
 		ordered=False
 )
 	if order_qs.exists():
@@ -52,7 +52,7 @@ def remove_from_cart(request, slug):
 		if order.items.filter(item__slug=item.slug).exists():
 			order_item = OrderItem.objects.filter(
 				item=item,
-				user=request.user,
+				user=request.session.session_key,
 				ordered=False
 			)[0]
 			order.items.remove(order_item)

@@ -39,8 +39,7 @@ class Item(models.Model):
 			})
 
 class OrderItem(models.Model):
-	user = models.ForeignKey(settings.AUTH_USER_MODEL,
-		on_delete=models.CASCADE, blank=True, null=True)
+	user = models.CharField(max_length=40)
 
 	ordered = models.BooleanField(default=False)
 	item = models.ForeignKey(Item, on_delete=models.CASCADE)
@@ -50,8 +49,7 @@ class OrderItem(models.Model):
 		return f"{self.quantity} of {self.item.title}"
 
 class Order(models.Model):
-	user = models.ForeignKey(settings.AUTH_USER_MODEL,
-		on_delete=models.CASCADE)
+	user = models.CharField(max_length=40)
 
 	items = models.ManyToManyField(OrderItem)
 	start_date = models.DateTimeField(auto_now_add=True)
@@ -59,4 +57,4 @@ class Order(models.Model):
 	ordered = models.BooleanField(default=False)
 
 	def __str__(self):
-		return self.user.username
+		return self.user
