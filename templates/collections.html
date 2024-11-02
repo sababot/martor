@@ -1,4 +1,5 @@
 {% load static %}
+{% load cart_template_tags %}
 
 <!DOCTYPE html>
 <html>
@@ -142,7 +143,7 @@
 				</a>
 				<a href="cart">
 					<div class="box">
-					  	<p class="box-title">cart(0)</p>
+					  	<p class="box-title">cart({{ request.session.session_key|cart_item_count }})</p>
 					</div>
 				</a>
 			</div>

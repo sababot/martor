@@ -13,6 +13,13 @@ class ShopView(ListView):
 	model = Item
 	template_name = "shop.html"
 
+def checkout(request):
+	return render(request, "checkout.html")
+
+class OrderSummaryView(DetailView):
+	model = Order
+	template_name = 'order_summary.html'
+
 class ItemDetailView(DetailView):
 	model = Item
 	template_name = "products.html"

@@ -1,4 +1,5 @@
 {% load static %}
+{% load cart_template_tags %}
 
 <!DOCTYPE html>
 <html>
@@ -144,7 +145,7 @@
 				</a>
 				<a href="cart">
 					<div class="box">
-					  	<p class="box-title">cart(0)</p>
+					  	<p class="box-title">cart({{ request.session.session_key|cart_item_count }})</p>
 					</div>
 				</a>
 			</div>
@@ -227,16 +228,49 @@
 		</div>
 	-->
 		<div class="work-cards" id="work-cards" style="margin-left: 2vw; margin-right: 2vw">
-			{% for item in object_list %}
+			{% for item in object_list|slice:":8" %}
+			{% if item.category == "S" %}
 			<a href="{{ item.get_absolute_url }}" class="card-game">
-				<img class="front" src="{% static 'images/collections/fall-to-rise/printful-mockups/martor-shirt-1-purple-front.webp' %}" onmouseover="hover_must_fall_shirt_1(this);" onmouseout="unhover_must_fall_shirt_1(this);">
-				<img class="back" src="{% static 'images/collections/fall-to-rise/printful-mockups/martor-shirt-1-purple-back.webp' %}" onmouseover="hover_must_fall_shirt_1(this);" onmouseout="unhover_must_fall_shirt_1(this);">
+				<img class="front" src="../../static/images/collections/1/{{ item.slug }}-front.png" onmouseover="hover_must_fall_shirt_1(this);" onmouseout="unhover_must_fall_shirt_1(this);">
+				<img class="back" src="../../static/images/collections/1/{{ item.slug }}-back.png" onmouseover="hover_must_fall_shirt_1(this);" onmouseout="unhover_must_fall_shirt_1(this);">
 				<p class="title">{{ item.title }}</p>
 				<div style="display: flex; justify-content: center; column-gap: 15px">
 					<p class="price">€{{ item.price }}</p>
 					<div style="width: 10px; height: 10px; background-color: #d2c3f1; border: solid; border-width: 1px;" class="color"></div>
 				</div>
+
 			</a>
+			{% endif %}
+			{% endfor %}
+
+			{% for item in object_list|slice:":8" %}
+			{% if item.category == "HO" %}
+			<a href="{{ item.get_absolute_url }}" class="card-game">
+				<img class="front" src="../../static/images/collections/1/{{ item.slug }}-front.png" onmouseover="hover_must_fall_shirt_1(this);" onmouseout="unhover_must_fall_shirt_1(this);">
+				<img class="back" src="../../static/images/collections/1/{{ item.slug }}-back.png" onmouseover="hover_must_fall_shirt_1(this);" onmouseout="unhover_must_fall_shirt_1(this);">
+				<p class="title">{{ item.title }}</p>
+				<div style="display: flex; justify-content: center; column-gap: 15px">
+					<p class="price">€{{ item.price }}</p>
+					<div style="width: 10px; height: 10px; background-color: #d2c3f1; border: solid; border-width: 1px;" class="color"></div>
+				</div>
+
+			</a>
+			{% endif %}
+			{% endfor %}
+
+			{% for item in object_list|slice:":8" %}
+			{% if item.category == "HA" %}
+			<a href="{{ item.get_absolute_url }}" class="card-game">
+				<img class="front" src="../../static/images/collections/1/{{ item.slug }}-front.png" onmouseover="hover_must_fall_shirt_1(this);" onmouseout="unhover_must_fall_shirt_1(this);">
+				<img class="back" src="../../static/images/collections/1/{{ item.slug }}-front.png" onmouseover="hover_must_fall_shirt_1(this);" onmouseout="unhover_must_fall_shirt_1(this);">
+				<p class="title">{{ item.title }}</p>
+				<div style="display: flex; justify-content: center; column-gap: 15px">
+					<p class="price">€{{ item.price }}</p>
+					<div style="width: 10px; height: 10px; background-color: #d2c3f1; border: solid; border-width: 1px;" class="color"></div>
+				</div>
+
+			</a>
+			{% endif %}
 			{% endfor %}
 		</div>
 	</div>
