@@ -27,6 +27,8 @@ var product_desktop = document.getElementById("product-desktop");
 var product_mobile = document.getElementById("product-mobile");
 var product_mobile_description = document.getElementById("product-mobile-description");
 
+var shop_heading = document.getElementById("shop-heading");
+
 width = window.innerWidth;
 height = window.innerHeight;
 
@@ -36,6 +38,16 @@ if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(naviga
 }
 
 function resize_elements(){
+	if (shop_heading != null) {
+		if (width <= 515) {
+			shop_heading.style.justifyContent = "left";
+		}
+
+		else {
+			shop_heading.style.justifyContent = "space-around";
+		}
+	}
+
 	if ((width / height) < 0.5){
 		newsletter.style.display = 'none';
 		footer_mobile.style.display = 'block';
@@ -44,8 +56,13 @@ function resize_elements(){
 		header_mobile.style.display = 'flex';
 		header_desktop.style.display = 'none';
 
+		if (footer_mobile != null) {
+
+		}
+
 		if (products != null){
 			products.style.gridTemplateColumns = "repeat(2, 50%)";
+			products.style.minHeight = "calc(100vh - 350px)";
 		}
 			
 		if (premiere != null && background_mobile != null && background_desktop != null){
@@ -80,6 +97,7 @@ function resize_elements(){
 
 		if (products != null){
 			products.style.gridTemplateColumns = "repeat(2, 50%)";
+			products.style.minHeight = "calc(100vh - 350px)";
 		}
 			
 		if (premiere != null && background_mobile != null && background_desktop != null){
@@ -114,6 +132,7 @@ function resize_elements(){
 
 		if (products != null){
 			products.style.gridTemplateColumns = "repeat(2, 50%)";
+			products.style.minHeight = "calc(100vh - 350px)";
 		}
 			
 		if (premiere != null && background_mobile != null && background_desktop != null){
@@ -148,6 +167,7 @@ function resize_elements(){
 
 		if (products != null){
 			products.style.gridTemplateColumns = "repeat(3, 32%)";
+			products.style.minHeight = "calc(100vh - 350px)";
 		}
 
 		if (premiere != null && background_mobile != null && background_desktop != null){
@@ -182,6 +202,7 @@ function resize_elements(){
 
 		if (products != null){
 			products.style.gridTemplateColumns = "repeat(3, 32%)";
+			products.style.minHeight = "calc(100vh - 350px)";
 		}
 
 		if (premiere != null && background_mobile != null && background_desktop != null){
@@ -216,6 +237,7 @@ function resize_elements(){
 
 		if (products != null){
 			products.style.gridTemplateColumns = "repeat(4, 23%)";
+			products.style.minHeight = "calc(100vh - 350px)";
 		}
 
 		if (premiere != null && background_mobile != null && background_desktop != null){

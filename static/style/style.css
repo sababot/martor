@@ -582,6 +582,7 @@ p{
     color: #fff;
     padding: 0px;
     text-align: center;
+    width: 100%;
 }
 
 .sidebar .disabled {
@@ -591,14 +592,13 @@ p{
 
 .sidebar .items p {
     text-align: left;
-    width: 100%;
-    color: black;
+    width: fit-content;
+    color: white;
     font-size: 16px;
-    margin-top: 15px;
-    padding-left: 5vw;
-    padding-top: 1vw;
-    background-color: transparent;
-    border-radius: 1vw;
+    margin-top: 0px;
+    margin-left: 5vw;
+    margin-top: 25px;
+    background-color: #4f3d74;
     display: block;
 }
 
@@ -670,7 +670,7 @@ p{
 }
 
 .sidebar .fennec-pop-2 {
-    position: fixed;
+    position: relative;
     width: 50vw;
     transform: rotate(90deg);
     left: 0;
@@ -679,9 +679,10 @@ p{
 
 .sidebar .martor-grey {
     position: fixed;
+    bottom: 0;
     width: 100%;
-    bottom: 50px;
     margin-left: 0%;
+    z-index: -4;
 }
 
 .product-button {
@@ -708,4 +709,84 @@ p{
 
     outline: none;
     -webkit-appearance: none;
+}
+
+.pagination {
+    margin-top: 5vw;
+    display: flex;
+    justify-content: center;
+    column-gap: 10px;
+}
+
+.pagination a {
+    text-decoration: none;
+    color: black;
+    display: flex;
+    justify-content: center;
+}
+
+.pagination .selected {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+
+.pagination a:before{
+    opacity: 0;
+    content: '[';
+}
+
+.pagination a:after{
+    opacity: 0;
+    content: ']';
+}
+
+.pagination .selected:before {
+    opacity: 1;
+    content: '[';
+}
+
+.pagination .selected:after {
+    opacity: 1;
+    content: ']';
+}
+
+.pagination a:hover:before {
+    opacity: 1;
+    content: '[';
+}
+
+.pagination a:hover:after {
+    opacity: 1;
+    content: ']';
+}
+
+.pagination .change-page {
+    display: block;
+}
+
+.pagination .change-page:before {
+    content: '';
+}
+
+.pagination .change-page:after {
+    content: '';
+}
+
+.pagination .change-page:hover:before {
+    content: '';
+}
+
+.pagination .change-page:hover:after {
+    content: '';
+}
+
+.pagination .change-page:hover {
+    font-weight: bold;
+}
+
+.superscript {
+    font-size: 0.6em;
+    vertical-align: super;
+    font-weight: normal;
 }

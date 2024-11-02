@@ -2,21 +2,21 @@ var active = 'all';
 
 var options = [	document.getElementById('all'), 
 				document.getElementById('shirts'),
-				document.getElementById('hoods'),
+				document.getElementById('hoodies'),
 				document.getElementById('pants'),
 				document.getElementById('hats'),
-				document.getElementById('accesories'),
-				document.getElementById('search_input')];
+				document.getElementById('accessories')];
+				//document.getElementById('search_input')];
 
 var shirts = document.getElementsByClassName('shirt');
-var hoods = document.getElementsByClassName('hood');
+var hoodies = document.getElementsByClassName('hoodie');
 var pants = document.getElementsByClassName('pant');
 var hats = document.getElementsByClassName('hat');
-var accesories = document.getElementsByClassName('accesory');
+var accessories = document.getElementsByClassName('accessory');
 
-var cards = document.querySelectorAll('.work-cards a');
+//var cards = document.querySelectorAll('.work-cards a');
 
-var search_bar = document.getElementById("search_input");
+//var search_bar = document.getElementById("search_input");
 
 function select_all() {
 	document.getElementById('all').style.fontWeight = 'bold';
@@ -39,9 +39,9 @@ function select_all() {
 		pants[i].style.display = 'block';
 	}
 
-	// ENABLE HOODS
-	for (var i = 0; i < hoods.length; i++) {
-		hoods[i].style.display = 'block';
+	// ENABLE hoodies
+	for (var i = 0; i < hoodies.length; i++) {
+		hoodies[i].style.display = 'block';
 	}
 
 	// ENABLE SHIRTS
@@ -49,9 +49,9 @@ function select_all() {
 		shirts[i].style.display = 'block';
 	}
 
-	// ENABLE ACCESORIES
-	for (var i = 0; i < accesories.length; i++) {
-		accesories[i].style.display = 'block';
+	// ENABLE accessoRIES
+	for (var i = 0; i < accessories.length; i++) {
+		accessories[i].style.display = 'block';
 	}
 }
 
@@ -71,9 +71,9 @@ function select_shirts() {
 		shirts[i].style.display = 'block';
 	}
 
-	// DISABLE HOODS
-	for (var i = 0; i < hoods.length; i++) {
-		hoods[i].style.display = 'none';
+	// DISABLE hoodies
+	for (var i = 0; i < hoodies.length; i++) {
+		hoodies[i].style.display = 'none';
 	}
 
 	// DISABLE PANTS
@@ -86,26 +86,26 @@ function select_shirts() {
 		hats[i].style.display = 'none';
 	}
 
-	// DISABLE ACCESORIES
-	for (var i = 0; i < accesories.length; i++) {
-		accesories[i].style.display = 'none';
+	// DISABLE accessoRIES
+	for (var i = 0; i < accessories.length; i++) {
+		accessories[i].style.display = 'none';
 	}
 }
 
-function select_hoods() {
-	document.getElementById('hoods').style.fontWeight = 'bold';
-	document.getElementById('hoods').style.borderColor = 'rgba(84, 7, 249, 1)';
-	active = 'hoods';
+function select_hoodies() {
+	document.getElementById('hoodies').style.fontWeight = 'bold';
+	document.getElementById('hoodies').style.borderColor = 'rgba(84, 7, 249, 1)';
+	active = 'hoodies';
 
 	for (var i = 0; i < options.length; i++) {
-		if (options[i].id != 'hoods') {
+		if (options[i].id != 'hoodies') {
 			options[i].style.fontWeight = 'normal';
 		}
 	}
 
-	// ENABLE HOODS
-	for (var i = 0; i < hoods.length; i++) {
-		hoods[i].style.display = 'block';
+	// ENABLE hoodies
+	for (var i = 0; i < hoodies.length; i++) {
+		hoodies[i].style.display = 'block';
 	}
 
 	// DISABLE SHIRTS
@@ -123,9 +123,9 @@ function select_hoods() {
 		hats[i].style.display = 'none';
 	}
 
-	// DISABLE ACCESORIES
-	for (var i = 0; i < accesories.length; i++) {
-		accesories[i].style.display = 'none';
+	// DISABLE accessoRIES
+	for (var i = 0; i < accessories.length; i++) {
+		accessories[i].style.display = 'none';
 	}
 }
 
@@ -145,9 +145,9 @@ function select_pants() {
 		pants[i].style.display = 'block';
 	}
 
-	// DIABLE HOODS
-	for (var i = 0; i < hoods.length; i++) {
-		hoods[i].style.display = 'none';
+	// DIABLE hoodies
+	for (var i = 0; i < hoodies.length; i++) {
+		hoodies[i].style.display = 'none';
 	}
 
 	// DISABLE SHIRTS
@@ -160,9 +160,9 @@ function select_pants() {
 		hats[i].style.display = 'none';
 	}
 
-	// DISABLE ACCESORIES
-	for (var i = 0; i < accesories.length; i++) {
-		accesories[i].style.display = 'none';
+	// DISABLE accessoRIES
+	for (var i = 0; i < accessories.length; i++) {
+		accessories[i].style.display = 'none';
 	}
 }
 
@@ -187,9 +187,9 @@ function select_hats() {
 		pants[i].style.display = 'none';
 	}
 
-	// DIABLE HOODS
-	for (var i = 0; i < hoods.length; i++) {
-		hoods[i].style.display = 'none';
+	// DIABLE hoodies
+	for (var i = 0; i < hoodies.length; i++) {
+		hoodies[i].style.display = 'none';
 	}
 
 	// DISABLE SHIRTS
@@ -197,26 +197,26 @@ function select_hats() {
 		shirts[i].style.display = 'none';
 	}
 
-	// DISABLE ACCESORIES
-	for (var i = 0; i < accesories.length; i++) {
-		accesories[i].style.display = 'none';
+	// DISABLE accessoRIES
+	for (var i = 0; i < accessories.length; i++) {
+		accessories[i].style.display = 'none';
 	}
 }
 
-function select_accesories() {
-	document.getElementById('accesories').style.fontWeight = 'bold';
-	document.getElementById('accesories').style.borderColor = 'rgba(84, 7, 249, 1)';
-	active = 'accesories';
+function select_accessories() {
+	document.getElementById('accessories').style.fontWeight = 'bold';
+	document.getElementById('accessories').style.borderColor = 'rgba(84, 7, 249, 1)';
+	active = 'accessories';
 
 	for (var i = 0; i < options.length; i++) {
-		if (options[i].id != 'accesories') {
+		if (options[i].id != 'accessories') {
 			options[i].style.fontWeight = 'normal';
 		}
 	}
 
-	// ENABLE ACCESORES
-	for (var i = 0; i < accesories.length; i++) {
-		accesories[i].style.display = 'block';
+	// ENABLE accessoRES
+	for (var i = 0; i < accessories.length; i++) {
+		accessories[i].style.display = 'block';
 	}
 
 	// DISABLE HATS
@@ -229,9 +229,9 @@ function select_accesories() {
 		pants[i].style.display = 'none';
 	}
 
-	// DIABLE HOODS
-	for (var i = 0; i < hoods.length; i++) {
-		hoods[i].style.display = 'none';
+	// DIABLE hoodies
+	for (var i = 0; i < hoodies.length; i++) {
+		hoodies[i].style.display = 'none';
 	}
 
 	// DISABLE SHIRTS
@@ -240,6 +240,7 @@ function select_accesories() {
 	}
 }
 
+/*
 function select_search() {
 	active = 'search';
 
@@ -264,5 +265,6 @@ function select_search() {
 search_bar.addEventListener("input", e => {
 	select_search();
 })
+*/
 
 select_all();
