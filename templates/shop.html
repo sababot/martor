@@ -172,7 +172,9 @@
 				<img src="{% static 'images/logo-6-remastered-2.png' %}" style="padding-top: 10px; height: 30px;">
 			</a>
 
-			<i class="fa-solid fa-cart-shopping" style="font-size: 20px; margin-top: 14px; margin-right: 12px; color: #2b2b2b"><span class="superscript">({{ request.session.session_key|cart_item_count }})</span></i>
+			<a href="/cart">
+				<i class="fa-solid fa-cart-shopping" style="font-size: 20px; margin-top: 14px; margin-right: 12px; color: #2b2b2b"><span class="superscript">({{ request.session.session_key|cart_item_count }})</span></i>
+			</a>
 
 		<!--
 			<div class="wrapper-sections-right" id="header_elements" style="padding-right: 5px; grid-gap: 0;">
