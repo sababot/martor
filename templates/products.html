@@ -120,7 +120,7 @@
 					  	<p class="box-title">shop</p>
 					</div>
 				</a>
-				<a href="collections">
+				<a href="/collections">
 					<div class="box">
 					  	<p class="box-title">collections</p>
 					</div>
@@ -142,7 +142,7 @@
 					  	<p class="box-title">contact</p>
 					</div>
 				</a>
-				<a href="cart">
+				<a href="/cart">
 					<div class="box">
 					  	<p class="box-title">cart({{ request.session.session_key|cart_item_count }})</p>
 					</div>
@@ -214,9 +214,8 @@
 				<p style="font-size: 14px;">XL</p>
 				<p style="font-size: 14px;">2XL</p>
 			</div>
-			<div style="display: flex; justify-content: start">
+			<div style="display: flex; justify-content: center; margin-top: 20px">
 				<a class="show-all" href="{{ object.get_add_to_cart_url }}" style="background-color: #4f3d74; color: white; padding: 4px 4px 4px 4px; margin-bottom: 50px">[add to cart]</a>
-				<a class="show-all" href="{{ object.get_remove_from_cart_url }}" style="background-color: #4f3d74; color: white; padding: 4px 4px 4px 4px; margin-bottom: 50px">[remove from cart]</a>
 			</div>
 
 			<div>

@@ -126,7 +126,7 @@
     width: 100%;
     display: flex;
     justify-content: center;
-    margin-top: 80px;
+    padding-top: 125px;
     margin-bottom: 20px;
     column-gap: 25px;
 }

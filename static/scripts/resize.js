@@ -29,6 +29,9 @@ var product_mobile_description = document.getElementById("product-mobile-descrip
 
 var shop_heading = document.getElementById("shop-heading");
 
+var cart_desktop = document.getElementById("cart-desktop");
+var cart_mobile = document.getElementById("cart-mobile");
+
 width = window.innerWidth;
 height = window.innerHeight;
 
@@ -56,8 +59,9 @@ function resize_elements(){
 		header_mobile.style.display = 'flex';
 		header_desktop.style.display = 'none';
 
-		if (footer_mobile != null) {
-
+		if (cart_mobile != null && cart_desktop != null) {
+			cart_mobile.style.display = 'block';
+			cart_desktop.style.display = 'none';
 		}
 
 		if (products != null){
@@ -95,6 +99,11 @@ function resize_elements(){
 		header_mobile.style.display = 'flex';
 		header_desktop.style.display = 'none';
 
+		if (cart_mobile != null && cart_desktop != null) {
+			cart_mobile.style.display = 'block';
+			cart_desktop.style.display = 'none';
+		}
+
 		if (products != null){
 			products.style.gridTemplateColumns = "repeat(2, 50%)";
 			products.style.minHeight = "calc(100vh - 350px)";
@@ -129,6 +138,11 @@ function resize_elements(){
 		footer_logo.style.display = 'none';
 		header_mobile.style.display = 'flex';
 		header_desktop.style.display = 'none';
+
+		if (cart_mobile != null && cart_desktop != null) {
+			cart_mobile.style.display = 'block';
+			cart_desktop.style.display = 'none';
+		}
 
 		if (products != null){
 			products.style.gridTemplateColumns = "repeat(2, 50%)";
@@ -165,6 +179,11 @@ function resize_elements(){
 		header_mobile.style.display = 'none';
 		header_desktop.style.display = 'flex';
 
+		if (cart_mobile != null && cart_desktop != null) {
+			cart_mobile.style.display = 'none';
+			cart_desktop.style.display = 'block';
+		}
+
 		if (products != null){
 			products.style.gridTemplateColumns = "repeat(3, 32%)";
 			products.style.minHeight = "calc(100vh - 350px)";
@@ -200,6 +219,11 @@ function resize_elements(){
 		header_mobile.style.display = 'none';
 		header_desktop.style.display = 'flex';
 
+		if (cart_mobile != null && cart_desktop != null) {
+			cart_mobile.style.display = 'none';
+			cart_desktop.style.display = 'block';
+		}
+
 		if (products != null){
 			products.style.gridTemplateColumns = "repeat(3, 32%)";
 			products.style.minHeight = "calc(100vh - 350px)";
@@ -234,6 +258,11 @@ function resize_elements(){
 		footer_logo.style.display = 'none';
 		header_mobile.style.display = 'none';
 		header_desktop.style.display = 'flex';
+
+		if (cart_mobile != null && cart_desktop != null) {
+			cart_mobile.style.display = 'none';
+			cart_desktop.style.display = 'block';
+		}
 
 		if (products != null){
 			products.style.gridTemplateColumns = "repeat(4, 23%)";

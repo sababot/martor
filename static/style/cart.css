@@ -1,0 +1,15 @@
+.cart-item {
+	margin: 0 50px 0px 50px;
+	display: flex;
+	column-gap: 10px;
+	justify-content: center;
+}
+
+.cart-item img {
+	width: 125px;
+}
+
+.cart-item p {
+	width: auto;
+	font-size: 15px;
+}

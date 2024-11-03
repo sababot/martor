@@ -1,6 +1,6 @@
 from django.contrib import messages
 from django.shortcuts import render, get_object_or_404
-from django.views.generic import ListView, DetailView
+from django.views.generic import ListView, DetailView, View
 from django.shortcuts import redirect
 from django.utils import timezone
 from .models import Item, OrderItem,  Order
@@ -17,9 +17,13 @@ class ShopView(ListView):
 def checkout(request):
 	return render(request, "checkout.html")
 
-class OrderSummaryView(DetailView):
-	model = Order
-	template_name = 'order_summary.html'
+class CartView(View):
+	def get(self, *args, **kwargs):
+		order = Order.objects.get(user=self.request.session.session_key, ordered=False)
+		context = {
+			'object': order
+		}
+		return render(self.request, "cart.html", context)
 
 class ItemDetailView(DetailView):
 	model = Item
@@ -44,13 +48,17 @@ def add_to_cart(request, slug):
 			messages.info(request, "Item quantity was updated")
 		else:
 			messages.info(request, "This item was added to your cart")
+			order_item.quantity = 1
+			order_item.save()
 			order.items.add(order_item)
 	else:
 		ordered_date = timezone.now()
 		order = Order.objects.create(user=request.session.session_key, ordered_date=ordered_date)
+		order_item.quantity = 1
+		order_item.save()
 		order.items.add(order_item)
 		messages.info(request, "This item was added to your cart")
-	return redirect("core:products", slug=slug)
+	return redirect("core:cart")
 
 def remove_from_cart(request, slug):
 	item = get_object_or_404(Item, slug=slug)
@@ -66,15 +74,45 @@ def remove_from_cart(request, slug):
 				user=request.session.session_key,
 				ordered=False
 			)[0]
+			order_item.quantity = 0
+			order_item.save()
 			order.items.remove(order_item)
 			messages.info(request, "This item was removed to your cart")
-			return redirect("core:products", slug=slug)
+			return redirect("core:cart")
 		else:
 			messages.info(request, "This item was not in your cart")
-			return redirect("core:products", slug=slug)
+			return redirect("core:cart")
 	else:
 		messages.info(request, "You do not have an active order")
-		return redirect("core:products", slug=slug)
+		return redirect("core:cart")
+
+def remove_single_item_from_cart(request, slug):
+	item = get_object_or_404(Item, slug=slug)
+	order_qs = Order.objects.filter(
+		user=request.session.session_key,
+		ordered=False
+)
+	if order_qs.exists():
+		order = order_qs[0]
+		if order.items.filter(item__slug=item.slug).exists():
+			order_item = OrderItem.objects.filter(
+				item=item,
+				user=request.session.session_key,
+				ordered=False
+			)[0]
+			order_item.quantity -= 1
+			order_item.save()
+			if order_item.quantity == 0:
+				order.items.remove(order_item)
+
+			messages.info(request, "This item quantity was updated")
+			return redirect("core:cart")
+		else:
+			messages.info(request, "This item was not in your cart")
+			return redirect("core:cart")
+	else:
+		messages.info(request, "You do not have an active order")
+		return redirect("core:cart")
 
 def collections(request):
 	return render(request, "collections.html")
