@@ -202,14 +202,14 @@
 		<div class="cart-item">
 			<img src="../../static/images/collections/1/{{ order_item.item.slug }}-front.png">
 			<div>
-				<div style="width: 150px">
+				<div style="width: 175px">
 					<p>{{ order_item.item.title }}</p>
 					<p style="font-size: 14px">M</p>
 					<p style="font-size: 15px">€{{ order_item.item.price }}</p>
 				</div>
 			</div>
 			<div>
-				<div style="display: flex; column-gap: 5px; margin-left: 100px;">
+				<div style="display: flex; column-gap: 5px; margin-left: 75px;">
 					<a href="{% url 'core:remove-single-item-from-cart' order_item.item.slug %}" style="text-decoration: none; color: black;">—</a>
 					<p>{{ order_item.quantity }}</p>
 					<a href="{% url 'core:add-to-cart' order_item.item.slug %}" style="text-decoration: none; color: black;">+</a>
@@ -234,7 +234,7 @@
 		<div class="cart-item" style="justify-content: space-between; margin: 0">
 			<div style="display: flex; column-gap: 15px">
 				<img src="../../static/images/collections/1/{{ order_item.item.slug }}-front.png">
-				<div style="width: 150px">
+				<div style="width: fit-content;">
 					<p>{{ order_item.item.title }}</p>
 					<p style="font-size: 14px">M</p>
 					<p style="font-size: 15px">€{{ order_item.item.price }}</p>
