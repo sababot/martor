@@ -197,7 +197,7 @@
 	<div class="shop-title">
 		<p>cart</p>
 	</div>
-	<div style="margin: 50px 200px 0 200px; min-height: 60vh;" id="cart-desktop">
+	<div style="margin: 50px 0px 0 0px; min-height: 60vh;" id="cart-desktop">
 		{% for order_item in object.items.all %}
 		<div class="cart-item">
 			<img src="../../static/images/collections/1/{{ order_item.item.slug }}-front.png">
@@ -227,6 +227,20 @@
 			</div>
 		</div>
 		{% endfor %}
+		<div style="display: flex; justify-content: center; margin: 0 50px 0px 50px;">
+			<div style="margin-right: 280px;">
+				<br>
+				<div style="margin-top: 8px; text-align: right;">
+					<a href="/shop" class="continue-shopping" style="color: black; padding: 2px 5px 2px 5px; text-decoration: none;">[contiune shopping]</a>
+				</div>
+			</div>
+			<div style="margin-left: 15vw">
+				<p style="font-size: 15px; width: 105px;">total: €124.69</p>
+				<div style="margin-top: 8px; text-align: right;">
+					<a href="" style="background-color: #4f3d74; color: white; padding: 2px 5px 2px 5px; text-decoration: none;">checkout</a>
+				</div>
+			</div>
+		</div>
 	</div>
 
 	<div style="margin: 50px 15px 0 15px; min-height: 60vh;" id="cart-mobile">
@@ -252,6 +266,23 @@
 			</div>
 		</div>
 		{% endfor %}
+		<!--
+		<p style="font-size: 12px; text-align: center; margin-top: 30px">pay over 3 interest-free installments (%0 APR) of €12.5</p>
+		<hr style="color: black; margin: 8px 0 25px 0">-->
+		<div style="display: flex; justify-content: space-between; margin: 15px 0px 0 0px;">
+			<div>
+				<br>
+				<div style="margin-top: 8px; text-align: right;">
+					<a href="/shop" class="continue-shopping" style="color: black; padding: 2px 5px 2px 5px; text-decoration: none;">[contiune shopping]</a>
+				</div>
+			</div>
+			<div>
+				<p style="font-size: 15px; width: 105px;">total: €124.69</p>
+				<div style="margin-top: 8px; text-align: right;">
+					<a href="" style="background-color: #4f3d74; color: white; padding: 2px 5px 2px 5px; text-decoration: none;">checkout</a>
+				</div>
+			</div>
+		</div>
 	</div>
 
 	<div id="newsletter">
