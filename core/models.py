@@ -12,6 +12,11 @@ COLLECTION_CHOICES = {
 	('1', 'Fall To Rise')
 }
 
+IMAGE_CHOICE = {
+	('1', 'Front'),
+	('2', 'Back')
+}
+
 class Item(models.Model):
 	title = models.CharField(max_length=100)
 	price = models.FloatField()
@@ -19,6 +24,7 @@ class Item(models.Model):
 	collection = models.CharField(choices=COLLECTION_CHOICES, max_length=1)
 	slug = models.SlugField()
 	description = models.TextField()
+	side = models.CharField(choices=IMAGE_CHOICE, max_length=1)
 
 	def __str__(self):
 		return self.title

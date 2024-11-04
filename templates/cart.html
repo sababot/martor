@@ -197,18 +197,20 @@
 	<div class="shop-title">
 		<p>cart</p>
 	</div>
-	<div style="margin: 50px 0px 0 0px; min-height: 60vh;" id="cart-desktop">
+	<div style="margin: 30px 0px 0 0px; min-height: 60vh;" id="cart-desktop">
 		{% for order_item in object.items.all %}
 		<div class="cart-item">
 			<img src="../../static/images/collections/1/{{ order_item.item.slug }}-front.png">
 			<div>
 				<div style="width: 175px">
+					<br><br>
 					<p>{{ order_item.item.title }}</p>
 					<p style="font-size: 14px">M</p>
 					<p style="font-size: 15px">€{{ order_item.item.price }}</p>
 				</div>
 			</div>
 			<div>
+				<br><br><br>
 				<div style="display: flex; column-gap: 5px; margin-left: 75px;">
 					<a href="{% url 'core:remove-single-item-from-cart' order_item.item.slug %}" style="text-decoration: none; color: black;">—</a>
 					<p>{{ order_item.quantity }}</p>
@@ -216,22 +218,23 @@
 				</div>
 			</div>
 			<div>
+				<br><br><br>
 				<div>
 					<a href="{% url 'core:remove-from-cart' order_item.item.slug %}" style="background-color: #4f3d74; color: white; padding: 2px 5px 2px 5px; margin-left: 15vw; text-decoration: none;">remove</a>
 				</div>
 			</div>
 			<div>
+				<br><br><br>
 				<div>
 					<a>€{{ order_item.item.price }}</a>
 				</div>
 			</div>
 		</div>
 		{% endfor %}
-		<div style="display: flex; justify-content: center; margin: 0 50px 0px 50px;">
-			<div style="margin-right: 280px;">
-				<br>
+		<div style="display: flex; justify-content: center; margin: 25px 50px 0 50px;">
+			<div style="margin-right: 285px;">
 				<div style="margin-top: 8px; text-align: right;">
-					<a href="/shop" class="continue-shopping" style="color: black; padding: 2px 5px 2px 5px; text-decoration: none;">[contiune shopping]</a>
+					<a href="/shop" class="continue-shopping" style="color: black; padding: 2px 5px 2px 5px; text-decoration: none; font-size: 15px;">[contiune shopping]</a>
 				</div>
 			</div>
 			<div style="margin-left: 15vw">
@@ -243,15 +246,19 @@
 		</div>
 	</div>
 
-	<div style="margin: 50px 15px 0 15px; min-height: 60vh;" id="cart-mobile">
+	<div style="margin: 30px 15px 0 15px; min-height: 60vh;" id="cart-mobile">
 		{% for order_item in object.items.all %}
 		<div class="cart-item" style="justify-content: space-between; margin: 0">
 			<div style="display: flex; column-gap: 15px">
 				<img src="../../static/images/collections/1/{{ order_item.item.slug }}-front.png">
 				<div style="width: fit-content;">
-					<p>{{ order_item.item.title }}</p>
-					<p style="font-size: 14px">M</p>
-					<p style="font-size: 15px">€{{ order_item.item.price }}</p>
+					<br>
+					<div style="">
+						<p>{{ order_item.item.title }}</p>
+						<p style="font-size: 14px">M</p>
+						<p style="font-size: 15px">€{{ order_item.item.price }}</p>
+					</div>
+					<br>
 					<div style="display: flex; column-gap: 5px; margin-top: 20px;">
 						<a href="{% url 'core:remove-single-item-from-cart' order_item.item.slug %}" style="text-decoration: none; color: black;">—</a>
 						<p>{{ order_item.quantity }}</p>
@@ -261,6 +268,7 @@
 			</div>
 			<div>
 				<div>
+					<br><br><br><br><br><br>
 					<a href="{% url 'core:remove-from-cart' order_item.item.slug %}" style="background-color: #4f3d74; color: white; padding: 2px 5px 2px 5px; text-decoration: none;">remove</a>
 				</div>
 			</div>
@@ -269,11 +277,10 @@
 		<!--
 		<p style="font-size: 12px; text-align: center; margin-top: 30px">pay over 3 interest-free installments (%0 APR) of €12.5</p>
 		<hr style="color: black; margin: 8px 0 25px 0">-->
-		<div style="display: flex; justify-content: space-between; margin: 15px 0px 0 0px;">
+		<div style="display: flex; justify-content: space-between; margin: 35px 0px 0 0px;">
 			<div>
-				<br>
-				<div style="margin-top: 8px; text-align: right;">
-					<a href="/shop" class="continue-shopping" style="color: black; padding: 2px 5px 2px 5px; text-decoration: none;">[contiune shopping]</a>
+				<div style="margin-top: 0px; text-align: right;">
+					<a href="/shop" class="continue-shopping" style="color: black; padding: 2px 5px 2px 5px; text-decoration: none; font-size: 15px;">[contiune shopping]</a>
 				</div>
 			</div>
 			<div>
