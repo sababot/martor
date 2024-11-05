@@ -790,3 +790,12 @@ p{
     vertical-align: super;
     font-weight: normal;
 }
+
+.product-mobile-images {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.product-mobile-images::-webkit-scrollbar {
+  display: none;
+}

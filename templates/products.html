@@ -273,9 +273,10 @@
 		</div>
 	</div>
 
-	<div id="product-mobile" style="display: block; padding-top: 100px; justify-content: space-between; margin-left: 0vw; margin-right: 0vw; gap: 2vw;">
-		<div style="display: flex; justify-content: center; width: 100%; padding-bottom: 20px; margin-bottom: 30px;">
+	<div id="product-mobile" style="position: relative; display: block; padding-top: 100px; justify-content: space-around; margin-left: 0vw; margin-right: 0vw; gap: 2vw;">
+		<div style="display: flex; justify-content: left; width: 100%; padding-bottom: 20px; margin-bottom: 30px; overflow-y: none; overflow-x: scroll" class="product-mobile-images">
 			<img src="../../static/images/collections/1/{{ object.slug }}-front.png" style="width: 100%; display: block;">
+			<img src="../../static/images/collections/1/{{ object.slug }}-back.png" style="width: 100%; display: block;">
 		</div>
 
 		<div style="display: flex; justify-content: center; align-items: center; margin-left: 5vw; margin-right: 5vw;">
