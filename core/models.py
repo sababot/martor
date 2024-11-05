@@ -24,7 +24,7 @@ class Item(models.Model):
 	collection = models.CharField(choices=COLLECTION_CHOICES, max_length=1)
 	slug = models.SlugField()
 	description = models.TextField()
-	side = models.CharField(choices=IMAGE_CHOICE, max_length=1)
+	side = models.CharField(choices=IMAGE_CHOICE, max_length=1, default='1')
 
 	def __str__(self):
 		return self.title
