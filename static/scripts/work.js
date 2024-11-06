@@ -279,6 +279,7 @@ search_heading_input.addEventListener("keypress", function(event) {
     // Trigger the button element with a click
     select_search(search_heading_input.value);
     document.getElementById("search-button").click();
+    document.getElementById("fake-focus").focus();
   }
 });
 
