@@ -25,7 +25,7 @@
 	<script src="https://kit.fontawesome.com/497ef235da.js" crossorigin="anonymous"></script>
 </head>
 {% if is_search %}
-<body id="bod" onload="showPage(); toggleSearch();">
+<body id="bod" onload="showPage(); toggleSearch(); document.getElementById('search-header-input').focus();">
 {% else %}
 <body id="bod" onload="showPage();">
 {% endif %}
@@ -118,7 +118,7 @@
 		<div class="search-header" id="search-header">
 			<div style="display: flex; width: 100%; justify-content: center; background-color: white; padding-bottom: 2px">
 				<input type="text" name="" class="search-header-input" placeholder="search" id="search-header-input">
-				<button style="width: fit-content; padding: 0 5px 0 5px; background: none; border: none; font-size: 15px;" onclick="select_search(document.getElementById('search-header-input').value); toggleSearch();" id="search-bar-button">[enter]</button>
+				<button style="width: fit-content; padding: 0 5px 0 5px; background: none; border: none; font-size: 15px; color: black" onclick="select_search(document.getElementById('search-header-input').value); toggleSearch();" id="search-bar-button">[enter]</button>
 			</div>
 		</div>
 
