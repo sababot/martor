@@ -42,7 +42,7 @@ if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(naviga
 }
 
 function resize_elements(){
-	if (shop_heading != null) {
+	if (shop_heading != null && shop_heading != null) {
 		if (width <= 730) {
 			shop_heading.style.justifyContent = "left";
 			search_bar.value = '';
