@@ -18,6 +18,7 @@ function hideSearch() {
 	show = false;
 
 	document.body.style.overflow = "auto";
+	document.getElementById('search-header-input').focus();
 }
 
 function toggleSearch() {
