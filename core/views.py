@@ -14,6 +14,15 @@ class ShopView(ListView):
 	paginate_by = 10
 	template_name = "shop.html"
 
+	def get_context_data(self, **kwargs):
+    	# Get the default context data from the superclass
+		context = super().get_context_data(**kwargs)
+        
+		# Add the 'is_search' flag based on the current URL
+		context['is_search'] = 'search' in self.request.path
+        
+		return context
+
 def checkout(request):
 	return render(request, "checkout.html")
 

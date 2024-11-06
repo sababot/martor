@@ -18,6 +18,8 @@ var cards = document.querySelectorAll('.work-cards a');
 
 var search_bar = document.getElementById("search_input");
 
+var search_heading_input = document.getElementById("search-header-input");
+
 function select_all() {
 	document.getElementById('all').style.fontWeight = 'bold';
 	document.getElementById('all').style.borderColor = 'rgba(84, 7, 249, 1)';
@@ -240,14 +242,19 @@ function select_accessories() {
 	}
 }
 
-function select_search() {
+function select_search(input_option) {
 	active = 'search';
 
 	for (var i = 0; i < options.length; i++) {
 		options[i].style.fontWeight = 'normal';
 	}
 
-	var input = document.getElementById("search_input").value.toLowerCase();
+	var input = "";
+
+	if (input_option != null)
+		input = input_option;
+	else if (input_option == null)
+		input = document.getElementById("search_input").value.toLowerCase();
 
 	for (var i = 0; i < cards.length; i++) {
 		if (cards[i].querySelector(".work-cards .title").innerHTML.toLowerCase().includes(input) == false) {
@@ -263,5 +270,16 @@ function select_search() {
 search_bar.addEventListener("input", e => {
 	select_search();
 })
+
+search_heading_input.addEventListener("keypress", function(event) {
+  // If the user presses the "Enter" key on the keyboard
+  if (event.key === "Enter") {
+    // Cancel the default action, if needed
+    event.preventDefault();
+    // Trigger the button element with a click
+    select_search(search_heading_input.value);
+    document.getElementById("search-button").click();
+  }
+});
 
 select_all();

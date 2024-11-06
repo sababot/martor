@@ -5,8 +5,8 @@
 <html>
 <head>
 	<title>Martor</title>
-	<link rel="stylesheet" type="text/css" href="{% static 'style/style.css' %}">
-	<link rel="stylesheet" type="text/css" href="{% static 'style/shop.css' %}">
+	<link rel="stylesheet" type="text/css" href="../../static/style/style.css">
+	<link rel="stylesheet" type="text/css" href="../../static/style/shop.css">
 
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.16.0/TweenMax.min.js"></script>
@@ -14,7 +14,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.3/plugins/animation.gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.3/plugins/animation.velocity.min.js"></script>
 
-    <link rel="icon" type="image/x-icon" href="{% static 'images/logo-6-instagram.png' %}">
+    <link rel="icon" type="image/x-icon" href="../../static/images/logo-6-instagram.png">
 
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -24,7 +24,12 @@
 
 	<script src="https://kit.fontawesome.com/497ef235da.js" crossorigin="anonymous"></script>
 </head>
-<body id="bod" onload="showPage()">
+{% if is_search %}
+<body id="bod" onload="showPage(); toggleSearch();">
+{% else %}
+<body id="bod" onload="showPage();">
+{% endif %}
+
 	<!--LOADER-->
 	<div class="loader-background" id="loader_div">
 		<div id="loader"></div>
@@ -108,6 +113,13 @@
 			<img src="{% static 'images/logo-6-instagram-gey.png' %}" class="martor-grey">
 		</div>
 
+		<div class="search-header" id="search-header">
+			<div style="display: flex; width: 100%; justify-content: center; background-color: white; padding-bottom: 2px">
+				<input type="text" name="" class="search-header-input" placeholder="search" id="search-header-input">
+				<button style="width: fit-content; padding: 0 5px 0 5px; background: none; border: none; font-size: 15px;" onclick="select_search(document.getElementById('search-header-input').value); toggleSearch();">[enter]</button>
+			</div>
+		</div>
+
 		<!--HEADER-->
 		<div id="header-desktop" class="header">
 			<div class="wrapper-sections-left" id="header_elements">
@@ -129,7 +141,7 @@
 			</div>
 
 			<a href="/">
-				<img src="{% static 'images/logo-6-remastered-2.png' %}" style="padding-top: 10px; height: 30px;">
+				<img src="../../static/images/logo-6-remastered-2.png" style="padding-top: 10px; height: 30px;">
 			</a>
 
 			<div class="wrapper-sections-right" id="header_elements">
@@ -151,7 +163,7 @@
 			</div>
 		</div>
 
-		<div id="header-mobile" class="header">
+		<div id="header-mobile" class="header" style="justify-content: space-between; align-items: center; position: relative;">
 		<!--
 			<div class="wrapper-sections-left" id="header_elements" style="padding-left: 5px; grid-gap: 0">
 				<a href="">
@@ -168,13 +180,19 @@
 				<div style="width: 20px; height: 2px; background-color: #2b2b2b; margin: 4px 0;"></div>
 			</div>
 
-			<a href="/">
-				<img src="{% static 'images/logo-6-remastered-2.png' %}" style="padding-top: 10px; height: 30px;">
+			<a href="/" style="position: absolute; left: 50%; transform: translateX(-50%);">
+				<img src="../../static/images/logo-6-remastered-2.png" style="padding-top: 10px; height: 30px;">
 			</a>
 
-			<a href="/cart">
-				<i class="fa-solid fa-cart-shopping" style="font-size: 20px; margin-top: 14px; margin-right: 12px; color: #2b2b2b"><span class="superscript">({{ request.session.session_key|cart_item_count }})</span></i>
-			</a>
+			<div style="display: flex; column-gap: 15px">
+				<button onclick="toggleSearch();" style="background: none; border: none" id="search-button">
+					<i class="fa-solid fa-magnifying-glass" style="font-size: 20px; margin-top: 14px; color: #2b2b2b"></i>
+				</button>
+
+				<a href="/cart">
+					<i class="fa-solid fa-cart-shopping" style="font-size: 20px; margin-top: 14px; margin-right: 12px; color: #2b2b2b"><span class="superscript">({{ request.session.session_key|cart_item_count }})</span></i>
+				</a>
+			</div>
 
 		<!--
 			<div class="wrapper-sections-right" id="header_elements" style="padding-right: 5px; grid-gap: 0;">
@@ -346,7 +364,7 @@
 				<a href="" style="font-size: 16px; margin-top: 5px; margin-bottom: 5px; text-align: center; position: absolute; left: 2.5vw; color: white; text-decoration: none;">return & exchanges</a><br><br>
 				<a href="" style="font-size: 16px; margin-top: 5px; margin-bottom: 5px; text-align: center; position: absolute; left: 2.5vw; color: white; text-decoration: none;">privacy policy</a><br><br>
 			</div>
-			<img id="footer-logo" src="{% static 'images/logo-6-instagram-inverse.png' %}" width="80px" height="80px" style="margin-top: 5px; margin-bottom: 5px">
+			<img id="footer-logo" src="../../static/images/logo-6-instagram-inverse.png" width="80px" height="80px" style="margin-top: 5px; margin-bottom: 5px">
 			<div>
 				<a href="" style="font-size: 16px; margin-top: 5px; margin-bottom: 5px; text-align: center; position: absolute; right: 2.5vw; color: white; text-decoration: none;">shipping policy</a><br><br>
 				<a href="" style="font-size: 16px; margin-top: 5px; margin-bottom: 5px; text-align: center; position: absolute; right: 2.5vw;  color: white; text-decoration: none;">faqs</a><br><br>
@@ -361,9 +379,10 @@
 	</div>
 
 	<!--SCRIPTS-->
-	<script src="{% static 'scripts/loader.js' %}"></script>
-	<script src="{% static 'scripts/sidebar.js' %}"></script>
-	<script src="{% static 'scripts/resize.js' %}"></script>
-	<script src="{% static 'scripts/work.js' %}"></script>
+	<script src="../../static/scripts/loader.js"></script>
+	<script src="../../static/scripts/sidebar.js"></script>
+	<script src="../../static/scripts/resize.js"></script>
+	<script src="../../static/scripts/work.js"></script>
+	<script src="../../static/scripts/search.js"></script>
 </body>
 </html>

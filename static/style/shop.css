@@ -123,7 +123,7 @@
     width: 100%;
     display: flex;
     justify-content: center;
-    padding-top: 125px;
+    padding-top: 100px;
     margin-bottom: 20px;
     column-gap: 25px;
 }
@@ -139,6 +139,7 @@
 }
 
 .shop-heading{
+    z-index: 1;
     padding-left: 0px;
     padding-right: 0px;
     width: 100%;

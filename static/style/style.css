@@ -799,3 +799,28 @@ p{
 .product-mobile-images::-webkit-scrollbar {
   display: none;
 }
+
+.search-header {
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.2);
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    transform: translate(200vw);
+    margin-top: 91px;
+}
+
+.search-header-input {
+    margin-top: 2px;
+    border-radius: 0;
+    text-decoration: none;
+    outline: none;
+    border-width: 1px;
+    background-color: transparent;
+    font-size: 15px;
+    padding-left: 2px;
+    text-align: left;
+    width: 70%;
+}
