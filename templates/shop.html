@@ -194,12 +194,15 @@
 	</div>-->
 
 	<div class="shop-heading" id="shop-heading">
-		<button onclick="select_all()" id="all" class="active">all</button>
-		<button onclick="select_shirts()" id="shirts">shirts</button>
-		<button onclick="select_hoodies()" id="hoodies">hoodies</button>
-		<button onclick="select_pants()" id="pants">pants</button>
-		<button onclick="select_hats()" id="hats">hats</button>
-		<button onclick="select_accessories()" id="accessories">accessories</button>
+		<div style="display: flex; justify-content: left; column-gap: 20px; margin-left: 20px">
+			<button onclick="select_all()" id="all" class="active">all</button>
+			<button onclick="select_shirts()" id="shirts">shirts</button>
+			<button onclick="select_hoodies()" id="hoodies">hoodies</button>
+			<button onclick="select_pants()" id="pants">pants</button>
+			<button onclick="select_hats()" id="hats">hats</button>
+			<button onclick="select_accessories()" id="accessories">accessories</button>
+		</div>
+		<input type="text" name="" class="search" placeholder="search" id="search_input">
 	</div>
 	<div class="select">
 		<!--
@@ -242,11 +245,11 @@
 			{% if item.category == "S" %}
 			<a href="{{ item.get_absolute_url }}" class="shirt">
 				{% if item.side == '1' %}
-					<img class="front" src="../../static/images/collections/1/{{ item.slug }}-front.png" onmouseover="hover_must_fall_shirt_1(this);" onmouseout="unhover_must_fall_shirt_1(this);">
-					<img class="back" src="../../static/images/collections/1/{{ item.slug }}-back.png" onmouseover="hover_must_fall_shirt_1(this);" onmouseout="unhover_must_fall_shirt_1(this);">
+					<img class="front" src="../../static/images/collections/1/{{ item.slug }}-front.png">
+					<img class="back" src="../../static/images/collections/1/{{ item.slug }}-back.png">
 				{% elif item.side == '2' %}
-					<img class="back" src="../../static/images/collections/1/{{ item.slug }}-front.png" onmouseover="hover_must_fall_shirt_1(this);" onmouseout="unhover_must_fall_shirt_1(this);">
-					<img class="front" src="../../static/images/collections/1/{{ item.slug }}-back.png" onmouseover="hover_must_fall_shirt_1(this);" onmouseout="unhover_must_fall_shirt_1(this);">
+					<img class="back" src="../../static/images/collections/1/{{ item.slug }}-front.png">
+					<img class="front" src="../../static/images/collections/1/{{ item.slug }}-back.png">
 				{% endif %}
 				<p class="title">{{ item.title }}</p>
 				<div style="display: flex; justify-content: center; column-gap: 15px">
@@ -262,12 +265,13 @@
 			{% if item.category == "HO" %}
 			<a href="{{ item.get_absolute_url }}" class="hoodie">
 				{% if item.side == '1' %}
-					<img class="front" src="../../static/images/collections/1/{{ item.slug }}-front.png" onmouseover="hover_must_fall_shirt_1(this);" onmouseout="unhover_must_fall_shirt_1(this);">
-					<img class="back" src="../../static/images/collections/1/{{ item.slug }}-back.png" onmouseover="hover_must_fall_shirt_1(this);" onmouseout="unhover_must_fall_shirt_1(this);">
+					<img class="front" src="../../static/images/collections/1/{{ item.slug }}-front.png">
+					<img class="back" src="../../static/images/collections/1/{{ item.slug }}-back.png">
 				{% elif item.side == '2' %}
-					<img class="back" src="../../static/images/collections/1/{{ item.slug }}-front.png" onmouseover="hover_must_fall_shirt_1(this);" onmouseout="unhover_must_fall_shirt_1(this);">
-					<img class="front" src="../../static/images/collections/1/{{ item.slug }}-back.png" onmouseover="hover_must_fall_shirt_1(this);" onmouseout="unhover_must_fall_shirt_1(this);">
+					<img class="back" src="../../static/images/collections/1/{{ item.slug }}-front.png">
+					<img class="front" src="../../static/images/collections/1/{{ item.slug }}-back.png">
 				{% endif %}
+				<p class="title">{{ item.title }}</p>
 				<div style="display: flex; justify-content: center; column-gap: 15px">
 					<p class="price">€{{ item.price }}</p>
 					<div style="width: 10px; height: 10px; background-color: #d2c3f1; border: solid; border-width: 1px;" class="color"></div>
@@ -280,13 +284,9 @@
 			{% for item in object_list|slice:":8" %}
 			{% if item.category == "HA" %}
 			<a href="{{ item.get_absolute_url }}" class="hat">
-				{% if item.side == '1' %}
-					<img class="front" src="../../static/images/collections/1/{{ item.slug }}-front.png" onmouseover="hover_must_fall_shirt_1(this);" onmouseout="unhover_must_fall_shirt_1(this);">
-					<img class="back" src="../../static/images/collections/1/{{ item.slug }}-back.png" onmouseover="hover_must_fall_shirt_1(this);" onmouseout="unhover_must_fall_shirt_1(this);">
-				{% elif item.side == '2' %}
-					<img class="back" src="../../static/images/collections/1/{{ item.slug }}-front.png" onmouseover="hover_must_fall_shirt_1(this);" onmouseout="unhover_must_fall_shirt_1(this);">
-					<img class="front" src="../../static/images/collections/1/{{ item.slug }}-back.png" onmouseover="hover_must_fall_shirt_1(this);" onmouseout="unhover_must_fall_shirt_1(this);">
-				{% endif %}
+					<img class="front" src="../../static/images/collections/1/{{ item.slug }}-front.png">
+					<img class="back" src="../../static/images/collections/1/{{ item.slug }}-front.png">
+				<p class="title">{{ item.title }}</p>
 				<div style="display: flex; justify-content: center; column-gap: 15px">
 					<p class="price">€{{ item.price }}</p>
 					<div style="width: 10px; height: 10px; background-color: #d2c3f1; border: solid; border-width: 1px;" class="color"></div>

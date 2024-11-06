@@ -73,18 +73,15 @@
 }
 
 .search {
-    height: 1vw;
     border-radius: 0;
     text-decoration: none;
     outline: none;
-    border-width: 0.1vw;
+    border-width: 1px;
     background-color: transparent;
-    font-size: 1vw;
-    padding-top: 0vw;
-    padding-bottom: 0vw;
-    padding-left: 0.25vw;
-    width: 10%;
+    font-size: 15px;
+    padding-left: 2px;
     text-align: left;
+    margin-right: 20px;
 }
 
 .search-button {
@@ -142,16 +139,17 @@
 }
 
 .shop-heading{
+    padding-left: 0px;
+    padding-right: 0px;
     width: 100%;
     position: relative;
     white-space: nowrap;
     overflow-x: scroll;
     overflow-y: hidden;
     display: flex;
-    justify-content: left;
+    justify-content: space-between;
     margin-bottom: 50px;
     padding-top: 75px;
-    column-gap: 25px;
     background-color: white;
     box-shadow: 0px -2px 4px grey;
 

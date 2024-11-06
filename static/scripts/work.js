@@ -14,9 +14,9 @@ var pants = document.getElementsByClassName('pant');
 var hats = document.getElementsByClassName('hat');
 var accessories = document.getElementsByClassName('accessory');
 
-//var cards = document.querySelectorAll('.work-cards a');
+var cards = document.querySelectorAll('.work-cards a');
 
-//var search_bar = document.getElementById("search_input");
+var search_bar = document.getElementById("search_input");
 
 function select_all() {
 	document.getElementById('all').style.fontWeight = 'bold';
@@ -240,7 +240,6 @@ function select_accessories() {
 	}
 }
 
-/*
 function select_search() {
 	active = 'search';
 
@@ -251,7 +250,6 @@ function select_search() {
 	var input = document.getElementById("search_input").value.toLowerCase();
 
 	for (var i = 0; i < cards.length; i++) {
-		console.log(cards[i].querySelector(".work-cards .title").innerHTML);
 		if (cards[i].querySelector(".work-cards .title").innerHTML.toLowerCase().includes(input) == false) {
 			cards[i].style.display = 'none';
 		}
@@ -265,6 +263,5 @@ function select_search() {
 search_bar.addEventListener("input", e => {
 	select_search();
 })
-*/
 
 select_all();
