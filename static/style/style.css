@@ -129,7 +129,7 @@ p{
 .wrapper-sections-left .box img {
     text-align: center;
     width: 100%;
-    padding-top: 0.25vw;
+    padding-top: 1px;
     color: #ffee9e;
     font-size: 100%;
 }
