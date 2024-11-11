@@ -212,11 +212,11 @@
 			{% if item.category == "S" %}
 			<a href="{{ item.get_absolute_url }}" class="card-game">
 				{% if item.side == '1' %}
-					<img class="front" src="../../static/images/collections/1/{{ item.slug }}-front.png">
-					<img class="back" src="../../static/images/collections/1/{{ item.slug }}-back.png">
+					<img class="front" src="../../static/images/collections/1/compressed/{{ item.slug }}-front.png">
+					<img class="back" src="../../static/images/collections/1/compressed/{{ item.slug }}-back.png">
 				{% elif item.side == '2' %}
-					<img class="back" src="../../static/images/collections/1/{{ item.slug }}-front.png">
-					<img class="front" src="../../static/images/collections/1/{{ item.slug }}-back.png">
+					<img class="back" src="../../static/images/collections/1/compressed/{{ item.slug }}-front.png">
+					<img class="front" src="../../static/images/collections/1/compressed/{{ item.slug }}-back.png">
 				{% endif %}
 				<p class="title">{{ item.title }}</p>
 				<div style="display: flex; justify-content: center; column-gap: 15px">
@@ -232,11 +232,11 @@
 			{% if item.category == "HO" %}
 			<a href="{{ item.get_absolute_url }}" class="card-game">
 				{% if item.side == '1' %}
-					<img class="front" src="../../static/images/collections/1/{{ item.slug }}-front.png">
-					<img class="back" src="../../static/images/collections/1/{{ item.slug }}-back.png">
+					<img class="front" src="../../static/images/collections/1/compressed/{{ item.slug }}-front.png">
+					<img class="back" src="../../static/images/collections/1/compressed/{{ item.slug }}-back.png">
 				{% elif item.side == '2' %}
-					<img class="back" src="../../static/images/collections/1/{{ item.slug }}-front.png">
-					<img class="front" src="../../static/images/collections/1/{{ item.slug }}-back.png">
+					<img class="back" src="../../static/images/collections/1/compressed/{{ item.slug }}-front.png">
+					<img class="front" src="../../static/images/collections/1/compressed/{{ item.slug }}-back.png">
 				{% endif %}
 				<p class="title">{{ item.title }}</p>
 				<div style="display: flex; justify-content: center; column-gap: 15px">
@@ -251,8 +251,8 @@
 			{% for item in object_list|slice:":8" %}
 			{% if item.category == "HA" %}
 			<a href="{{ item.get_absolute_url }}" class="card-game">
-				<img class="front" src="../../static/images/collections/1/{{ item.slug }}-front.png">
-					<img class="back" src="../../static/images/collections/1/{{ item.slug }}-front.png">
+				<img class="front" src="../../static/images/collections/1/compressed/{{ item.slug }}-front.png">
+					<img class="back" src="../../static/images/collections/1/compressed/{{ item.slug }}-front.png">
 				<p class="title">{{ item.title }}</p>
 				<div style="display: flex; justify-content: center; column-gap: 15px">
 					<p class="price">€{{ item.price }}</p>

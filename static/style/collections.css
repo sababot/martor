@@ -1,8 +1,8 @@
 .collection-cards {
     display: grid;
     grid-template-columns: repeat(2, 40vw);
-    column-gap: 1vw;
-    row-gap: 5vw;
+    column-gap: 25px;
+    row-gap: 75px;
     margin-left: 5vw;
     margin-right: 5vw;
     justify-content: center;
