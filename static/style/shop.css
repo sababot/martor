@@ -73,10 +73,9 @@
 }
 
 .search {
-    border-radius: 0;
+    border-width: 0;
     text-decoration: none;
     outline: none;
-    border-width: 1px;
     background-color: transparent;
     font-size: 15px;
     padding-left: 2px;

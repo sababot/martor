@@ -28,7 +28,7 @@ var product_mobile = document.getElementById("product-mobile");
 var product_mobile_description = document.getElementById("product-mobile-description");
 
 var shop_heading = document.getElementById("shop-heading");
-var search_bar = document.getElementById("search_input");
+var search_bar = document.getElementById("search-input-container");
 
 var cart_desktop = document.getElementById("cart-desktop");
 var cart_mobile = document.getElementById("cart-mobile");
@@ -42,16 +42,16 @@ if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(naviga
 }
 
 function resize_elements(){
-	if (shop_heading != null && shop_heading != null) {
+	if (shop_heading != null && search_bar != null) {
 		if (width <= 730) {
 			shop_heading.style.justifyContent = "left";
-			search_bar.value = '';
-			search_bar.style.display = 'none';
+			document.getElementById("search-input-container").value = '';
+			document.getElementById("search-input-container").style.display = 'none';
 		}
 
 		else {
 			shop_heading.style.justifyContent = "space-between";
-			search_bar.style.display = 'flex';
+			document.getElementById("search-input-container").style.display = 'flex';
 		}
 	}
 
