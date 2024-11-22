@@ -2,6 +2,7 @@ from django.urls import path
 from .views import (
 	HomeView,
 	ShopView,
+	WipsView,
 	ItemDetailView,
 	CartView,
 	checkout,
@@ -18,6 +19,7 @@ urlpatterns = [
 	path('', HomeView.as_view(), name='home'),
 	path('shop', ShopView.as_view(), name="shop"),
 	path('shop/search', ShopView.as_view(), name="shop_search"),
+	path('wips', WipsView.as_view(), name="wips"),
 	path('checkout', checkout, name="checkout"),
 	path('cart', CartView.as_view(), name="cart"),
 	path('products/<slug>/', ItemDetailView.as_view(), name="products"),

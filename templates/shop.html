@@ -264,7 +264,7 @@
 		</div>
 	-->
 		<div class="work-cards" id="work-cards" style="margin-left: 2vw; margin-right: 2vw; min-height: calc(100vh - 350px)">
-			{% for item in object_list|slice:":8" %}
+			{% for item in object_list %}
 			{% if item.category == "S" %}
 			<a href="{{ item.get_absolute_url }}" class="shirt">
 				{% if item.side == '1' %}
@@ -284,7 +284,7 @@
 			{% endif %}
 			{% endfor %}
 
-			{% for item in object_list|slice:":8" %}
+			{% for item in object_list %}
 			{% if item.category == "HO" %}
 			<a href="{{ item.get_absolute_url }}" class="hoodie">
 				{% if item.side == '1' %}

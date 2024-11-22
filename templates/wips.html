@@ -1,0 +1,366 @@
+{% load static %}
+{% load cart_template_tags %}
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Martor</title>
+	<link rel="stylesheet" type="text/css" href="../../static/style/style.css">
+	<link rel="stylesheet" type="text/css" href="../../static/style/shop.css">
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.16.0/TweenMax.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.3/ScrollMagic.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.3/plugins/animation.gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.3/plugins/animation.velocity.min.js"></script>
+
+    <link rel="icon" type="image/x-icon" href="../../static/images/logo-6-instagram.png">
+
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Cutive+Mono&display=swap" rel="stylesheet">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+
+	<script src="https://kit.fontawesome.com/497ef235da.js" crossorigin="anonymous"></script>
+</head>
+{% if is_search %}
+<body id="bod" onload="showPage(); showSearch(); document.getElementById('search-header-input').focus();">
+{% else %}
+<body id="bod" onload="showPage();">
+{% endif %}
+
+	<!--LOADER-->
+	<div class="loader-background" id="loader_div">
+		<div id="loader"></div>
+	</div>
+
+	<!--TICKER-->
+	<div style="position: fixed; z-index: 2">
+		<div class="tickerContainer">  
+		  <div class="ticker">
+		    <div>
+		      <span>WORLD WIDE SHIPPING</span>
+		      <span>FALL TO RISE OUT NOW</span>
+		      <span>© MARTOR CLOTHING</span>
+		      <span>FREE SHIPPING OVER 100€</span>
+		      <span>WORLD WIDE SHIPPING</span>
+		      <span>FALL TO RISE OUT NOW</span>
+		      <span>© MARTOR CLOTHING</span>
+		      <span>FREE SHIPPING OVER 100€</span>
+		    </div>
+		  </div>
+		</div>
+
+		<!--SIDEBAR-->
+		<div class="sidebar" id="sidebar">
+			<div style="display: flex; justify-content: space-around">
+				<div class="items" style="flex: 1">
+					<a href="/shop">
+						<div class="box">
+						  	<p class="box-title">shop</p>
+						</div>
+					</a>
+					<a href="/collections">
+						<div class="box">
+						  	<p class="box-title">collections</p>
+						</div>
+					</a>
+					<a href="/about">
+						<div class="box">
+						  	<p class="box-title">about</p>
+						</div>
+					</a>
+					<a href="/contact">
+						<div class="box">
+						  	<p class="box-title">contact</p>
+						</div>
+					</a>
+					<a href="/cart">
+						<div class="box">
+						  	<p class="box-title">cart</p>
+						</div>
+					</a>
+				</div>
+				<div class="items" style="flex: 1">
+					<a href="/shop">
+						<div class="box">
+						  	<p class="box-title">all</p>
+						</div>
+					</a>
+					<a href="/shop">
+						<div class="box">
+						  	<p class="box-title">shirts</p>
+						</div>
+					</a>
+					<a href="/shop">
+						<div class="box">
+						  	<p class="box-title">hoodies</p>
+						</div>
+					</a>
+					<a href="/shop">
+						<div class="box">
+						  	<p class="box-title">pants</p>
+						</div>
+					</a>
+					<a href="/shop">
+						<div class="box">
+						  	<p class="box-title">hats</p>
+						</div>
+					</a>
+				</div>
+			</div>
+			<img src="{% static 'images/logo-6-instagram-gey.png' %}" class="martor-grey">
+		</div>
+
+		<div id="fake-focus"></div>
+
+		<div class="search-header" id="search-header">
+			<div style="display: flex; width: 100%; justify-content: center; background-color: white; padding-bottom: 2px">
+				<input type="text" name="" class="search-header-input" placeholder="search" id="search-header-input">
+				<button style="width: fit-content; padding: 0 5px 0 5px; background: none; border: none; font-size: 15px; color: black" onclick="select_search(document.getElementById('search-header-input').value); toggleSearch();" id="search-bar-button">[enter]</button>
+			</div>
+		</div>
+
+		<!--HEADER-->
+		<div id="header-desktop" class="header">
+			<div class="wrapper-sections-left" id="header_elements">
+				<a href="/">
+					<div class="box">
+					  	<p class="box-title">home</p>
+					</div>
+				</a>
+				<a href="/shop">
+					<div class="box">
+					  	<p class="box-title">shop</p>
+					</div>
+				</a>
+				<a href="collections">
+					<div class="box">
+					  	<p class="box-title">collections</p>
+					</div>
+				</a>
+			</div>
+
+			<a href="/">
+				<img src="../../static/images/logo-6-remastered-2.png" style="padding-top: 10px; height: 30px;">
+			</a>
+
+			<div class="wrapper-sections-right" id="header_elements">
+				<a href="about">
+					<div class="box">
+					  	<p class="box-title">about</p>
+					</div>
+				</a>
+				<a href="contact">
+					<div class="box">
+					  	<p class="box-title">contact</p>
+					</div>
+				</a>
+				<a href="cart">
+					<div class="box">
+					  	<p class="box-title">cart({{ request.session.session_key|cart_item_count }})</p>
+					</div>
+				</a>
+			</div>
+		</div>
+
+		<div id="header-mobile" class="header" style="justify-content: space-between; align-items: center; position: relative;">
+		<!--
+			<div class="wrapper-sections-left" id="header_elements" style="padding-left: 5px; grid-gap: 0">
+				<a href="">
+					<div class="box">
+					  	<p class="box-title" style="font-size: 17px;">menu</p>
+					</div>
+				</a>
+			</div>
+		-->
+
+			<div style="margin-top: 12px; margin-left: 15px;" onclick="toggleSidebar()">
+				<div style="width: 20px; height: 2px; background-color: #2b2b2b; margin: 4px 0;"></div>
+				<div style="width: 20px; height: 2px; background-color: #2b2b2b; margin: 4px 0;"></div>
+				<div style="width: 20px; height: 2px; background-color: #2b2b2b; margin: 4px 0;"></div>
+			</div>
+
+			<a href="/" style="position: absolute; left: 50%; transform: translateX(-50%);">
+				<img src="../../static/images/logo-6-remastered-2.png" style="padding-top: 10px; height: 30px;">
+			</a>
+
+			<div style="display: flex; column-gap: 15px">
+				<button onclick="toggleSearch();" style="background: none; border: none" id="search-button">
+					<i class="fa-solid fa-magnifying-glass" style="font-size: 20px; margin-top: 14px; color: #2b2b2b"></i>
+				</button>
+
+				<a href="/cart">
+					<i class="fa-solid fa-cart-shopping" style="font-size: 20px; margin-top: 14px; margin-right: 12px; color: #2b2b2b"><span class="superscript">({{ request.session.session_key|cart_item_count }})</span></i>
+				</a>
+			</div>
+
+		<!--
+			<div class="wrapper-sections-right" id="header_elements" style="padding-right: 5px; grid-gap: 0;">
+				<a href="cart">
+					<div class="box">
+					  	<p class="box-title" style="font-size: 17px;">cart</p>
+					</div>
+				</a>
+			</div>
+		-->
+		</div>
+	</div>
+
+	<!--SHOP-->
+	<div class="shop-title">
+		<p class="active">WIPs</p>
+	</div>
+
+	<div class="select">
+		<!--
+		<div class="select-sections">
+			<button id="all" onclick="select_all()">
+				<div class="box">
+				  	<p class="box-title">all</p>
+				</div>
+			</button><br>
+			<button id="shirts" onclick="select_shirts()">
+				<div class="box">
+				  	<p class="box-title">shirts</p>
+				</div>
+			</button><br>
+			<button id="hoods" onclick="select_hoods()">
+				<div class="box">
+				  	<p class="box-title">hoods</p>
+				</div>
+			</button><br>
+			<button id="pants" onclick="select_pants()">
+				<div class="box">
+				  	<p class="box-title">pants</p>
+				</div>
+			</button><br>
+			<button id="hats" onclick="select_hats()">
+				<div class="box">
+				  	<p class="box-title">hats</p>
+				</div>
+			</button><br>
+			<button id="accesories" onclick="select_accesories()">
+				<div class="box">
+				  	<p class="box-title">accesories</p>
+				</div>
+			</button><br>
+			<input type="text" name="" class="search" placeholder="search" id="search_input">
+		</div>
+	-->
+		<div class="work-cards" id="work-cards" style="margin-left: 2vw; margin-right: 2vw; min-height: calc(100vh - 350px)">
+			<!------------------------------------------------------------------------->
+			<a href="{{ item.get_absolute_url }}" class="shirt">
+				<img class="front" src="../../static/images/collections/misc/if-its-cold-touch-your-bros.webp">
+				<img class="back" src="../../static/images/collections/misc/if-its-cold-touch-your-bros.webp">
+				<p class="title">Touch Your Bros Shirt</p>
+				<div style="display: flex; justify-content: center; column-gap: 15px">
+					<p class="price">€19.99</p>
+					<div style="width: 10px; height: 10px; background-color: #2A21CD; border: solid; border-width: 1px;" class="color"></div>
+				</div>
+			</a>
+			<!------------------------------------------------------------------------->
+			<a href="{{ item.get_absolute_url }}" class="shirt">
+				<img class="front" src="../../static/images/collections/misc/rand-lens-front.png">
+				<img class="back" src="../../static/images/collections/misc/rand-lens-front.png">
+				<p class="title">Frisbee Shirt</p>
+				<div style="display: flex; justify-content: center; column-gap: 15px">
+					<p class="price">€19.99</p>
+					<div style="width: 10px; height: 10px; background-color: #370D86; border: solid; border-width: 1px;" class="color"></div>
+				</div>
+			</a>
+			<!------------------------------------------------------------------------->
+			<a href="{{ item.get_absolute_url }}" class="shirt">
+				<img class="front" src="../../static/images/collections/misc/tire-shirt-front-var-1.png">
+				<img class="back" src="../../static/images/collections/misc/tire-shirt-front-var-1.png">
+				<p class="title">Tire Shirt</p>
+				<div style="display: flex; justify-content: center; column-gap: 15px">
+					<p class="price">€19.99</p>
+					<div style="width: 10px; height: 10px; background-color: #F0EFEB; border: solid; border-width: 1px;" class="color"></div>
+				</div>
+			</a>
+			<!------------------------------------------------------------------------->
+			<a href="{{ item.get_absolute_url }}" class="shirt">
+				<img class="front" src="../../static/images/collections/misc/logo-exp-shirt-2-front.png">
+				<img class="back" src="../../static/images/collections/misc/logo-exp-shirt-2-front.png">
+				<p class="title">Oval Globe Shirt</p>
+				<div style="display: flex; justify-content: center; column-gap: 15px">
+					<p class="price">€19.99</p>
+					<div style="width: 10px; height: 10px; background-color: #B45653; border: solid; border-width: 1px;" class="color"></div>
+				</div>
+			</a>
+			<!------------------------------------------------------------------------->
+		</div>
+	</div>
+
+	{% if is_paginated %}
+	<div class="pagination">
+		{% if page_obj.has_previous %}
+		<a href="?page={{ page_obj.previous_page_number }}" class="change-page">
+			<
+		</a>
+		{% endif %}
+
+		<a href="?page={{ page_obj.number }}" class="selected">
+			{{ page_obj.number }}
+		</a>
+
+		{% if page_obj.has_next %}
+		<a href="?page={{ page_obj.next_page_number }}" class="change-page">
+			>
+		</a>
+		{% endif %}
+	</div>
+	{% endif %}
+
+	<div id="newsletter">
+		<div class="stay-updated">
+			<p>stay updated</p>
+		</div>
+		<p class="newsletter-text">Form a part of Martor and stay updated with all the news revolving Martor and be the first to find out about discounts and giveaways</p>
+		<div class="newsletter">
+			<input type="text" placeholder="email@domain.com" name="">
+			<button>[subscribe]</button>
+		</div>
+		<p class="newsletter-text">(you can opt out anytime)</p>
+	</div>
+
+	<div id="footer-desktop" style="display: flex; justify-content: space-between; margin-top: 8vw; background-color: #4f3d74; width: 95vw; padding-left: 2.5vw; padding-right: 2.5vw;">
+		<a href="" style="font-size: 14px; margin-top: 3px; margin-bottom: 3px; text-align: center; color: white; text-decoration: none;">info</a>
+		<a href="" style="font-size: 14px; margin-top: 3px; margin-bottom: 3px; text-align: center; color: white; text-decoration: none;">return & exchanges</a>
+		<a href="" style="font-size: 14px; margin-top: 3px; margin-bottom: 3px; text-align: center; color: white; text-decoration: none;">privacy policy</a>
+		<a href="" style="font-size: 14px; margin-top: 3px; margin-bottom: 3px; text-align: center; color: white; text-decoration: none;">shipping policy</a>
+		<a href="" style="font-size: 14px; margin-top: 3px; margin-bottom: 3px; text-align: center; color: white; text-decoration: none;">faqs</a>
+		<a href="" style="font-size: 14px; margin-top: 3px; margin-bottom: 3px; text-align: center; color: white; text-decoration: none;">terms & conditions</a>
+	</div>
+
+	<div id="footer-mobile" style="margin-bottom: 0; margin-top: 20vw; background-color: #4f3d74; width: 95vw; padding-left: 2.5vw; padding-right: 2.5vw; padding-bottom: 15px; padding-top: 15px">
+		<div style="display: flex; justify-content: space-between">
+			<div>
+				<a href="" style="font-size: 16px; margin-top: 5px; margin-bottom: 5px; text-align: center; position: absolute; left: 2.5vw; color: white; text-decoration: none;">info</a><br><br>
+				<a href="" style="font-size: 16px; margin-top: 5px; margin-bottom: 5px; text-align: center; position: absolute; left: 2.5vw; color: white; text-decoration: none;">return & exchanges</a><br><br>
+				<a href="" style="font-size: 16px; margin-top: 5px; margin-bottom: 5px; text-align: center; position: absolute; left: 2.5vw; color: white; text-decoration: none;">privacy policy</a><br><br>
+			</div>
+			<img id="footer-logo" src="../../static/images/logo-6-instagram-inverse.png" width="80px" height="80px" style="margin-top: 5px; margin-bottom: 5px">
+			<div>
+				<a href="" style="font-size: 16px; margin-top: 5px; margin-bottom: 5px; text-align: center; position: absolute; right: 2.5vw; color: white; text-decoration: none;">shipping policy</a><br><br>
+				<a href="" style="font-size: 16px; margin-top: 5px; margin-bottom: 5px; text-align: center; position: absolute; right: 2.5vw;  color: white; text-decoration: none;">faqs</a><br><br>
+				<a href="" style="font-size: 16px; margin-top: 5px; margin-bottom: 5px; text-align: center; position: absolute; right: 2.5vw;  color: white; text-decoration: none;">terms & conditions</a><br><br>
+			</div>
+		</div>
+
+		<div class="newsletter" style="margin: 0; margin-top: 20px">
+			<input type="text" placeholder="email@domain.com" name="" style="width: 100%; color: white; font-size: 16px; border-color: lightgrey">
+			<button style="color: white; font-size: 16px;">[subscribe]</button>
+		</div>
+	</div>
+
+	<!--SCRIPTS-->
+	<script src="../../static/scripts/loader.js"></script>
+	<script src="../../static/scripts/sidebar.js"></script>
+	<script src="../../static/scripts/resize.js"></script>
+	<script src="../../static/scripts/work.js"></script>
+	<script src="../../static/scripts/search.js"></script>
+</body>
+</html>
