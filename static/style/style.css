@@ -478,22 +478,22 @@ p{
 
 .ticker div {
     display: inline-block;
-    width: 4000px;
+    width: 8000px;
     height: 20px;
     position: absolute;
     overflow: hidden;
-    animation: ticker 15s linear infinite;
+    animation: ticker 60s linear infinite;
 }
 
 .ticker span {
     float: left;
-    width: 12.5%;
+    width: 500px;
     font-size: 15px;
 }
 
 @keyframes ticker {
     0% { left: 0; }
-    100% { left: -2000px; }
+    100% { left: -4000px; }
 }
 
 .lookbook{
