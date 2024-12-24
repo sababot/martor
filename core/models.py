@@ -17,6 +17,14 @@ IMAGE_CHOICE = {
 	('2', 'Back')
 }
 
+SIZE_CHOICE = {
+	('S', 'Small'),
+	('M', 'Medium'),
+	('L', 'Large'),
+	('XL', 'Extra Large'),
+	('2XL', 'Double Extra Lage')
+}
+
 class Item(models.Model):
 	title = models.CharField(max_length=100)
 	price = models.FloatField()
@@ -50,9 +58,13 @@ class OrderItem(models.Model):
 	ordered = models.BooleanField(default=False)
 	item = models.ForeignKey(Item, on_delete=models.CASCADE)
 	quantity = models.IntegerField(default=1)
+	size = models.CharField(choices=SIZE_CHOICE, max_length=3)
 
 	def __str__(self):
 		return f"{self.quantity} of {self.item.title}"
+
+	def get_total_item_price(self):
+		return self.quantity * self.item.price
 
 class Order(models.Model):
 	user = models.CharField(max_length=40)
@@ -64,3 +76,9 @@ class Order(models.Model):
 
 	def __str__(self):
 		return self.user
+
+	def get_total(self):
+		total = 0
+		for order_item in self.items.all():
+			total += order_item.get_total_item_price()
+		return total

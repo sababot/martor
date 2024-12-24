@@ -232,7 +232,7 @@
 			<div>
 				<br><br><br>
 				<div>
-					<a>€{{ order_item.item.price }}</a>
+					<a>€{{ order_item.get_total_item_price }}</a>
 				</div>
 			</div>
 		</div>
@@ -244,7 +244,7 @@
 				</div>
 			</div>
 			<div style="margin-left: 15vw">
-				<p style="font-size: 15px; width: 105px;">total: €124.69</p>
+				<p style="font-size: 15px; width: 105px;">total: €{{ object.get_total }}</p>
 				<div style="margin-top: 8px; text-align: right;">
 					<a href="" style="background-color: #4f3d74; color: white; padding: 2px 5px 2px 5px; text-decoration: none;">checkout</a>
 				</div>
