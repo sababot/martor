@@ -40,34 +40,7 @@ export default function Home() {
               <p className='text-center'>Classic Shirt Blue</p>
               <div className='flex justify-center gap-3'>
                 <p className='text-gray-500 text-sm leading-3'>€19.99</p>
-                <div className='w-3 h-3 bg-purple-300 border-1 border-black border-solid'></div>
-              </div>
-            </div>
-
-            <div>
-              <img src="/images/collections/1/compressed/classic-hoodie-grey-front.png" alt="shirt-1" />
-              <p className='text-center'>Classic Hoodie Grey</p>
-              <div className='flex justify-center gap-3'>
-                <p className='text-gray-500 text-sm leading-3'>€19.99</p>
-                <div className='w-3 h-3 bg-purple-300 border-1 border-black border-solid'></div>
-              </div>
-            </div>
-
-            <div>
-              <img src="/images/collections/1/compressed/classic-hoodie-black-front.png" alt="shirt-1" />
-              <p className='text-center'>Classic Hoodie Black</p>
-              <div className='flex justify-center gap-3'>
-                <p className='text-gray-500 text-sm leading-3'>€19.99</p>
-                <div className='w-3 h-3 bg-purple-300 border-1 border-black border-solid'></div>
-              </div>
-            </div>
-
-            <div>
-              <img src="/images/collections/1/compressed/delusion-shirt-magenta-back.png" alt="shirt-1" />
-              <p className='text-center'>Delusion Shirt Magenta</p>
-              <div className='flex justify-center gap-3'>
-                <p className='text-gray-500 text-sm leading-3'>€19.99</p>
-                <div className='w-3 h-3 bg-purple-300 border-1 border-black border-solid'></div>
+                <div className='w-3 h-3 bg-blue-200 border-1 border-black border-solid'></div>
               </div>
             </div>
 
@@ -76,7 +49,7 @@ export default function Home() {
               <p className='text-center'>Old Man Shirt Black</p>
               <div className='flex justify-center gap-3'>
                 <p className='text-gray-500 text-sm leading-3'>€19.99</p>
-                <div className='w-3 h-3 bg-purple-300 border-1 border-black border-solid'></div>
+                <div className='w-3 h-3 bg-black border-1 border-black border-solid'></div>
               </div>
             </div>
 
@@ -85,6 +58,33 @@ export default function Home() {
               <p className='text-center'>Old Man Shirt White</p>
               <div className='flex justify-center gap-3'>
                 <p className='text-gray-500 text-sm leading-3'>€19.99</p>
+                <div className='w-3 h-3 bg-white border-1 border-black border-solid'></div>
+              </div>
+            </div>
+
+            <div>
+              <img src="/images/collections/1/compressed/delusion-shirt-magenta-back.png" alt="shirt-1" />
+              <p className='text-center'>Delusion Shirt Magenta</p>
+              <div className='flex justify-center gap-3'>
+                <p className='text-gray-500 text-sm leading-3'>€19.99</p>
+                <div className='w-3 h-3 bg-purple-900 border-1 border-black border-solid'></div>
+              </div>
+            </div>
+
+            <div>
+              <img src="/images/collections/misc/logo-exp-shirt-2-front.png" alt="shirt-1" />
+              <p className='text-center'>Lens Shirt Red</p>
+              <div className='flex justify-center gap-3'>
+                <p className='text-gray-500 text-sm leading-3'>€19.99</p>
+                <div className='w-3 h-3 bg-red-900 border-1 border-black border-solid'></div>
+              </div>
+            </div>
+
+             <div>
+              <img src="/images/collections/1/compressed/classic-hoodie-grey-front.png" alt="shirt-1" />
+              <p className='text-center'>Classic Hoodie Magenta</p>
+              <div className='flex justify-center gap-3'>
+                <p className='text-gray-500 text-sm leading-3'>€24.99</p>
                 <div className='w-3 h-3 bg-purple-300 border-1 border-black border-solid'></div>
               </div>
             </div>
@@ -93,8 +93,8 @@ export default function Home() {
               <img src="/images/collections/1/compressed/old-man-cap-green-front.png" alt="shirt-1" />
               <p className='text-center'>Old Man Cap Green</p>
               <div className='flex justify-center gap-3'>
-                <p className='text-gray-500 text-sm leading-3'>€19.99</p>
-                <div className='w-3 h-3 bg-purple-300 border-1 border-black border-solid'></div>
+                <p className='text-gray-500 text-sm leading-3'>€8.99</p>
+                <div className='w-3 h-3 bg-green-800 border-1 border-black border-solid'></div>
               </div>
             </div>
           </div>
