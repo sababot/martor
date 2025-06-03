@@ -63,20 +63,20 @@ export default function Home() {
             </div>
 
             <div>
-              <img src="/images/collections/1/compressed/delusion-shirt-magenta-back.png" alt="shirt-1" />
-              <p className='text-center'>Delusion Shirt Magenta</p>
+              <img src="/images/collections/1/lens-shirt-red-front.png" alt="shirt-1" />
+              <p className='text-center'>Lens Shirt Red</p>
               <div className='flex justify-center gap-3'>
                 <p className='text-gray-500 text-sm leading-3'>€19.99</p>
-                <div className='w-3 h-3 bg-purple-900 border-1 border-black border-solid'></div>
+                <div className='w-3 h-3 bg-red-800 border-1 border-black border-solid'></div>
               </div>
             </div>
 
             <div>
-              <img src="/images/collections/misc/logo-exp-shirt-2-front.png" alt="shirt-1" />
-              <p className='text-center'>Lens Shirt Red</p>
+              <img src="/images/collections/1/lens-shirt-magenta-front.png" alt="shirt-1" />
+              <p className='text-center'>Lens Shirt Magenta</p>
               <div className='flex justify-center gap-3'>
                 <p className='text-gray-500 text-sm leading-3'>€19.99</p>
-                <div className='w-3 h-3 bg-red-900 border-1 border-black border-solid'></div>
+                <div className='w-3 h-3 bg-purple-900 border-1 border-black border-solid'></div>
               </div>
             </div>
 
@@ -90,11 +90,11 @@ export default function Home() {
             </div>
 
             <div>
-              <img src="/images/collections/1/compressed/old-man-cap-green-front.png" alt="shirt-1" />
-              <p className='text-center'>Old Man Cap Green</p>
+              <img src="/images/collections/1/compressed/classic-hoodie-grey-front.png" alt="shirt-1" />
+              <p className='text-center'>Classic Hoodie Magenta</p>
               <div className='flex justify-center gap-3'>
-                <p className='text-gray-500 text-sm leading-3'>€8.99</p>
-                <div className='w-3 h-3 bg-green-800 border-1 border-black border-solid'></div>
+                <p className='text-gray-500 text-sm leading-3'>€24.99</p>
+                <div className='w-3 h-3 bg-purple-300 border-1 border-black border-solid'></div>
               </div>
             </div>
           </div>
