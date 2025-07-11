@@ -40,7 +40,7 @@ const NavbarMobile = () => {
 
 			<div className={isOpen ? "-translate-x-full fixed top-0 right-0 w-full h-full transition-all bg-white z-40" : "translate-x-0 fixed top-0 right-0 transition-all w-full h-full bg-white z-40"}>
 				<div className='mx-6 mt-20'>
-					<div className='flex gap-6'>
+					<div className='flex gap-6 fixed w-full z-2'>
 						<div className='flex-1/2'>
 							<a href="/shop" className=''>
 								<div className='flex justify-start'>
@@ -96,7 +96,7 @@ const NavbarMobile = () => {
 							</a>
 						</div>
 					</div>
-					<img src="/images/logo-6-instagram-gey.png" className='fixed bottom-0 w-full m-0 p-0 left-0 z-41' />
+					<img src="/images/logo-6-instagram-gey.png" className='fixed bottom-0 w-full m-0 p-0 left-0 z-0' />
 				</div>
 			</div>
 		</div>
