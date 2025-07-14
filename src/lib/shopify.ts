@@ -1,0 +1,58 @@
+// lib/shopify.ts
+const domain = process.env.SHOPIFY_STORE_DOMAIN;
+const token = process.env.SHOPIFY_STOREFRONT_API_TOKEN;
+
+const SHOPIFY_API_URL = `https://${domain}/api/2025-07/graphql.json`;
+
+export async function getProducts() {
+  const res = await fetch(SHOPIFY_API_URL, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      'X-Shopify-Storefront-Access-Token': token!,
+    },
+    body: JSON.stringify({
+      query: `
+        {
+          products(first: 10) {
+            edges {
+              node {
+                id
+                title
+                handle
+                description
+                images(first: 1) {
+                  edges {
+                    node {
+                      url
+                      altText
+                    }
+                  }
+                }
+                variants(first: 1) {
+                  edges {
+                    node {
+                      price {
+                        amount
+                        currencyCode
+                      }
+                      selectedOptions {
+                        name
+                        value
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      `,
+    }),
+    cache: 'no-store', // disables caching like getServerSideProps
+  });
+
+  const json = await res.json();
+  console.log(JSON.stringify(json, null, 2));
+  return json.data.products.edges.map((edge: any) => edge.node);
+}
