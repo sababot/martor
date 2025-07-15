@@ -3,7 +3,14 @@ import Separator from '@/components/Separator'
 import Image from "next/image";
 import { Check, Star } from 'lucide-react';
 
-export default function Home() {
+import { getAllCollections } from '@/lib/shopify';
+
+export default async function Home() {
+  const unfiltered_collections = await getAllCollections();
+  const collections = unfiltered_collections.filter(
+    (col: any) => col.handle !== "new-arrivals"
+  ); // exclude collection new-arrivals
+
   return (
     <div>
       <link rel="preconnect" href="https://fonts.googleapis.com"/>
@@ -25,11 +32,13 @@ export default function Home() {
               <p className='text-center mt-4'>All Items</p>
               <p className='text-center text-sm text-gray-500 leading-4'>8 Items</p>
             </div>
-            <div className='pt-4 sm:pt-0'>
-              <img src="/images/sample/sample-10.webp" alt="shirt-1" />
-              <p className='text-center mt-4'>Martor Classics</p>
-              <p className='text-center text-sm text-gray-500 leading-4'>8 Items</p>
+            {collections.map((collection: any) => ( // query through all collections
+            <div key={collection.id} className='pt-4 sm:pt-0'>
+              <img src={collection.image?.url} alt={collection.images?.edges?.[0]?.node?.altText} />
+              <p className='text-center mt-4'>{collection.title}</p>
+              <p className='text-center text-sm text-gray-500 leading-4'>{collection.products.edges.length} Items</p>
             </div>
+            ))}
           </div>
         </section>
       </div>

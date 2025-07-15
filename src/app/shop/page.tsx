@@ -23,7 +23,7 @@ export default async function Home() {
             {products.map((product: any) => (
               <div key={product.id}>
                 <img src={product.images?.edges?.[0]?.node?.url} alt={product.images?.edges?.[0]?.node?.altText} />
-                <p className='text-center'>{product.title}</p>
+                <p className='text-center line-clamp-2'>{product.title}</p>
                 <div className='flex justify-center gap-3'>
                   <p className='text-gray-500 text-sm leading-3'>{product.variants?.edges?.[0]?.node?.price.amount}</p>
                   <div className='w-3 h-3 border-1 border-black border-solid' style={{ backgroundColor: product.variants?.edges?.[0]?.node?.selectedOptions?.find(opt => opt.name.toLowerCase() === 'color')?.value.toLowerCase() || '#888' }}></div>

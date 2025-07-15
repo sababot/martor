@@ -14,7 +14,7 @@ export async function getProducts() {
     body: JSON.stringify({
       query: `
         {
-          products(first: 10) {
+          products(first: 100) {
             edges {
               node {
                 id
@@ -55,4 +55,121 @@ export async function getProducts() {
   const json = await res.json();
   console.log(JSON.stringify(json, null, 2));
   return json.data.products.edges.map((edge: any) => edge.node);
+}
+
+export async function getProductsFromCollection(collectionHandle: string) {
+  if (!domain || !token) {
+    throw new Error('Missing Shopify environment variables');
+  }
+
+  const res = await fetch(SHOPIFY_API_URL, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      'X-Shopify-Storefront-Access-Token': token,
+    },
+    body: JSON.stringify({
+      query: `
+        query getCollectionProducts($handle: String!) {
+          collection(handle: $handle) {
+            title
+            products(first: 100) {
+              edges {
+                node {
+                  id
+                  title
+                  handle
+                  description
+                  images(first: 1) {
+                    edges {
+                      node {
+                        url
+                        altText
+                      }
+                    }
+                  }
+                  variants(first: 1) {
+                    edges {
+                      node {
+                        price {
+                          amount
+                          currencyCode
+                        }
+                        selectedOptions {
+                          name
+                          value
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      `,
+      variables: {
+        handle: collectionHandle,
+      },
+    }),
+    cache: 'no-store',
+  });
+
+  if (!res.ok) {
+    console.error('Shopify API error:', res.statusText);
+    throw new Error('Failed to fetch collection');
+  }
+
+  const json = await res.json();
+
+  if (!json.data.collection) {
+    throw new Error(`Collection with handle "${collectionHandle}" not found`);
+  }
+
+  return json.data.collection.products.edges.map((edge: any) => edge.node);
+}
+
+export async function getAllCollections() {
+  const res = await fetch(SHOPIFY_API_URL, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      'X-Shopify-Storefront-Access-Token': token!,
+    },
+    body: JSON.stringify({
+      query: `
+        {
+          collections(first: 100) {
+            edges {
+              node {
+                id
+                title
+                handle
+                image {
+                  url
+                  altText
+                }
+                products(first: 100) {
+                  edges {
+                    node {
+                      id
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      `,
+    }),
+    cache: 'no-store',
+  });
+
+  const json = await res.json();
+
+  if (!json.data) {
+    throw new Error("Failed to fetch collections");
+  }
+
+  return json.data.collections.edges.map((edge: any) => edge.node);
 }
