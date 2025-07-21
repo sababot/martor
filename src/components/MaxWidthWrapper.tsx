@@ -9,7 +9,7 @@ children
 	children: ReactNode
 }) => {
 	return <div	className={cn(
-		"h-full mx-auto w-full max-w-screen-xl px-5 md:px-10",
+		"h-full mx-auto w-full max-w-screen-xl px-0 md:px-10",
 		className
 		)}>
 			{children}
