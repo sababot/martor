@@ -1,7 +1,8 @@
 import MaxWidthWrapper from '@/components/MaxWidthWrapper'
 import Separator from '@/components/Separator'
 import Image from "next/image";
-import { Check, Star } from 'lucide-react';
+import Link from "next/link"
+import { Check, Star, Search } from 'lucide-react';
 
 import { getProducts } from '@/lib/shopify';
 
@@ -26,9 +27,11 @@ export default async function Home() {
                 <button id="pants" className="text-center px-2 font-black text-md font-normal">pants</button>
                 <button id="hats" className="text-center px-2 font-black text-md font-normal">hats</button>
                 <button id="accessories" className="text-center px-2 font-black text-md font-normal">accessories</button>
-                <div className="flex" id="search-input-container">
-                  <i className="fas fa-magnifying-glass"></i>
-                  <input type="text" name="" placeholder="search" id="search_input"/>
+                <div className="flex gap-x-1" id="search-input-container">
+                  <Link href='/search'>
+                    <Search strokeWidth={2} className="w-4 pt-0.25"/>
+                  </Link>
+                  <input type="text" name="" placeholder="search" id="search_input" className="border-0 decoration-0 outline-0 text-left"/>
                 </div>
               </div>
             </div>
