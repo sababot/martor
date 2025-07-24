@@ -39,14 +39,14 @@ export default async function Home() {
           <div className="w-full border-b border-gray-200 mb-6"></div>
           <div className='grid grid-cols-2 lg:grid-cols-4 md:grid-cols-3 gap-3 md:gap-6 px-2 md:px-4 pt-4 mt-2 md:mt-4'>
             {products.map((product: any) => (
-              <div key={product.id}>
+              <Link key={product.id} href={`/products/${product.handle}`}>
                 <img src={product.images?.edges?.[0]?.node?.url} alt={product.images?.edges?.[0]?.node?.altText} />
                 <p className='text-center line-clamp-2'>{product.title}</p>
                 <div className='flex justify-center gap-3'>
                   <p className='text-gray-500 text-sm leading-3'>€{product.variants?.edges?.[0]?.node?.price.amount}</p>
                   <div className='w-3 h-3 border-1 border-black border-solid' style={{ backgroundColor: product.variants?.edges?.[0]?.node?.selectedOptions?.find(opt => opt.name.toLowerCase() === 'color')?.value.toLowerCase() || '#888' }}></div>
                 </div>
-              </div>
+              </Link>
             ))}
           </div>
         </section>
