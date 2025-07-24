@@ -15,24 +15,24 @@ export default async function Home() {
       <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
 
       <div style={{fontFamily: 'Ubuntu Mono'}}>
-        <div id="product-desktop" className="flex pt-10 justify-start ml-0 mr-2 gap-1 w-auto">
-          <div className="w-full overflow-y-auto">
+        <div id="product-desktop" className="flex pt-10 justify-start ml-0 mr-3 gap-1 w-auto">
+          <div className="w-full overflow-y-auto flex-3/4">
             <img src="../../static/images/collections/1/{{ object.slug }}-front.png" className="w-full block"/>
             <img src="../../static/images/collections/1/{{ object.slug }}-back.png" className="w-full block"/>
           </div>
-          <div className="w-auto h-full block sticky top-10 ml-5">
+          <div className="h-full block sticky top-15 ml-5 flex-1/4">
             <div className="justify-start flex">
-              <p className="font-md background-color-[#4f3d74] font-white pr-5 mb-2">title</p>
+              <p className="font-md bg-[#4f3d74] text-white px-2 mb-2">Classic Shirt Magenta</p>
             </div>
             <p className="font-md">€20</p>
-            <br/><br/>
-            <p className="font-md">description</p>
+            <br/>
+            <p className="font-md">Martor classic tee with hella flow, trynna be the bosss, wear this martor tee. you may die, but you'll die with flow</p>
             <br/><br/>
             <p className="font-md mb-5">[color]</p>
             <div className="flex gap-7 ml-2">
-              <div className="border-radius-full background-color-purple w-5 h-5"></div>
-              <div className="border-radius-full background-color-blue w-5 h-5"></div>
-              <div className="border-radius-full background-color-grey w-5 h-5"></div>
+              <div className="border-radius-full bg-[#4f3d74] w-5 h-5"></div>
+              <div className="border-radius-full bg-blue w-5 h-5"></div>
+              <div className="border-radius-full bg-grey w-5 h-5"></div>
             </div>
             <br/><br/>
             <p className="font-md mb-5">[size]</p>
@@ -42,6 +42,17 @@ export default async function Home() {
               <p className="font-md">L</p>
               <p className="font-md">XL</p>
               <p className="font-md">2XL</p>
+            </div>
+
+            <br/><br/>
+            {/* ADD TO CART */}
+            <div className="flex justify-center mt-5 mb-[50px]">
+              <a
+                href="{{ object.get_add_to_cart_url }}"
+                className="show-all bg-[#4f3d74] text-white px-1"
+              >
+                [add to cart]
+              </a>
             </div>
 
             <div>
@@ -68,30 +79,10 @@ export default async function Home() {
                 </p>
                 <p className="text-sm mb-0">- pre-shrunken textile</p>
                 <p className="text-sm mb-2.5">- open-end yarn spinning</p>
-
-                {/* SIZE ROW */}
-                <p className="text-base mb-2.5">[size]</p>
-                <div className="flex gap-[15px] ml-[3px]">
-                  <p className="text-sm">S</p>
-                  <p className="text-sm">M</p>
-                  <p className="text-sm">L</p>
-                  <p className="text-sm">XL</p>
-                  <p className="text-sm">2XL</p>
-                </div>
-
-                {/* ADD TO CART */}
-                <div className="flex justify-center mt-5 mb-[50px]">
-                  <a
-                    href="{{ object.get_add_to_cart_url }}"
-                    className="show-all bg-[#4f3d74] text-white px-1 py-1"
-                  >
-                    [add to cart]
-                  </a>
-                </div>
               </div>
 
               {/* SIZING */}
-              <br/><br/>
+              <br/>
               <button
                 className="product-button mt-4"
                 onclick="
@@ -118,7 +109,7 @@ export default async function Home() {
               </div>
 
               {/* SHIPPING */}
-              <br/><br/>
+              <br/>
               <button
                 className="product-button mt-4"
                 onclick="
@@ -139,7 +130,6 @@ export default async function Home() {
                 <p className="text-sm mb-0">- europe orders for this item take 6-12 working days</p>
               </div>
             </div>
-
           </div>
         </div>
       </div>
