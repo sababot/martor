@@ -17,10 +17,10 @@ export default async function Home() {
       <div style={{fontFamily: 'Ubuntu Mono'}}>
         <div id="product-desktop" className="flex pt-10 justify-start ml-0 mr-3 gap-1 w-auto">
           <div className="w-full overflow-y-auto flex-3/4">
-            <img src="../../static/images/collections/1/{{ object.slug }}-front.png" className="w-full block"/>
-            <img src="../../static/images/collections/1/{{ object.slug }}-back.png" className="w-full block"/>
+            <img src="https://cdn.shopify.com/s/files/1/0960/2780/3980/files/classic-shirt-magenta-front_15506aa3-b503-43a1-b9ee-788146f035bc.png?v=1752861730" className="w-full block"/>
+            <img src="https://cdn.shopify.com/s/files/1/0960/2780/3980/files/classic-shirt-magenta-front_15506aa3-b503-43a1-b9ee-788146f035bc.png?v=1752861730" className="w-full block"/>
           </div>
-          <div className="h-full block sticky top-15 ml-5 flex-1/4">
+          <div className="h-full block sticky top-22 ml-5 flex-1/4">
             <div className="justify-start flex">
               <p className="font-md bg-[#4f3d74] text-white px-2 mb-2">Classic Shirt Magenta</p>
             </div>
@@ -58,15 +58,7 @@ export default async function Home() {
             <div>
               {/* DETAILS */}
               <button
-                className="product-button"
-                onclick="
-                  if (document.getElementById('details-product').style.display == 'block'){
-                    document.getElementById('details-product').style.display = 'none';
-                  } else {
-                    document.getElementById('details-product').style.display = 'block';
-                  }
-                "
-              >
+                className="product-button">
                 [details]
               </button>
               <div
@@ -83,16 +75,7 @@ export default async function Home() {
 
               {/* SIZING */}
               <br/>
-              <button
-                className="product-button mt-4"
-                onclick="
-                  if (document.getElementById('sizing-product').style.display == 'block'){
-                    document.getElementById('sizing-product').style.display = 'none';
-                  } else {
-                    document.getElementById('sizing-product').style.display = 'block';
-                  }
-                "
-              >
+              <button className="product-button mt-4">
                 [sizing]
               </button>
               <div
@@ -111,15 +94,7 @@ export default async function Home() {
               {/* SHIPPING */}
               <br/>
               <button
-                className="product-button mt-4"
-                onclick="
-                  if (document.getElementById('shipping-product').style.display == 'block'){
-                    document.getElementById('shipping-product').style.display = 'none';
-                  } else {
-                    document.getElementById('shipping-product').style.display = 'block';
-                  }
-                "
-              >
+                className="product-button mt-4">
                 [shipping]
               </button>
               <div
