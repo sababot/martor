@@ -1,6 +1,6 @@
 import MaxWidthWrapper from '@/components/MaxWidthWrapper'
 import Separator from '@/components/Separator'
-import Image from "next/image";
+import Image from "next/image"
 import Link from "next/link"
 import { Check, Star, Search } from 'lucide-react';
 
@@ -19,7 +19,7 @@ export default async function Home() {
       <div style={{fontFamily: 'Ubuntu Mono'}}>
         <section>
           <MaxWidthWrapper>
-            <div id="shop-heading" className="w-full relative whitespace-nowrap overflow-hidden mt-0" >
+            <div id="shop-heading" className="w-full relative whitespace-nowrap no-scrollbar overflow-scroll md:overflow-hidden mt-0" >
               <div className="flex justify-around gap-x-5 mx-4">
                 <button id="all" className="text-center px-2 font-black text-md font-normal">all</button>
                 <button id="shirts" className="text-center px-2 font-black text-md font-normal">shirts</button>
@@ -27,7 +27,7 @@ export default async function Home() {
                 <button id="pants" className="text-center px-2 font-black text-md font-normal">pants</button>
                 <button id="hats" className="text-center px-2 font-black text-md font-normal">hats</button>
                 <button id="accessories" className="text-center px-2 font-black text-md font-normal">accessories</button>
-                <div className="flex gap-x-1" id="search-input-container">
+                <div className="gap-x-1 hidden md:flex" id="search-input-container">
                   <Link href='/search'>
                     <Search strokeWidth={2} className="w-4 pt-0.25"/>
                   </Link>
@@ -41,7 +41,7 @@ export default async function Home() {
             {products.map((product: any) => (
               <Link key={product.id} href={`/products/${product.handle}`}>
                 <img src={product.images?.edges?.[0]?.node?.url} alt={product.images?.edges?.[0]?.node?.altText} />
-                <p className='text-center line-clamp-2'>{product.title}</p>
+                <p className='text-center line-clamp-1'>{product.title}</p>
                 <div className='flex justify-center gap-3'>
                   <p className='text-gray-500 text-sm leading-3'>€{product.variants?.edges?.[0]?.node?.price.amount}</p>
                   <div className='w-3 h-3 border-1 border-black border-solid' style={{ backgroundColor: product.variants?.edges?.[0]?.node?.selectedOptions?.find(opt => opt.name.toLowerCase() === 'color')?.value.toLowerCase() || '#888' }}></div>

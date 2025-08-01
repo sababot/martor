@@ -4,9 +4,20 @@ import Image from "next/image";
 import Link from "next/link"
 import { Check, Star, Search } from 'lucide-react';
 
+import { getProduct } from '@/lib/shopify';
 import { getProducts } from '@/lib/shopify';
 
-export default async function Home() {
+import ProductImageViewer from '@/components/ProductImageViewer'
+
+type Props = {
+  params: {
+    handle: string;
+  };
+};
+
+export default async function Home({ params }: Props) {
+  const product = await getProduct(params.handle);
+
   return (
     <div>
       <link rel="preconnect" href="https://fonts.googleapis.com"/>
@@ -15,24 +26,45 @@ export default async function Home() {
       <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
 
       <div style={{fontFamily: 'Ubuntu Mono'}}>
-        <div id="product-desktop" className="flex pt-10 justify-start ml-0 mr-3 gap-1 w-auto">
-          <div className="w-full overflow-y-auto flex-3/4">
-            <img src="https://cdn.shopify.com/s/files/1/0960/2780/3980/files/classic-shirt-magenta-front_15506aa3-b503-43a1-b9ee-788146f035bc.png?v=1752861730" className="w-full block"/>
-            <img src="https://cdn.shopify.com/s/files/1/0960/2780/3980/files/classic-shirt-magenta-front_15506aa3-b503-43a1-b9ee-788146f035bc.png?v=1752861730" className="w-full block"/>
+        <div id="product-desktop" className="block md:flex pt-10 justify-start ml-0 mr-3 gap-1 w-auto">
+          <div className="w-full overflow-y-auto flex-3/4 hidden md:block">
+            {product.images.edges.map((image: any, i: number) => (
+              <img key={i} src={image.node.url} alt={image.node.altText || product.title} className="w-full block mb-4"/>
+            ))}
           </div>
+          <ProductImageViewer images={product.images.edges} className="block md:hidden" />
           <div className="h-full block sticky top-22 ml-5 flex-1/4">
             <div className="justify-start flex">
-              <p className="font-md bg-[#4f3d74] text-white px-2 mb-2">Classic Shirt Magenta</p>
+              <p className="font-md bg-[#4f3d74] text-white px-2 mb-2">{product.title}</p>
             </div>
-            <p className="font-md">€20</p>
+            <p className="font-md text-gray-600">€{product.variants.edges[0].node.price.amount}</p>
             <br/>
-            <p className="font-md">Martor classic tee with hella flow, trynna be the bosss, wear this martor tee. you may die, but you'll die with flow</p>
+            <p className="font-md">{product.description}</p>
             <br/><br/>
             <p className="font-md mb-5">[color]</p>
-            <div className="flex gap-7 ml-2">
-              <div className="border-radius-full bg-[#4f3d74] w-5 h-5"></div>
-              <div className="border-radius-full bg-blue w-5 h-5"></div>
-              <div className="border-radius-full bg-grey w-5 h-5"></div>
+            <div className="flex gap-7">
+              {product.variants?.edges?.selectedOptions?.edges.find(opt => opt.name.toLowerCase() === 'color')?.map((color: string, i: number) => (
+              <div className="border-2 border-gray-800 w-4 h-4" key={i} style={{ backgroundColor: color }}></div>
+              ))}
+            </div>
+            <div className="flex gap-7">
+              {[
+                ...new Set(
+                  product.variants.edges
+                    .flatMap((edge: any) =>
+                      edge.node.selectedOptions
+                        .filter((opt: any) => opt.name.toLowerCase() === 'color')
+                        .map((opt: any) => opt.value.toLowerCase())
+                    )
+                ),
+              ].map((color: string, i: number) => (
+                <div
+                  key={i}
+                  className={`w-4 h-4 border-2 ${i === 0 ? 'border-gray-600' : 'border-gray-200'}`}
+                  style={{ backgroundColor: color }}
+                  title={color}
+                ></div>
+              ))}
             </div>
             <br/><br/>
             <p className="font-md mb-5">[size]</p>

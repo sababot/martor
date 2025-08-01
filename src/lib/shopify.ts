@@ -172,3 +172,59 @@ export async function getAllCollections() {
 
   return json.data.collections.edges.map((edge: any) => edge.node);
 }
+
+export async function getProduct(handle: string) {
+  const res = await fetch(SHOPIFY_API_URL, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      'X-Shopify-Storefront-Access-Token': token!,
+    },
+    body: JSON.stringify({
+      query: `
+        query getProductByHandle($handle: String!) {
+          productByHandle(handle: $handle) {
+            id
+            title
+            handle
+            description
+            images(first: 10) {
+              edges {
+                node {
+                  url
+                  altText
+                }
+              }
+            }
+            variants(first: 10) {
+              edges {
+                node {
+                  id
+                  title
+                  price {
+                    amount
+                    currencyCode
+                  }
+                  selectedOptions {
+                    name
+                    value
+                  }
+                }
+              }
+            }
+          }
+        }
+      `,
+      variables: { handle },
+    }),
+    cache: 'no-store',
+  });
+
+  const json = await res.json();
+
+  if (!json.data?.productByHandle) {
+    throw new Error(`No product found for handle: ${handle}`);
+  }
+
+  return json.data.productByHandle;
+}
