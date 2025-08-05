@@ -23,7 +23,7 @@ export default function ProductImageViewer({ images }: Props) {
   })
 
   return (
-    <div {...handlers} className="relative w-full mx-auto mb-15 overflow-hidden">
+    <div {...handlers} className="block md:hidden relative w-full mx-auto mb-15 overflow-hidden">
       <Image
         src={images[index].node.url}
         alt={images[index].node.altText || 'Product image'}

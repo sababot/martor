@@ -8,6 +8,8 @@ import FooterMobile from "@/components/FooterMobile"
 import Newsletter from "@/components/Newsletter"
 import Separator from "@/components/Separator"
 
+import { CartProvider } from '@/context/CartContext'
+
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -30,17 +32,17 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        <Navbar/>
-        <NavbarMobile/>
-        {children}
-        <Separator/>
-        <Newsletter/>
-        <Separator/>
-        <Footer/>
-        <FooterMobile/>
+      <body style={{fontFamily: 'Ubuntu Mono'}}>
+        <CartProvider>
+          <Navbar/>
+          <NavbarMobile/>
+          {children}
+          <Separator/>
+          <Newsletter/>
+          <Separator/>
+          <Footer/>
+          <FooterMobile/>
+        </CartProvider>
       </body>
     </html>
   );

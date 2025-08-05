@@ -8,6 +8,7 @@ import { getProduct } from '@/lib/shopify';
 import { getProducts } from '@/lib/shopify';
 
 import ProductImageViewer from '@/components/ProductImageViewer'
+import ProductInfoSections from '@/components/ProductInfoSections'
 
 type Props = {
   params: {
@@ -32,7 +33,7 @@ export default async function Home({ params }: Props) {
               <img key={i} src={image.node.url} alt={image.node.altText || product.title} className="w-full block mb-4"/>
             ))}
           </div>
-          <ProductImageViewer images={product.images.edges} className="block md:hidden" />
+          <ProductImageViewer images={product.images.edges} className="hidden" />
           <div className="h-full block sticky top-22 ml-5 flex-1/4">
             <div className="justify-start flex">
               <p className="font-md bg-[#4f3d74] text-white px-2 mb-2">{product.title}</p>
@@ -87,56 +88,7 @@ export default async function Home({ params }: Props) {
               </a>
             </div>
 
-            <div>
-              {/* DETAILS */}
-              <button
-                className="product-button">
-                [details]
-              </button>
-              <div
-                id="details-product"
-                className="block mb-0 text-sm"
-              >
-                <p className="text-sm mb-0">- material: 100% cotton</p>
-                <p className="text-sm mb-0">
-                  - textile weight: 180 g/cm<sup>2</sup> (5.3 oz/yd<sup>2</sup>)
-                </p>
-                <p className="text-sm mb-0">- pre-shrunken textile</p>
-                <p className="text-sm mb-2.5">- open-end yarn spinning</p>
-              </div>
-
-              {/* SIZING */}
-              <br/>
-              <button className="product-button mt-4">
-                [sizing]
-              </button>
-              <div
-                id="sizing-product"
-                className="hidden mb-0 text-sm"
-              >
-                <div className="flex justify-center">
-                  <img
-                    src="../../static/images/gildan-men-sizing.png"
-                    alt="Sizing chart"
-                    className="w-[300px]"
-                  />
-                </div>
-              </div>
-
-              {/* SHIPPING */}
-              <br/>
-              <button
-                className="product-button mt-4">
-                [shipping]
-              </button>
-              <div
-                id="shipping-product"
-                className="hidden mb-2.5 text-sm"
-              >
-                <p className="text-sm mb-0">- spain orders for this item take 4-10 working days</p>
-                <p className="text-sm mb-0">- europe orders for this item take 6-12 working days</p>
-              </div>
-            </div>
+            <ProductInfoSections></ProductInfoSections>
           </div>
         </div>
       </div>

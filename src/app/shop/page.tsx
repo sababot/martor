@@ -4,10 +4,10 @@ import Image from "next/image"
 import Link from "next/link"
 import { Check, Star, Search } from 'lucide-react';
 
-import { getProducts } from '@/lib/shopify';
+import { getProductsCompressed } from '@/lib/shopify';
 
 export default async function Home() {
-  const products = await getProducts();
+  const products = await getProductsCompressed();
 
   return (
     <div>
@@ -45,6 +45,9 @@ export default async function Home() {
                 <div className='flex justify-center gap-3'>
                   <p className='text-gray-500 text-sm leading-3'>€{product.variants?.edges?.[0]?.node?.price.amount}</p>
                   <div className='w-3 h-3 border-1 border-black border-solid' style={{ backgroundColor: product.variants?.edges?.[0]?.node?.selectedOptions?.find(opt => opt.name.toLowerCase() === 'color')?.value.toLowerCase() || '#888' }}></div>
+                  {product.variants?.edges?.selectedOptions?.edges.find(opt => opt.name.toLowerCase() === 'color')?.map((color: string, i: number) => (
+                  <div className="w-3 h-3 border-1 border-black border-solid" key={i} style={{ backgroundColor: color }}></div>
+                  ))}
                 </div>
               </Link>
             ))}
