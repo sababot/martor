@@ -1,3 +1,5 @@
+import AddToCartButton from '@/components/AddToCartButton'
+
 import MaxWidthWrapper from '@/components/MaxWidthWrapper'
 import Separator from '@/components/Separator'
 import Image from "next/image";
@@ -18,6 +20,10 @@ type Props = {
 
 export default async function Home({ params }: Props) {
   const product = await getProduct(params.handle);
+
+  const productGid = 'gid://shopify/Product/${product.id}' // or however you get it
+
+  const variantId = product.variants.edges[0].node.id
 
   return (
     <div>
@@ -80,14 +86,9 @@ export default async function Home({ params }: Props) {
             <br/><br/>
             {/* ADD TO CART */}
             <div className="flex justify-center mt-5 mb-[50px]">
-              <a
-                href="{{ object.get_add_to_cart_url }}"
-                className="show-all bg-[#4f3d74] text-white px-1"
-              >
-                [add to cart]
-              </a>
+              <AddToCartButton variantId={variantId}></AddToCartButton>
             </div>
-
+            
             <ProductInfoSections></ProductInfoSections>
           </div>
         </div>
