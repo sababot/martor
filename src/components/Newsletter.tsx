@@ -2,7 +2,7 @@ import Link from "next/link"
 
 const Newsletter = () => {
 	return (
-		<div className='hidden sm:flex w-full items-center justify-center' style={{fontFamily: 'Ubuntu Mono'}}>
+		<div className='hidden sm:flex w-full items-center justify-center' style={{fontFamily: 'ubuntu'}}>
 			<div className='w-160'>
 				<div className='flex items-center justify-center'>
 		            <p className='bg-accent text-white px-2 leading-5'>stay updated</p>

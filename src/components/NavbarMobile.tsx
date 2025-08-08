@@ -1,14 +1,21 @@
 "use client"
+
 import { useState } from "react";
 import Link from "next/link"
 import MaxWidthWrapper from "./MaxWidthWrapper"
 import { AlignJustify, Search, ShoppingCart } from 'lucide-react';
 
+import { useCart } from '@/context/CartContext'
+
 const NavbarMobile = () => {
 	const [isOpen, setIsOpen] = useState(true);
 
+	const { cart, loading } = useCart()
+
+	const itemCount = cart?.totalQuantity || 0
+
 	return (
-		<div style={{fontFamily: 'Ubuntu Mono'}}>
+		<div style={{fontFamily: 'ubuntu'}}>
 			<div className='block md:hidden h-12 inset-x-0 top-0'>
 			</div>
 
@@ -30,7 +37,7 @@ const NavbarMobile = () => {
 
 							<Link href='/cart' className='flex'>
 								<ShoppingCart strokeWidth={2} />
-								<span className="align-super text-xs">(0)</span>
+								<span className="align-super text-xs">({itemCount})</span>
 							</Link>
 						</div>
 

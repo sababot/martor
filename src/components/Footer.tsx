@@ -2,7 +2,7 @@ import Link from "next/link"
 
 const Footer = () => {
 	return (
-		<div className='hidden sm:flex justify-between bg-accent w-full px-6 text-sm' style={{fontFamily: 'Ubuntu Mono'}}>
+		<div className='hidden sm:flex justify-between bg-accent w-full px-6 text-sm' style={{fontFamily: 'ubuntu'}}>
 			<a href="" className='text-white'>info</a>
 			<a href="" className='text-white'>return & exchanges</a>
 			<a href="" className='text-white'>privacy policy</a>

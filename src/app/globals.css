@@ -130,25 +130,22 @@
 }
 
 @font-face {
-  font-family: "ubuntu";
-  src: url('/fonts/UbuntuNerdFont.ttf') format("ttf");
+  font-family: "Ubuntu";
+  src: url("/fonts/UbuntuNerdFont.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
-  font-family: "wobbly";
-  src: url('/fonts/Wobbly.ttf') format("ttf");
+  font-family: "Wobbly";
+  src: url("/fonts/Wobbly.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
 
-@theme {
-  --font-ubuntu: "ubuntu", monospace;
-}
-
-@theme {
-  --font-wobbly: "wobbly", sans-serif; 
+:root {
+  --font-ubuntu: "Ubuntu", monospace;
+  --font-wobbly: "Wobbly", sans-serif;
 }
 
 /* Hide scrollbar for all browsers */

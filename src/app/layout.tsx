@@ -32,8 +32,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body style={{fontFamily: 'Ubuntu Mono'}}>
-        <CartProvider>
+      <body style={{ fontFamily: 'ubuntu' }} className="font-ubuntu">
+        <CartProvider className="font-ubuntu" style={{ fontFamily: 'ubuntu' }}>
           <Navbar/>
           <NavbarMobile/>
           {children}

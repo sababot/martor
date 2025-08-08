@@ -1,13 +1,19 @@
-"use client";
+'use client'
+
 import { usePathname } from "next/navigation";
 import Link from "next/link"
 import MaxWidthWrapper from "./MaxWidthWrapper"
 
+import { useCart } from '@/context/CartContext'
+
 const Navbar = () => {
 	const pathname = usePathname();
+	const { cart, loading } = useCart()
+
+	const itemCount = cart?.totalQuantity || 0
 
 	return (
-		<nav className='hidden md:block sticky z-100 h-12 inset-x-0 top-0 w-full border-b border-gray-200 bg-white backdrop-blur-lg transition-all' style={{fontFamily: 'Ubuntu Mono'}}>
+		<nav className='hidden md:block sticky z-100 h-12 inset-x-0 top-0 w-full border-b border-gray-200 bg-white backdrop-blur-lg transition-all' style={{ fontFamily: 'ubuntu' }}>
 			<MaxWidthWrapper>
 				<div className='flex h-12 items-center justify-between border-b border-zinc-200'>
 					<div className='flex gap-[4vw]'>
@@ -49,7 +55,7 @@ const Navbar = () => {
 
 						<Link href='/cart' className='group'>
 							<p className={pathname === "/cart" ? "font-bold before:content-['['] after:content-[']']" : "before:content-['['] after:content-[']'] before:opacity-0 after:opacity-0 group-hover:before:opacity-100 group-hover:after:opacity-100"}>
-								cart(0)
+								cart({itemCount})
 							</p>
 						</Link>
 					</div>

@@ -176,7 +176,7 @@ export function CartProvider({ children }: { children: ReactNode }) {
   }
 
   return (
-    <CartContext.Provider value={{ cart, loading, addItem, updateItem, removeItem }}>
+    <CartContext.Provider value={{ cart, loading, addItem, updateItem, removeItem }} style={{fontFamily: 'Ubuntu Mono'}} className="font-ubuntu">
       {children}
     </CartContext.Provider>
   )

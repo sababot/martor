@@ -2,7 +2,7 @@ import Link from "next/link"
 
 const FooterMobile = () => {
 	return (
-		<div className='block sm:hidden bg-accent w-full px-6 pt-4 h-auto' style={{fontFamily: 'Ubuntu Mono'}}>
+		<div className='block sm:hidden bg-accent w-full px-6 pt-4 h-auto' style={{fontFamily: 'ubuntu'}}>
 			<div className='flex justify-between'>
 				<div className='inline-block'>
 					<a href="" className='text-sm text-center text-white'>privacy policy</a><br/>
