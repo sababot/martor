@@ -43,7 +43,7 @@ export default async function Home() {
             ))}
           </div>
           <div className='flex items-center justify-center mt-6'>
-            <button className='hover:font-semibold hover:font-'>[show all]</button>
+            <Link href="/shop" className='hover:font-semibold hover:font-'>[show all]</Link>
           </div>
         </section>
 
@@ -60,7 +60,7 @@ export default async function Home() {
             </iframe>
           </div>
           <div className='flex items-center justify-center mt-1 sm:mt-3 md:mt-4'>
-            <button className='hover:font-semibold hover:font-'>[view channel]</button>
+            <Link href="/" className='hover:font-semibold hover:font-'>[view channel]</Link>
           </div>
         </section>
 

@@ -61,7 +61,7 @@ export default function CartPage() {
       ))}
       <div className="flex justify-between items-center mt-8">
         <div className="flex items-center justify-center">
-          <button href="/shop" className="hover:font-semibold">[continue shopping]</button>
+          <Link href="/shop" className="hover:font-semibold">[continue shopping]</Link>
         </div>
         <div className="text-right">
           <p>subtotal: €{cart.cost.subtotalAmount.amount}</p>
