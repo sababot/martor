@@ -235,6 +235,36 @@ export async function getAllCollections() {
   return json.data.collections.edges.map((edge: any) => edge.node);
 }
 
+export async function getCollectionByHandle(handle: string) {
+  const res = await fetch(SHOPIFY_API_URL, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      'X-Shopify-Storefront-Access-Token': token!,
+    },
+    body: JSON.stringify({
+      query: `
+        query getCollection($handle: String!) {
+          collection(handle: $handle) {
+            id
+            title
+            description
+            image {
+              url
+              altText
+            }
+          }
+        }
+      `,
+      variables: { handle },
+    }),
+    cache: 'no-store', // disable Next.js caching
+  });
+
+  const json = await res.json();
+  return json.data?.collection ?? null;
+}
+
 export async function getProduct(handle: string) {
   const res = await fetch(SHOPIFY_API_URL, {
     method: 'POST',
@@ -418,4 +448,27 @@ query GetCart($cartId: ID!) {
 export async function getCart(cartId: string) {
   const data = await shopifyFetch(GET_CART_QUERY, { cartId })
   return data.cart
+}
+
+export async function getTotalProductCount() {
+  const res = await fetch(SHOPIFY_API_URL, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      'X-Shopify-Storefront-Access-Token': token!,
+    },
+    body: JSON.stringify({
+      query: `
+        {
+          products {
+            totalCount
+          }
+        }
+      `,
+    }),
+    cache: 'no-store',
+  });
+
+  const json = await res.json();
+  return json.data?.products?.totalCount ?? 0;
 }
