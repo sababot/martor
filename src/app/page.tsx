@@ -36,7 +36,7 @@ export default async function Home() {
                 <img src={product.images?.edges?.[0]?.node?.url} alt={product.images?.edges?.[0]?.node?.altText} />
                 <p className='text-center line-clamp-1'>{product.title}</p>
                 <div className='flex justify-center gap-3'>
-                  <p className='text-gray-500 text-sm leading-3'>{product.variants?.edges?.[0]?.node?.price.amount}</p>
+                  <p className='text-gray-500 text-sm leading-3'>€{product.variants?.edges?.[0]?.node?.price.amount}</p>
                   {product.variants?.edges?.flatMap(edge => edge.node.selectedOptions.filter(opt => opt.name.toLowerCase() === 'color').map(opt => opt.value)).filter((value, index, self) => self.indexOf(value) === index).map((color, i) => (
                     <div key={i} className="w-3 h-3 border border-black" style={{ backgroundColor: color.toLowerCase() }}></div>
                   ))}

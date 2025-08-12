@@ -10,11 +10,6 @@ const version = process.env.NEXT_PUBLIC_SHOPIFY_STOREFRONT_API_VERSION!;
 const STOREFRONT_URL   = `https://${domain}/api/${version}/graphql.json`;
 const STOREFRONT_TOKEN = token;
 
-console.log(
-  'Shopify URL:', STOREFRONT_URL,
-  'Token:', !!STOREFRONT_TOKEN
-);
-
 // Types
 interface CartLine {
   id: string
@@ -89,7 +84,7 @@ export function CartProvider({ children }: { children: ReactNode }) {
         cart(id: $id) {
           id totalQuantity cost { subtotalAmount { amount currencyCode } }
           lines(first: 100) {
-            edges { node { id quantity cost { totalAmount { amount currencyCode } } merchandise { ... on ProductVariant { id title priceV2 { amount currencyCode } image { url } } } } }
+            edges { node { id quantity cost { totalAmount { amount currencyCode } } merchandise { ... on ProductVariant { id title priceV2 { amount currencyCode } image { url } product { title handle } selectedOptions { name value } } } } }
           }
         }
       }
