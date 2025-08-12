@@ -38,16 +38,18 @@ export default function CartPage() {
         <p className="text-center text-md px-1 bg-[#4f3d74] text-white mt-3">cart</p>
       </div>
       {cart.lines.map(line => (
-        <div key={line.id} className="flex w-full items-center gap-10 mb-6">
-          <Image src={line.merchandise.image.url} alt={line.merchandise.title} width={80} height={80} />
-          <div>
-            <p className="font-semibold">{line.merchandise.title}</p>
-            <p className="hidden md:block">€{line.merchandise.priceV2.amount}</p>
-            <div className="ml-auto block md:hidden">€{line.cost.totalAmount.amount}</div>
-            <div className="flex items-center gap-2 md:hidden">
-              <button onClick={() => updateItem(line.id, line.quantity - 1)} disabled={line.quantity <= 1} className="enabled:hover:font-bold disabled:opacity-25">−</button>
-              <span>{line.quantity}</span>
-              <button onClick={() => updateItem(line.id, line.quantity + 1)} className="hover:font-bold">+</button>
+        <div key={line.id} className="flex md:grid md:grid-cols-4 w-full items-center gap-10 mb-6">
+          <div className="flex gap-6 items-center">
+            <Image src={line.merchandise.image.url} alt={line.merchandise.title} width={80} height={80} />
+            <div>
+              <p className="font-semibold">{line.merchandise.title}</p>
+              <p className="hidden md:block">€{line.merchandise.priceV2.amount}</p>
+              <div className="ml-auto block md:hidden">€{line.cost.totalAmount.amount}</div>
+              <div className="flex items-center gap-2 md:hidden">
+                <button onClick={() => updateItem(line.id, line.quantity - 1)} disabled={line.quantity <= 1} className="enabled:hover:font-bold disabled:opacity-25">−</button>
+                <span>{line.quantity}</span>
+                <button onClick={() => updateItem(line.id, line.quantity + 1)} className="hover:font-bold">+</button>
+              </div>
             </div>
           </div>
           <div className="items-center gap-2 hidden md:flex">

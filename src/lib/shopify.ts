@@ -30,7 +30,7 @@ export async function getProducts() {
                     }
                   }
                 }
-                variants(first: 1) {
+                variants(first: 10) {
                   edges {
                     node {
                       price {
@@ -85,7 +85,7 @@ export async function getProductsCompressed() {
                     }
                   }
                 }
-                variants(first: 1) {
+                variants(first: 10) {
                   edges {
                     node {
                       price {
@@ -146,7 +146,7 @@ export async function getProductsFromCollection(collectionHandle: string) {
                       }
                     }
                   }
-                  variants(first: 1) {
+                  variants(first: 10) {
                     edges {
                       node {
                         price {

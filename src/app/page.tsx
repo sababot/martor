@@ -37,7 +37,9 @@ export default async function Home() {
                 <p className='text-center line-clamp-1'>{product.title}</p>
                 <div className='flex justify-center gap-3'>
                   <p className='text-gray-500 text-sm leading-3'>{product.variants?.edges?.[0]?.node?.price.amount}</p>
-                  <div className='w-3 h-3 border-1 border-black border-solid' style={{ backgroundColor: product.variants?.edges?.[0]?.node?.selectedOptions?.find(opt => opt.name.toLowerCase() === 'color')?.value.toLowerCase() || '#888' }}></div>
+                  {product.variants?.edges?.flatMap(edge => edge.node.selectedOptions.filter(opt => opt.name.toLowerCase() === 'color').map(opt => opt.value)).filter((value, index, self) => self.indexOf(value) === index).map((color, i) => (
+                    <div key={i} className="w-3 h-3 border border-black" style={{ backgroundColor: color.toLowerCase() }}></div>
+                  ))}
                 </div>
               </Link>
             ))}
