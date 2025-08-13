@@ -9,6 +9,7 @@ import Newsletter from "@/components/Newsletter"
 import Separator from "@/components/Separator"
 
 import { CartProvider } from '@/context/CartContext'
+import AppLoader from '@/components/AppLoader'
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -34,14 +35,16 @@ export default function RootLayout({
     <html lang="en">
       <body style={{ fontFamily: 'ubuntu' }} className="font-ubuntu">
         <CartProvider className="font-ubuntu" style={{ fontFamily: 'ubuntu' }}>
-          <Navbar/>
-          <NavbarMobile/>
-          {children}
-          <Separator/>
-          <Newsletter/>
-          <Separator/>
-          <Footer/>
-          <FooterMobile/>
+          <AppLoader>
+            <Navbar/>
+            <NavbarMobile/>
+            {children}
+            <Separator/>
+            <Newsletter/>
+            <Separator/>
+            <Footer/>
+            <FooterMobile/>
+          </AppLoader>
         </CartProvider>
       </body>
     </html>

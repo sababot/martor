@@ -1,0 +1,18 @@
+[GENERAL]
+- make email subscription work
+- make two themes, which are selectable (magenta and blue)
+- make about and contact page (maybe change contact page for something else)
+
+[HOME]
+- front page image
+- premiere
+- upgrade lookbook
+
+[SHOP]
+- make selectors and search work
+
+[CART]
+- add "similar products" section
+
+[PRODUCTS]
+- make the color and size selectable

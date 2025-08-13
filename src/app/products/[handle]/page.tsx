@@ -11,6 +11,7 @@ import { getProducts } from '@/lib/shopify';
 
 import ProductImageViewer from '@/components/ProductImageViewer'
 import ProductInfoSections from '@/components/ProductInfoSections'
+import ProductOptions from "@/components/ProductOptions";
 
 type Props = {
   params: {
@@ -19,6 +20,7 @@ type Props = {
 };
 
 export default async function Home({ params }: Props) {
+  const allProducts = await getProducts();
   const product = await getProduct(params.handle);
 
   const productGid = 'gid://shopify/Product/${product.id}' // or however you get it
@@ -48,47 +50,7 @@ export default async function Home({ params }: Props) {
             <br/>
             <p className="font-md">{product.description}</p>
             <br/><br/>
-            <p className="font-md mb-5">[color]</p>
-            <div className="flex gap-7">
-              {product.variants?.edges?.selectedOptions?.edges.find(opt => opt.name.toLowerCase() === 'color')?.map((color: string, i: number) => (
-              <div className="border-2 border-gray-800 w-4 h-4" key={i} style={{ backgroundColor: color }}></div>
-              ))}
-            </div>
-            <div className="flex gap-7">
-              {[
-                ...new Set(
-                  product.variants.edges
-                    .flatMap((edge: any) =>
-                      edge.node.selectedOptions
-                        .filter((opt: any) => opt.name.toLowerCase() === 'color')
-                        .map((opt: any) => opt.value.toLowerCase())
-                    )
-                ),
-              ].map((color: string, i: number) => (
-                <div
-                  key={i}
-                  className={`w-4 h-4 border-2 ${i === 0 ? 'border-gray-600' : 'border-gray-200'}`}
-                  style={{ backgroundColor: color }}
-                  title={color}
-                ></div>
-              ))}
-            </div>
-            <br/><br/>
-            <p className="font-md mb-5">[size]</p>
-            <div className="flex gap-8 ml-1">
-              <p className="font-md">S</p>
-              <p className="font-md">M</p>
-              <p className="font-md">L</p>
-              <p className="font-md">XL</p>
-              <p className="font-md">2XL</p>
-            </div>
-
-            <br/><br/>
-            {/* ADD TO CART */}
-            <div className="flex justify-center mt-5 mb-[50px]">
-              <AddToCartButton variantId={variantId}></AddToCartButton>
-            </div>
-            
+            <ProductOptions product={product} allProducts={allProducts} />
             <ProductInfoSections></ProductInfoSections>
           </div>
         </div>
