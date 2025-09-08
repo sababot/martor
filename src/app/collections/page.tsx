@@ -33,7 +33,7 @@ export default async function Home() {
           <div className='flex items-center justify-center'>
             <p className='bg-accent text-white px-2 leading-5'>our collections</p>
           </div>
-          <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 md:grid-cols-3 gap-3 md:gap-6 px-6 md:px-8 lg:px-10 pt-4 mt-2 md:mt-4'>
+          <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 md:grid-cols-3 gap-3 md:gap-6 px-6 md:px-8 lg:px-10 pt-4 mt-2 md:mt-6'>
             <Link href="/shop" className='pb-4'>
               <img src="/images/sample/sample-9.webp" alt="shirt-1" />
               <p className='text-center mt-4'>All Items</p>

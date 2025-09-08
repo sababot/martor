@@ -13,6 +13,3 @@
 
 [CART]
 - add "similar products" section
-
-[PRODUCTS]
-- make the color and size selectable
