@@ -24,13 +24,13 @@ const Navbar = () => {
 						</Link>
 
 						<Link href='/shop' className='group'>
-							<p className={pathname === "/shop" ? "font-bold before:content-['['] after:content-[']']" : "before:content-['['] after:content-[']'] before:opacity-0 after:opacity-0 group-hover:before:opacity-100 group-hover:after:opacity-100"}>
+							<p className={(pathname === "/shop" || pathname.startsWith("/shop/")) ? "font-bold before:content-['['] after:content-[']']" : "before:content-['['] after:content-[']'] before:opacity-0 after:opacity-0 group-hover:before:opacity-100 group-hover:after:opacity-100"}>
 								shop
 							</p>
 						</Link>
 
 						<Link href='/collections' className='group'>
-							<p className={pathname === "/collections" ? "font-bold before:content-['['] after:content-[']']" : "before:content-['['] after:content-[']'] before:opacity-0 after:opacity-0 group-hover:before:opacity-100 group-hover:after:opacity-100"}>
+							<p className={(pathname === "/collections" || pathname.startsWith("/collections/")) ? "font-bold before:content-['['] after:content-[']']" : "before:content-['['] after:content-[']'] before:opacity-0 after:opacity-0 group-hover:before:opacity-100 group-hover:after:opacity-100"}>
 								collections
 							</p>
 						</Link>

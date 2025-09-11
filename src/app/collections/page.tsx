@@ -10,7 +10,7 @@ import { getTotalProductCount } from '@/lib/shopify';
 export default async function Home() {
   const unfiltered_collections = await getAllCollections();
   const collections = unfiltered_collections.filter(
-    (col: any) => col.handle !== "new-arrivals"
+    (col: any) => col.handle !== "new-arrivals" && col.handle !== "shirts" && col.handle !== "hoodies" && col.handle !== "pants" && col.handle !== "hats" && col.handle !== "accessories"
   ); // exclude collection new-arrivals
 
   const total_products = collections.reduce(
