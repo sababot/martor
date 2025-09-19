@@ -43,8 +43,13 @@ export default function CartPage() {
         <p className="text-center text-md px-1 bg-[#4f3d74] text-white mt-3">cart</p>
       </div>
 
-      <div className="flex justify-center mt-15">
-        <p>Your cart is empty.</p>
+      <div className="flex flex-col items-center justify-center py-16 px-4">
+        <div className="text-center">
+          <h3 className="text-md font-normal mb-6">
+            your cart is empty...
+          </h3>
+          <Link href="/shop" className="hover:font-semibold">[all products]</Link>
+        </div>
       </div>
     </div>
   )

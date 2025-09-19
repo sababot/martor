@@ -81,22 +81,22 @@ const NavbarMobile = () => {
 								  	<p className='bg-accent mt-6 px-2 text-white'>all</p>
 								</div>
 							</a>
-							<a href="/collections">
+							<a href="/shop/shirts">
 								<div className='flex justify-start'>
 								  	<p className='bg-accent mt-6 px-2 text-white'>shirts</p>
 								</div>
 							</a>
-							<a href="/about">
+							<a href="/shop/hoodies">
 								<div className='flex justify-start'>
 								  	<p className='bg-accent mt-6 px-2 text-white'>hoodies</p>
 								</div>
 							</a>
-							<a href="/contact">
+							<a href="/shop/pants">
 								<div className='flex justify-start'>
 								  	<p className='bg-accent mt-6 px-2 text-white'>pants</p>
 								</div>
 							</a>
-							<a href="/cart">
+							<a href="/shop/hats">
 								<div className='flex justify-start'>
 								  	<p className='bg-accent mt-6 px-2 text-white'>hats</p>
 								</div>

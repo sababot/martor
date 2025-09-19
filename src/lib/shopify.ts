@@ -472,3 +472,280 @@ export async function getTotalProductCount() {
   const json = await res.json();
   return json.data?.products?.totalCount ?? 0;
 }
+
+export async function searchProductsInCollection(collectionHandle: string, searchTerm: string) {
+  console.log('Searching in collection:', collectionHandle, 'for:', searchTerm);
+  
+  const query = `
+    query searchInCollection($handle: String!, $query: String!, $first: Int!) {
+      collection(handle: $handle) {
+        id
+        title
+        products(first: $first, query: $query) {
+          edges {
+            node {
+              id
+              title
+              handle
+              productType
+              tags
+              images(first: 5) {
+                edges {
+                  node {
+                    url
+                    altText
+                  }
+                }
+              }
+              variants(first: 10) {
+                edges {
+                  node {
+                    id
+                    price {
+                      amount
+                      currencyCode
+                    }
+                    selectedOptions {
+                      name
+                      value
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  `;
+
+  // Try different search approaches
+  const searchQueries = [
+    `title:*${searchTerm}*`,
+    `${searchTerm}`,
+    `title:"${searchTerm}"`,
+    `tag:${searchTerm}`,
+    `product_type:${searchTerm}`
+  ];
+
+  for (const searchQuery of searchQueries) {
+    const variables = {
+      handle: collectionHandle,
+      query: searchQuery,
+      first: 50
+    };
+
+    console.log('Trying search query:', searchQuery);
+
+    try {
+      const response = await fetch(process.env.SHOPIFY_STORE_DOMAIN, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'X-Shopify-Storefront-Access-Token': process.env.SHOPIFY_STOREFRONT_ACCESS_TOKEN,
+        },
+        body: JSON.stringify({ query, variables }),
+      });
+
+      const json = await response.json();
+      
+      if (json.errors) {
+        console.error('Shopify API errors:', json.errors);
+        continue;
+      }
+      
+      const products = json.data?.collection?.products?.edges?.map(edge => edge.node) || [];
+      console.log(`Search query "${searchQuery}" returned ${products.length} products`);
+      
+      if (products.length > 0) {
+        return products;
+      }
+      
+    } catch (error) {
+      console.error('Search error:', error);
+      continue;
+    }
+  }
+
+  // If no search worked, try getting all products and filter client-side as fallback
+  console.log('All search queries failed, trying client-side filtering as fallback');
+  try {
+    const allProducts = await getProductsFromCollection(collectionHandle);
+    const filteredProducts = allProducts.filter(product => 
+      product.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      product.productType?.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      product.tags?.some(tag => tag.toLowerCase().includes(searchTerm.toLowerCase()))
+    );
+    console.log(`Client-side filtering returned ${filteredProducts.length} products`);
+    return filteredProducts;
+  } catch (error) {
+    console.error('Fallback search error:', error);
+    return [];
+  }
+}
+
+// Search all products (for a global search page) - Fixed version
+export async function searchAllProducts(searchTerm: string) {
+  console.log('Global search for:', searchTerm);
+  
+  try {
+    // First, get ALL products (you might need to implement this if you don't have it)
+    const allProducts = await getProductsCompressed();
+    
+    if (!allProducts || allProducts.length === 0) {
+      console.log('No products found for global search');
+      return [];
+    }
+
+    console.log(`Searching "${searchTerm}" in ${allProducts.length} total products`);
+
+    // Filter client-side (same approach that works for collections)
+    const searchTermLower = searchTerm.toLowerCase();
+    const filteredProducts = allProducts.filter(product => {
+      // Search in title
+      const titleMatch = product.title?.toLowerCase().includes(searchTermLower);
+      
+      // Search in product type
+      const productTypeMatch = product.productType?.toLowerCase().includes(searchTermLower);
+      
+      // Search in tags (if they exist)
+      const tagMatch = product.tags?.some(tag => 
+        tag.toLowerCase().includes(searchTermLower)
+      );
+
+      // Search in description (if available)
+      const descriptionMatch = product.description?.toLowerCase().includes(searchTermLower);
+
+      return titleMatch || productTypeMatch || tagMatch || descriptionMatch;
+    });
+
+    console.log(`Global search found ${filteredProducts.length} products matching "${searchTerm}"`);
+    return filteredProducts;
+
+  } catch (error) {
+    console.error('Global search error:', error);
+    return [];
+  }
+}
+
+// Add this function if you don't have it - gets all products from all collections
+export async function getAllProducts() {
+  const query = `
+    query getAllProducts($first: Int!) {
+      products(first: $first) {
+        edges {
+          node {
+            id
+            title
+            handle
+            productType
+            tags
+            description
+            collections(first: 3) {
+              edges {
+                node {
+                  title
+                  handle
+                }
+              }
+            }
+            images(first: 5) {
+              edges {
+                node {
+                  url
+                  altText
+                }
+              }
+            }
+            variants(first: 10) {
+              edges {
+                node {
+                  id
+                  price {
+                    amount
+                    currencyCode
+                  }
+                  selectedOptions {
+                    name
+                    value
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  `;
+
+  const variables = {
+    first: 250 // Adjust based on your store size
+  };
+
+  try {
+    const response = await fetch(process.env.SHOPIFY_STORE_DOMAIN, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'X-Shopify-Storefront-Access-Token': process.env.SHOPIFY_STOREFRONT_ACCESS_TOKEN,
+      },
+      body: JSON.stringify({ query, variables }),
+    });
+
+    const json = await response.json();
+    
+    if (json.errors) {
+      console.error('Shopify API errors:', json.errors);
+      return [];
+    }
+    
+    return json.data?.products?.edges?.map(edge => edge.node) || [];
+  } catch (error) {
+    console.error('Get all products error:', error);
+    return [];
+  }
+}
+
+// Get search suggestions (for autocomplete - optional)
+export async function getSearchSuggestions(searchTerm: string, limit = 5) {
+  const query = `
+    query searchSuggestions($query: String!, $first: Int!) {
+      products(first: $first, query: $query) {
+        edges {
+          node {
+            id
+            title
+            handle
+          }
+        }
+      }
+    }
+  `;
+
+  const variables = {
+    query: `title:*${searchTerm}*`,
+    first: limit
+  };
+
+  try {
+    const response = await fetch(process.env.SHOPIFY_STORE_DOMAIN, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'X-Shopify-Storefront-Access-Token': process.env.SHOPIFY_STOREFRONT_ACCESS_TOKEN,
+      },
+      body: JSON.stringify({ query, variables }),
+    });
+
+    const json = await response.json();
+    return json.data?.products?.edges?.map(edge => ({
+      id: edge.node.id,
+      title: edge.node.title,
+      handle: edge.node.handle
+    })) || [];
+  } catch (error) {
+    console.error('Suggestions error:', error);
+    return [];
+  }
+}
+

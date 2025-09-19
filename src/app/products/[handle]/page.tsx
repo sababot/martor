@@ -7,7 +7,7 @@ import Link from "next/link"
 import { Check, Star, Search } from 'lucide-react';
 
 import { getProduct } from '@/lib/shopify';
-import { getProducts } from '@/lib/shopify';
+import { getProductsCompressed } from '@/lib/shopify';
 
 import ProductImageViewer from '@/components/ProductImageViewer'
 import ProductInfoSections from '@/components/ProductInfoSections'
@@ -20,7 +20,7 @@ type Props = {
 };
 
 export default async function Home({ params }: Props) {
-  const allProducts = await getProducts();
+  const allProducts = await getProductsCompressed();
   const product = await getProduct(params.handle);
 
   const productGid = 'gid://shopify/Product/${product.id}' // or however you get it

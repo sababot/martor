@@ -31,7 +31,9 @@ export default async function Home() {
                   <Link href='/search'>
                     <Search strokeWidth={2} className="w-4 pt-0.25"/>
                   </Link>
-                  <input type="text" name="" placeholder="search" id="search_input" className="border-0 decoration-0 outline-0 text-left"/>
+                  <form action="/search" method="GET">
+                    <input type="text" name="q" placeholder="search" id="search_input" className="border-0 decoration-0 outline-0 text-left"/>
+                  </form>
                 </div>
               </div>
             </div>
